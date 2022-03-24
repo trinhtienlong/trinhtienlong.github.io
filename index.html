@@ -13,7 +13,7 @@
             font-family: Kanit;
         }
 
-        .c {
+        .title {
             width: 1200px;
             margin: 20px auto;
             border-radius: 5px;
@@ -23,7 +23,7 @@
         }
 
 
-        .c2 {
+        .title--style {
             color: white;
             margin: 10px 0;
             text-transform: uppercase;
@@ -33,7 +33,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .aaa {
+        .body {
             display: flex;
             flex-direction: column;
             background-color: rgb(165, 212, 255);
@@ -43,7 +43,7 @@
             border-radius: 5px;
         }
 
-        .aa {
+        .body__child {
             width: 1000px;
             box-sizing: border-box;
             margin: 20px auto 0 auto;
@@ -52,7 +52,7 @@
             justify-content: center;
         }
 
-        .a {
+        .body__child--one {
             width: 30%;
             display: flex;
             flex-direction: column;
@@ -60,29 +60,29 @@
             margin: 30px 0 20px;
         }
 
-        .a:hover {
+        .body__child--one:hover {
             border-left: solid 1px;
             border-right: solid 1px;
             border-color: rgb(0, 99, 156);
         }
 
-        .a:hover a .k {
+        .body__child--one:hover a .style__img {
             height: 200px;
         }
 
-        .a:hover a h3{
+        .body__child--one:hover a h3{
             background: -webkit-linear-gradient(120deg, #ff9100, #ff00bfa2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .k {
+        .style__img {
             width: 200px;
             height: 150px;
             transition: 0.3s ease-in;
         }
 
-        .a1 {
+        .style__img--in {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -97,7 +97,7 @@
             text-decoration: none;
         }
 
-        .a1:hover {
+        .style__img--in:hover {
             border: solid #ffee59 5px;
             border-radius: 10px;
         }
@@ -113,56 +113,56 @@
 
 <body style="margin: 0; background-color:rgb(205, 234, 255) ;">
 
-    <div class="c">
-        <h2 class="c2">CÙNG TÌM HIỂU MỌI THỨ TRONG TỰ NHIÊN</h2>
+    <div class="title">
+        <h2 class="title--style">CÙNG TÌM HIỂU MỌI THỨ TRONG TỰ NHIÊN</h2>
     </div>
 
-    <div class="aaa">
-        <div class="aa">
-            <div class="a">
+    <div class="body">
+        <div class="body__child">
+            <div class="body__child--one">
                 <a href="cat.html">
-                    <div class="k">
-                        <img class="a1" src="cat.jpg" alt="anh-bi-loi">
+                    <div class="style__img">
+                        <img class="style__img--in" src="cat.jpg" alt="anh-bi-loi">
                     </div>
                     <h3>MÈO</h3>
                 </a>
             </div>
-            <div class="a">
+            <div class="body__child--one">
                 <a href="dog.html">
-                    <div class="k">
-                        <img class="a1" src="dog.jpg" alt="anh-bi-loi">
+                    <div class="style__img">
+                        <img class="style__img--in" src="dog.jpg" alt="anh-bi-loi">
                     </div>
                     <h3>CHÓ</h3>
                 </a>
             </div>
-            <div class="a">
+            <div class="body__child--one">
                 <a href="cay-mai.html">
-                    <div class="k">
-                        <img class="a1" src="cay-mai.jpg" alt="anh-bi-loi">
+                    <div class="style__img">
+                        <img class="style__img--in" src="cay-mai.jpg" alt="anh-bi-loi">
                     </div>
                     <h3>CÂY MAI</h3>
                 </a>
             </div>
-            <div class="a">
+            <div class="body__child--one">
                 <a href="cay-hoa-lan.html">
-                    <div class="k">
-                        <img class="a1" src="cay-lan.jpg" alt="anh-bi-loi">
+                    <div class="style__img">
+                        <img class="style__img--in" src="cay-lan.jpg" alt="anh-bi-loi">
                     </div>
                     <h3>CÂY HOA LAN</h3>
                 </a>
             </div>
-            <div class="a">
+            <div class="body__child--one">
                 <a href="ha-long.html">
-                    <div class="k">
-                        <img class="a1" src="ha-long.jpg" alt="anh-bi-loi">
+                    <div class="style__img">
+                        <img class="style__img--in" src="ha-long.jpg" alt="anh-bi-loi">
                     </div>
                     <h3>VỊNH HẠ LONG</h3>
                 </a>
             </div>
-            <div class="a">
+            <div class="body__child--one">
                 <a href="phu-quoc.html">
-                    <div class="k">
-                        <img class="a1" src="phu-quoc.jpg" alt="anh-bi-loi">
+                    <div class="style__img">
+                        <img class="style__img--in" src="phu-quoc.jpg" alt="anh-bi-loi">
                     </div>
                     <h3>ĐẢO PHÚ QUỐC</h3>
                 </a>
