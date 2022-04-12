@@ -37,7 +37,7 @@
             display: flex;
             flex-direction: column;
             background-color: rgb(165, 212, 255);
-            height: 600px;
+            height: 610px;
             width: 1200px;
             margin: auto;
             border-radius: 5px;
@@ -46,7 +46,7 @@
         .body__child {
             width: 1000px;
             box-sizing: border-box;
-            margin: 20px auto 0 auto;
+            margin: 0 auto ;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -57,7 +57,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 30px 0 20px;
+            margin: 18px 0 20px;
         }
 
         .body__child--one:hover {
@@ -66,8 +66,10 @@
             border-color: rgb(0, 99, 156);
         }
 
-        .body__child--one:hover a .style__img {
-            height: 200px;
+        .body__child--one:hover a .style__img .style__img--in{
+            transform: scale(1.5);
+            opacity: 1;
+            filter: blur(0);
         }
 
         .body__child--one:hover a h3{
@@ -78,16 +80,20 @@
 
         .style__img {
             width: 200px;
-            height: 150px;
-            transition: 0.3s ease-in;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            border: solid 5px 0;
+            background-color: black;
         }
 
         .style__img--in {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border: solid #f8e9d7 5px;
-            border-radius: 10px;
+            transition: all linear 0.4s;
+            opacity: 0.65;
+            filter: blur(1px);
         }
 
         a {
@@ -98,8 +104,7 @@
         }
 
         .style__img--in:hover {
-            border: solid #ffee59 5px;
-            border-radius: 10px;
+
         }
 
         h3 {
@@ -122,7 +127,7 @@
             <div class="body__child--one">
                 <a href="cat.html">
                     <div class="style__img">
-                        <img class="style__img--in" src="cat.jpg" alt="anh-bi-loi">
+                        <img class="style__img--in" src="img/cat.jpg" alt="anh-cat">
                     </div>
                     <h3>MÈO</h3>
                 </a>
@@ -130,7 +135,7 @@
             <div class="body__child--one">
                 <a href="dog.html">
                     <div class="style__img">
-                        <img class="style__img--in" src="dog.jpg" alt="anh-bi-loi">
+                        <img class="style__img--in" src="img/dog.jpg" alt="anh-dog">
                     </div>
                     <h3>CHÓ</h3>
                 </a>
@@ -138,7 +143,7 @@
             <div class="body__child--one">
                 <a href="cay-mai.html">
                     <div class="style__img">
-                        <img class="style__img--in" src="cay-mai.jpg" alt="anh-bi-loi">
+                        <img class="style__img--in" src="img/cay-mai.jpg" alt="anh-Cay-mai">
                     </div>
                     <h3>CÂY MAI</h3>
                 </a>
@@ -146,7 +151,7 @@
             <div class="body__child--one">
                 <a href="cay-hoa-lan.html">
                     <div class="style__img">
-                        <img class="style__img--in" src="cay-lan.jpg" alt="anh-bi-loi">
+                        <img class="style__img--in" src="img/cay-lan.jpg" alt="anh-Hoa-lan">
                     </div>
                     <h3>CÂY HOA LAN</h3>
                 </a>
@@ -154,7 +159,7 @@
             <div class="body__child--one">
                 <a href="ha-long.html">
                     <div class="style__img">
-                        <img class="style__img--in" src="ha-long.jpg" alt="anh-bi-loi">
+                        <img class="style__img--in" src="img/ha-long.jpg" alt="anh-Vinh-ha-long">
                     </div>
                     <h3>VỊNH HẠ LONG</h3>
                 </a>
@@ -162,7 +167,7 @@
             <div class="body__child--one">
                 <a href="phu-quoc.html">
                     <div class="style__img">
-                        <img class="style__img--in" src="phu-quoc.jpg" alt="anh-bi-loi">
+                        <img class="style__img--in" src="img/phu-quoc.jpg" alt="anh-Phu-quoc">
                     </div>
                     <h3>ĐẢO PHÚ QUỐC</h3>
                 </a>
