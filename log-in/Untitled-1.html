@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Login</title>
+    <style>
+
+        .login-page {
+            width: 360px;
+            padding: 150px;
+            margin: 70px auto;
+            background: -webkit-linear-gradient(120deg, #009cff, #dbd92a);
+            border-radius: 5px;
+        }
+
+        .form:hover {
+            box-shadow: 20px 20px 20px 0 rgb(0 0 0 / 20%), 20px 20px 5px 0 rgb(0 0 0 / 24%);
+        }
+
+        .form:hover .ac {
+            background: -webkit-linear-gradient(120deg, #009cff, #dbd92a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form {
+            background: #ffffff;
+            max-width: 360px;
+            padding: 40px;
+            text-align: center;
+            border-radius: 5px;
+            box-sizing: border-box;
+            box-shadow: 20px -20px 20px 0 rgb(0 0 0 / 20%), 20px -20px 5px 0 rgb(0 0 0 / 24%);
+            transition: 0.4s ease-in;
+        }
+
+        .form:hover{
+            box-shadow: 20px 20px 20px 0 rgb(0 0 0 / 20%), 20px 20px 5px 0 rgb(0 0 0 / 24%);
+        }
+
+        input {
+            background: #f2f2f2;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 0;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        button {
+            text-transform: uppercase;
+            background: -webkit-linear-gradient(120deg, #ca00ff, #dbd92a);
+            width: 65%;
+            border: 0;
+            border-radius: 4px;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            cursor: pointer;
+            transition: ease-in 0.2s;
+        }
+
+        button:hover {
+            background: -webkit-linear-gradient(120deg, #009cff, #dbd92a);
+            width: 100%;
+        }
+
+        .message {
+            margin: 15px 0 0;
+            color: #b3b3b3;
+            font-size: 12px;
+        }
+
+        .message a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .ac {
+            margin: 0 0 15px;
+            font-size: 40px;
+            color: #2adb6e;
+            background: -webkit-linear-gradient(120deg, #ca00ff, #dbd92a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <div class="ac">
+                <i class="fa-solid fa-right-to-bracket"></i>
+            </div>
+            <form class="register-form">
+                <input type="text" placeholder="username" />
+                <input type="password" placeholder="password" />
+            </form>
+            <form class="login-form">
+                <button>login</button>
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

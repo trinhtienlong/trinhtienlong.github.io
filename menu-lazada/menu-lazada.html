@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="https://cdn.chanhtuoi.com/uploads/2020/06/logo-lazada-2.png">
+    <title>LAZADA Vietnam</title>
+    <style>
+        * {
+            font-family: Roboto;
+        }
+
+        .menu__child--text,a {
+            display: block;
+            padding-left: 10px;
+            padding-bottom: 8px;
+            padding-top: 8px;
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: orangered;
+            background-color: rgba(255, 255, 255, 0.082);
+        }
+
+        .body {
+            width: 1300px;
+            height: 100vh;
+            margin: auto;
+            display: flex;
+            padding: 30px 0 0 0;
+            background-color: #ffb8c9;
+        }
+
+        .menu {
+            width: 22%;
+            height: 327px;
+            background-color: rgb(68, 68, 68);
+            padding: 13px 0;
+            position: relative;
+        }
+
+        .menu__child {
+            font-size: 18.5px;
+            margin: 8px 0;
+        }
+
+        .menu__child:hover .menu__child--text {
+            color: orangered;
+            background-color: rgba(255, 255, 255, 0.082);
+        }
+
+        .menu__child:hover .menu__child--text i {
+            color: orangered !important;
+        }
+
+        .menu__child:hover .menu__child--ul {
+            visibility: visible;
+        }
+
+        .menu__child--ul {
+            margin: 0;
+            font-size: 18.5px;
+            color: white;
+            width: 180px;
+            height: 327px;
+            background-color: rgb(68, 68, 68);
+            list-style: none;
+            padding: 13px 0;
+            position: absolute;
+            left: 286px;
+            top: 0;
+            z-index: 1;
+            visibility: hidden;
+            border-radius: 0 10px 10px 0;
+            transition: 0.2s ease-in;
+        }
+
+        li {
+            margin: 8px 0;
+            text-transform: capitalize;
+        }
+
+        .style__img {
+            width: 78%;
+            height: 239px;
+        }
+
+    </style>
+</head>
+
+<body style="margin: 0;background-color: #ffb8c9;">
+    <div class="body">
+        <div class="menu">
+            <div class="menu__child">
+                <a class="menu__child--text" href="#">Thiết Bị Điện Tử <i
+                        style=" color: rgb(68, 68, 68); padding-left: 124px;" class="fa-solid fa-angles-right"></i></a>
+                <ul class="menu__child--ul">
+                    <li><a href="#">điện thoại di động</a> </li>
+                    <li><a href="#">máy tính bảng</a> </li>
+                    <li><a href="#">laptop</a> </li>
+                    <li><a href="#">máy tính để bàn</a> </li>
+                    <li><a href="#">âm thanh</a> </li>
+                    <li><a href="#">camera</a> </li>
+                    <li><a href="#">máy in</a> </li>
+                </ul>
+            </div>
+            <div class="menu__child">
+                <a class="menu__child--text" href="#">Phụ Kiện Điện Tử <i
+                        style="color: rgb(68, 68, 68); padding-left: 114px;" class="fa-solid fa-angles-right"></i></a>
+                <ul class="menu__child--ul">
+                    <li><a href="#">phụ kiện di động</a> </li>
+                    <li><a href="#">thiết bị thông minh</a> </li>
+                    <li><a href="#">thiết bị số</a> </li>
+                    <li><a href="#"> phụ kiện máy ảnh</a></li>
+                    <li><a href="#">thiết bị lưu trữ</a> </li>
+                    <li><a href="#">thiết bị máy tính</a> </li>
+                    <li><a href="#">thiết bị mạng</a> </li>
+                </ul>
+            </div>
+            <div class="menu__child">
+                <a class="menu__child--text" href="#">TV & Thiết Bị Điện Gia Dụng <i
+                        style="color: rgb(68, 68, 68); padding-left: 29px ;" class="fa-solid fa-angles-right"></i></a>
+                <ul class="menu__child--ul">
+                    <li><a href="#">điện thoại di động</a> </li>
+                    <li><a href="#"> máy tính bảng</a></li>
+                    <li><a href="#">laptop</a> </li>
+                    <li><a href="#">máy tính để bàn</a> </li>
+                    <li><a href="#">âm thanh</a> </li>
+                    <li><a href="#"> camera</a></li>
+                </ul>
+            </div>
+            <div class="menu__child">
+                <a class="menu__child--text" href="#">Sức Khỏe & Sắc Đẹp <i
+                        style="color: rgb(68, 68, 68); padding-left: 87px;" class="fa-solid fa-angles-right"></i></a>
+                <ul class="menu__child--ul">
+                    <li><a href="#">chăm sóc da</a> </li>
+                    <li><a href="#">làm đẹp</a> </li>
+                    <li><a href="#">chăm sóc cơ thể</a> </li>
+                    <li><a href="#">chăm sóc tóc</a> </li>
+                    <li><a href="#">nước hoa</a> </li>
+                </ul>
+            </div>
+            <div class="menu__child">
+                <a class="menu__child--text" href="#">Siêu Thị Tạp Hóa <i
+                        style="color: rgb(68, 68, 68); padding-left: 115px;" class="fa-solid fa-angles-right"></i></a>
+                <ul class="menu__child--ul">
+                    <li><a href="#">sửa tươi tiệt trùng</a> </li>
+                    <li><a href="#">bia rượu</a> </li>
+                    <li><a href="#">thực phẩm</a> </li>
+                    <li><a href="#"> kẹo & socola</a></li>
+                    <li><a href="#">lau chùi vệ sinh</a> </li>
+                    <li><a href="#"> vệ sinh thú cưng</a></li>
+                </ul>
+            </div>
+            <div class="menu__child">
+                <a class="menu__child--text" href="#">Thời Trang Nữ <i
+                        style="color: rgb(68, 68, 68); padding-left: 138px;" class="fa-solid fa-angles-right"></i></a>
+                <ul class="menu__child--ul">
+                    <li><a href="#">váy</a> </li>
+                    <li><a href="#">quần</a> </li>
+                    <li><a href="#">đầm</a> </li>
+                    <li><a href="#"> phụ kiện</a> </li>
+                    <li><a href="#">trang điểm</a> </li>
+                    <li><a href="#">giày</a> </li>
+                </ul>
+            </div>
+            <div class="menu__child">
+                <a class="menu__child--text" href="#">Thời Trang Nam<i
+                        style="color: rgb(68, 68, 68); padding-left: 128px;" class="fa-solid fa-angles-right"></i></a>
+                <ul class="menu__child--ul">
+                    <li><a href="#">quần áo </a> </li>
+                    <li><a href="#">trang phục</a> </li>
+                    <li><a href="#">phụ kiện</a> </li>
+                    <li><a href="#"> đồ lót nam</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="style__img">
+            <img width="100%"
+                src="https://lzd-img-global.slatic.net/g/icms/images/ims-web/553f4c7c-777e-4ec8-99ec-4f6614148595.jpg_2200x2200q90.jpg_.webp"
+                alt="">
+        </div>
+    </div>
+</body>
+
+</html>
