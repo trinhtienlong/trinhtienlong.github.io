@@ -14,7 +14,7 @@
         }
 
         .title {
-            width: 80%;
+            max-width: 1200px;
             margin: 20px auto;
             border-radius: 5px;
             display: flex;
@@ -38,16 +38,57 @@
             display: flex;
             flex-direction: column;
             background-color: rgb(165, 212, 255);
-            height: 610px;
-            width: 80%;
+            max-width: 1200px;
             margin: auto;
             border-radius: 5px;
         }
 
+        @media only screen and (max-width: 750px){
+            .body .body__child .body__child--one{
+                width: 40%;
+            }
+
+            a .style__img{
+                width: 170px;
+                height: 170px;
+            }
+
+            .title .title--style{
+                font-size: 33px;
+            }
+        }
+
+        @media only screen and (max-width: 540px){
+            .body .body__child .body__child--one{
+                width: 51%;
+            }
+
+            .title .title--style{
+                font-size: 26px;
+            }
+
+            a .style__img{
+                width: 360px;
+                height: 170px;
+            }
+        }
+
+        @media only screen and (max-width: 450px){
+            .body .body__child .body__child--one{
+                width: 85%;
+            }
+
+            a .style__img{
+                width: 360px;
+                height: 170px;
+            }
+        }
+
+
         .body__child {
-            width: 80%;
+            max-width: 1000px;
             box-sizing: border-box;
-            margin: 0 auto ;
+            margin: 0 auto 20px ;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -58,13 +99,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 18px 0 20px;
-        }
-
-        .body__child--one:hover {
-            border-left: solid 1px;
-            border-right: solid 1px;
-            border-color: rgb(0, 99, 156);
+            margin: 18px 0 0;
         }
 
         .body__child--one:hover a .style__img .style__img--in{
@@ -102,10 +137,6 @@
             flex-direction: column;
             align-items: center;
             text-decoration: none;
-        }
-
-        .style__img--in:hover {
-
         }
 
         h3 {
