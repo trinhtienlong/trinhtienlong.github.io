@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
     <link href="logo-world.png" rel="shortcut icon" type="image/x-icon">
     <title>MÈO</title>
@@ -27,12 +29,12 @@
             transition: 0.3s ease-in;
         }
 
-        .home:hover i{
+        .home:hover i {
             padding-right: 50px;
             visibility: visible;
         }
 
-        .home:hover{
+        .home:hover {
             width: 273px;
         }
 
@@ -41,7 +43,7 @@
             background-color: rgb(152, 97, 127);
         }
 
-        .body__child{
+        .body__child {
             width: 80%;
             margin: auto;
             text-align: justify;
@@ -50,9 +52,9 @@
         h1 {
             font-size: 43px;
             color: rgb(255, 255, 255);
-            text-shadow: 0px 0px 8px rgb(255, 75, 216),0px 0px 8px rgb(255, 75, 216),
-            0px 0px 8px rgb(255, 75, 216),0px 0px 8px rgb(255, 75, 216),
-            0px 0px 8px rgb(255, 75, 216),0px 0px 8px rgb(255, 75, 216);
+            text-shadow: 0px 0px 8px rgb(255, 75, 216), 0px 0px 8px rgb(255, 75, 216),
+                0px 0px 8px rgb(255, 75, 216), 0px 0px 8px rgb(255, 75, 216),
+                0px 0px 8px rgb(255, 75, 216), 0px 0px 8px rgb(255, 75, 216);
         }
 
         .style__img--child {
@@ -62,9 +64,14 @@
             animation: scale 15s linear infinite;
         }
 
+        @keyframes scale {
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
         .style__img {
             width: 100%;
-            height: 600px;
             overflow: hidden;
         }
 
@@ -79,14 +86,46 @@
             line-height: 30px;
         }
 
-        i{
+        i {
             visibility: hidden;
             transition: 0.3s ease-in;
         }
 
-        @keyframes scale {
-            50% {
-                transform: scale(1.2);
+        @media only screen and (max-width: 870px) {
+            h1 {
+                font-size: 33px;
+            }
+
+            .home {
+                font-size: 17px;
+                width: 200px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            h1 {
+                font-size: 30px;
+            }
+
+            .home {
+                font-size: 13px;
+                width: 152px;
+            }
+
+            .home:hover {
+                width: 200px;
+            }
+
+            .home:hover i {
+                padding-right: 35px;
+            }
+
+            .style__span--one {
+                font-size: 19px;
+            }
+
+            .style__span--two {
+                font-size: 19px;
             }
         }
     </style>
@@ -126,4 +165,5 @@
         </div>
     </div>
 </body>
+
 </html>
