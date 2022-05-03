@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid color">
+            <a class="navbar-brand" href="#">
+                <img width="120px" src="techmaster.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav justify-content-end ">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">PHÒNG LAB</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TRỰC TUYẾN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">KHAI GIẢNG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">BLOG</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            CHÚNG TÔI
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Trung tâm</a></li>
+                            <li><a class="dropdown-item" href="#">Quy định chung</a></li>
+                            <li><a class="dropdown-item" href="#">Giảng viên</a></li>
+                            <li><a class="dropdown-item" href="#">Hướng dẫn đăng kí học</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mgn">
+        <div class="row">
+            <div class="col-2 filter-desktop cl-2">
+                <div class="sticky">
+                    <p>Đối tượng người học</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Doanh nghiệp
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Lớp tối
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                        <label class="form-check-label" for="flexRadioDefault3">
+                            Thiếu nhi
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                        <label class="form-check-label" for="flexRadioDefault4">
+                            Học từ đầu
+                        </label>
+                    </div>
+
+                    <p class="cd">Chủ đề</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+                        <label class="form-check-label" for="flexRadioDefault5">
+                            Web frontend
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6">
+                        <label class="form-check-label" for="flexRadioDefault6">
+                            Di động
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault7">
+                        <label class="form-check-label" for="flexRadioDefault7">
+                            Web backend
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault8">
+                        <label class="form-check-label" for="flexRadioDefault8">
+                            Big Data,AI
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault9">
+                        <label class="form-check-label" for="flexRadioDefault9">
+                            Kiểm thử
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-10 col-12">
+                <div class="col-lg-4 col-md-6 col-md-6 col-sm-12 ttr ">
+                    <form class="d-flex ">
+                        <input class="form-control me-2" type="search" placeholder="Tìm kiếm khóa học"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <button class="btn btn-outline-success filter" type="submit">
+                            <i class="fa-solid fa-filter"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="container-fluid cv">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 gy-4">
+                            <div class="card">
+                                <div class="av">
+                                    <img src="img/js.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Javascript căn bản</h5>
+                                    <div class="test">
+                                        <p class="card-text">online</p>
+                                        <span style="padding: 0 5px;">5 </span>
+                                        <i class="fa-solid fa-star" style="color:orange"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 gy-4">
+                            <div class="card">
+                                <img src="img/notejs-T.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lập trình Nodejs</h5>
+                                    <div class="test">
+                                        <p class="card-text">online</p>
+                                        <span style="padding: 0 5px;">5 </span>
+                                        <i class="fa-solid fa-star" style="color:orange"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 gy-4">
+                            <div class="card">
+                                <img src="img/java.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Học lập trình java trực tuyến</h5>
+                                    <div class="test">
+                                        <p class="card-text">online</p>
+                                        <span style="padding: 0 5px;">5 </span>
+                                        <i class="fa-solid fa-star" style="color:orange"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 gy-4">
+                            <div class="card">
+                                <img src="img/ios.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lập trình di động IOS Swift</h5>
+                                    <div class="test">
+                                        <p class="card-text">online</p>
+                                        <span style="padding: 0 5px;">5 </span>
+                                        <i class="fa-solid fa-star" style="color:orange"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 gy-4">
+                            <div class="card">
+                                <img src="img/react.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lập trình di động đa nền tảng</h5>
+                                    <div class="test">
+                                        <p class="card-text">online</p>
+                                        <span style="padding: 0 5px;">5 </span>
+                                        <i class="fa-solid fa-star" style="color:orange"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 gy-4">
+                            <div class="card">
+                                <img src="img/word.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Xây dựng và quản trị website</h5>
+                                    <div class="test">
+                                        <p class="card-text">online</p>
+                                        <span style="padding: 0 5px;">5 </span>
+                                        <i class="fa-solid fa-star" style="color:orange"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 ">
+                    <ul class="sty">
+                        <h4>CHỦ SỞ HỮU WEBSITE</h4>
+                        <li>
+                            Công ty TNHH TechMaster Vietnam Ltd</li>
+                        <li>Số ĐKDN: 0105392153</li>
+                        <li>Ngày cấp: 4-7-2011</li>
+                        <li>Nơi cấp: Sở kế hoạch - đầu tư Hà nội</li>
+                        <li>Người đại diện pháp luật: Lê Minh Thu</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-6 ">
+                    <ul class="sty">
+                        <h4>GIỚI THIỆU</h4>
+                        <li>Học viện CNTT TechMaster</li>
+                        <li>Giảng viên</li>
+                        <li>Quy định</li>
+                        <li>Hướng dẫn mua khóa học</li>
+                        <li>Ưu đãi và hoàn trả học phí</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-6 ">
+                    <ul class="sty">
+                        <h4>TƯ VẤN TUYỂN SINH</h4>
+                        <li>Phạm Thị Mẫn - 0963023185</li>
+                        <li>manpham@techmaster.vn</li>
+                        <li>Dương Đức Thịnh - 0987273764</li>
+                        <li>thinh@techmaster.vn</li>
+                        <li>huong@techmaster.vn</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-6 ">
+                    <ul class="sty">
+                        <h4>ĐỊA CHỈ</h4>
+                        <li>Cơ sở 1: 14 ngõ 4, Nguyễn Đình Chiểu, Quận Hai Bà Trưng, Hà Nội</li>
+                        <li>Cơ sở 2: Tầng 12A, tòa nhà Viwaseen Tower, số 48, Tố Hữu, Lê Văn Lương kéo dài, Hà Nội</li>
+                        <li>Cơ sở 3: 77 Đường số 23, khu nhà thương mại, KĐT TP Giao lưu, Bắc Từ Liêm, Hà Nội</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
