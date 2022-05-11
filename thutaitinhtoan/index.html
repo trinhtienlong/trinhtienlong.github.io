@@ -64,6 +64,12 @@
         span {
             font-size: 30px;
         }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -83,7 +89,7 @@
             </select>
             <div id="num1" class="test2"></div>
             <span>=</span>
-            <input id="input" class="test2">
+            <input id="input" class="test2" type="number">
             <div id="test" class="test4">kiểm tra</div>
         </div>
     </div>
@@ -97,61 +103,61 @@
             let resul = document.getElementById('input')
 
             if (document.getElementById('my').value === "+") {
-                if ((+resul.value) == "") {
-                    alert('baby không nhập kết quả thì kiểm tra sao được hỏ')
+                if (!(resul.value)) {
+                    alert('bạn chưa nhập kết quả')
                 }
-                if ((+resul.value) == (+num.innerHTML) + (+num1.innerHTML)) {
+                if ((resul.value) == (+num.innerHTML) + (+num1.innerHTML)) {
                     alert('Quá chuẩn nuôn.10đ về chỗ')
                     location.reload();
-                } else if((+resul.value) != (+num.innerHTML) + (+num1.innerHTML) && (+resul.value) != ""){
+                } else if((resul.value) != "") {
                     alert('Sai nhá nhẩm lại mau!')
                 }
             }
 
             if (document.getElementById('my').value === "-") {
-                if ((+resul.value) == "") {
-                    alert('baby không nhập kết quả thì kiểm tra sao được hỏ')
+                if (!(resul.value)) {
+                    alert('bạn chưa nhập kết quả')
                 }
-                if ((+resul.value) == (+num.innerHTML) - (+num1.innerHTML)) {
+                if ((resul.value) == (+num.innerHTML) - (+num1.innerHTML)) {
                     alert('Quá chuẩn nuôn.10đ về chỗ')
                     location.reload();
-                } else if((+resul.value) != (+num.innerHTML) + (+num1.innerHTML) && (+resul.value) != "") {
+                } else if((resul.value) != ""){
                     alert('Sai nhá nhẩm lại mau!')
                 }
             }
 
             if (document.getElementById('my').value === "*") {
-                if ((+resul.value) == "") {
-                    alert('baby không nhập kết quả thì kiểm tra sao được hỏ')
+                if (!(resul.value)) {
+                    alert('bạn chưa nhập kết quả')
                 }
-                if ((+resul.value) == (+num.innerHTML) * (+num1.innerHTML)) {
+                if ((resul.value) == (+num.innerHTML) * (+num1.innerHTML)) {
                     alert('Quá chuẩn nuôn.10đ về chỗ')
                     location.reload();
-                } else if((+resul.value) != (+num.innerHTML) + (+num1.innerHTML) && (+resul.value) != "") {
+                } else if((resul.value) != ""){
                     alert('Sai nhá nhẩm lại mau!')
                 }
             }
 
             if (document.getElementById('my').value === "/") {
-                if ((+resul.value) == "") {
-                    alert('baby không nhập kết quả thì kiểm tra sao được hỏ')
+                if (!(resul.value)) {
+                    alert('bạn chưa nhập kết quả')
                 }
-                if ((+resul.value) == (+num.innerHTML) / (+num1.innerHTML)) {
+                if ((resul.value) == (+num.innerHTML) / (+num1.innerHTML)) {
                     alert('Quá chuẩn nuôn.10đ về chỗ')
                     location.reload();
-                } else if((+resul.value) != (+num.innerHTML) + (+num1.innerHTML) && (+resul.value) != "") {
+                } else if((resul.value) != ""){
                     alert('Sai nhá nhẩm lại mau!')
                 }
             }
 
             if (document.getElementById('my').value === "^") {
-                if ((+resul.value) == "") {
-                    alert('baby không nhập kết quả thì kiểm tra sao được hỏ')
+                if (!(resul.value)) {
+                    alert('bạn chưa nhập kết quả')
                 }
-                if ((+resul.value) == (+num.innerHTML) ^ (+num1.innerHTML)) {
+                if ((resul.value) == Math.pow((+num.innerHTML), (+num1.innerHTML))) {
                     alert('Quá chuẩn nuôn.10đ về chỗ')
                     location.reload();
-                } else if((+resul.value) != (+num.innerHTML) + (+num1.innerHTML) && (+resul.value) != "") {
+                } else if((resul.value) != ""){
                     alert('Sai nhá nhẩm lại mau!')
                 }
             }
