@@ -108,9 +108,9 @@
 
         function test1() {
             let random = Math.floor(Math.random() * 5)
-            let randomCalc = document.getElementById('my').value
+            let randomCalc = document.getElementById('my')
             let calc = document.querySelectorAll('option')
-            randomCalc = calc[random].value
+            randomCalc.value = calc[random].value
             console.log(randomCalc)
         }
 
