@@ -80,7 +80,7 @@
         <div class="test1">THỬ TÀI TÍNH TOÁN NÀO BẠN ƠI !</div>
         <div class="test-bot">
             <div id="num" class="test2"></div>
-            <select id="my" class="vv" onchange="">
+            <select id="my" class="vv">
                 <option value="+">+</option>
                 <option value="-">-</option>
                 <option value="*">*</option>
@@ -99,6 +99,23 @@
         num.innerHTML = Math.floor(Math.random() * 10)
         let num1 = document.getElementById('num1');
         num1.innerHTML = Math.floor(Math.random() * 10)
+
+        /*
+        em tạo random cho phép tính nhưng mỗi khi load nó k nhảy phép tính khác,
+        em thử gán 'document.getElementById('my').value = 'phép tính' thì nó đổi,
+        a giúp e đổi phép tính với ạ
+        */
+
+        function test1() {
+            let random = Math.floor(Math.random() * 5)
+            let randomCalc = document.getElementById('my').value
+            let calc = document.querySelectorAll('option')
+            randomCalc = calc[random].value
+            console.log(randomCalc)
+        }
+
+        test1()
+        
         function test() {
             let resul = document.getElementById('input')
 
@@ -107,10 +124,10 @@
                     alert('bạn chưa nhập kết quả')
                 }
                 if ((resul.value) == (+num.innerHTML) + (+num1.innerHTML)) {
-                    alert('Quá chuẩn nuôn.10đ về chỗ')
+                    alert('kết quả chính xác')
                     location.reload();
-                } else if((resul.value) != "") {
-                    alert('Sai nhá nhẩm lại mau!')
+                } else if ((resul.value) != "") {
+                    alert('Sai rồi hãy thử đáp án khác!')
                 }
             }
 
@@ -119,10 +136,10 @@
                     alert('bạn chưa nhập kết quả')
                 }
                 if ((resul.value) == (+num.innerHTML) - (+num1.innerHTML)) {
-                    alert('Quá chuẩn nuôn.10đ về chỗ')
+                    alert('kết quả chính xác')
                     location.reload();
-                } else if((resul.value) != ""){
-                    alert('Sai nhá nhẩm lại mau!')
+                } else if ((resul.value) != "") {
+                    alert('Sai rồi hãy thử đáp án khác!')
                 }
             }
 
@@ -131,10 +148,10 @@
                     alert('bạn chưa nhập kết quả')
                 }
                 if ((resul.value) == (+num.innerHTML) * (+num1.innerHTML)) {
-                    alert('Quá chuẩn nuôn.10đ về chỗ')
+                    alert('kết quả chính xác')
                     location.reload();
-                } else if((resul.value) != ""){
-                    alert('Sai nhá nhẩm lại mau!')
+                } else if ((resul.value) != "") {
+                    alert('Sai rồi hãy thử đáp án khác!')
                 }
             }
 
@@ -143,10 +160,10 @@
                     alert('bạn chưa nhập kết quả')
                 }
                 if ((resul.value) == (+num.innerHTML) / (+num1.innerHTML)) {
-                    alert('Quá chuẩn nuôn.10đ về chỗ')
+                    alert('kết quả chính xác')
                     location.reload();
-                } else if((resul.value) != ""){
-                    alert('Sai nhá nhẩm lại mau!')
+                } else if ((resul.value) != "") {
+                    alert('Sai rồi hãy thử đáp án khác!')
                 }
             }
 
@@ -155,10 +172,10 @@
                     alert('bạn chưa nhập kết quả')
                 }
                 if ((resul.value) == Math.pow((+num.innerHTML), (+num1.innerHTML))) {
-                    alert('Quá chuẩn nuôn.10đ về chỗ')
+                    alert('kết quả chính xác')
                     location.reload();
-                } else if((resul.value) != ""){
-                    alert('Sai nhá nhẩm lại mau!')
+                } else if ((resul.value) != "") {
+                    alert('Sai rồi hãy thử đáp án khác!')
                 }
             }
         }
