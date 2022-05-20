@@ -79,60 +79,61 @@ body {
 }
 
 /* detail */
-.cus-bread a{
-    text-decoration: none;
-    color: #333;
+.cus-bread a {
+  text-decoration: none;
+  color: #333;
 }
 
-.material{
-    display: flex;
-    margin-bottom: 20px;
+.material {
+  display: flex;
+  margin-bottom: 20px;
 }
 
-.material div{
-    margin-right: 10px;
+.material div {
+  margin-right: 10px;
 }
 
-.addcart{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.addcart {
+  display: flex;
+  align-items: center;
 }
 
-.add{
-    border-color: black;
-    border-radius: 0;
+.add {
+  margin: 0 15px;
+  border-color: black;
+  border-radius: 0;
 }
 
-.add1{
-    padding: 16px 0;
-    width: 200px;
-    border-radius: 0;
+.add1 {
+  margin-left: 10px;
+  padding: 16px 0;
+  width: 250px;
+  border-radius: 0;
 }
 
-.name{
+.name {
   font-size: 4rem;
 }
 
-.money{
+.money {
   font-size: 20px;
   text-decoration: line-through rgb(208, 1, 1);
 }
 
-.money1{
+.money1 {
   font-size: 20px;
   font-weight: bolder;
 }
 
-.model{
+.model {
   font-weight: bolder;
 }
 
-.number{
+.number {
   font-size: 30px;
 }
 
-.cus-nav{
+.cus-nav {
   margin-top: 60px;
 }
 
@@ -151,48 +152,48 @@ body {
   color: #d84727;
 }
 
-.img40{
+.img40 {
   display: block;
   margin: auto;
   max-width: 100%;
 }
 
-.detail{
+.detail {
   margin: 20px 0;
 }
 
-.detail-name{
+.detail-name {
   font-size: 24px;
   line-height: 35px;
 }
 
-.detail-desc{
+.detail-desc {
   line-height: 30px;
 }
 
-.border{
+.border {
   border: 1px solid #333;
   position: relative;
   height: 100%;
 }
 
-.relate-tittle{
+.relate-tittle {
   font-size: 34px;
 }
 
-.relate-name{
+.relate-name {
   font-size: 24px;
 }
 
-.relate-price1{
+.relate-price1 {
   font-size: 20px;
 }
 
-.relate-price{
+.relate-price {
   text-decoration: line-through #d84727;
 }
 
-.sale{
+.sale {
   position: absolute;
   background: #d84727;
   color: white;
@@ -203,7 +204,7 @@ body {
   right: 16px;
 }
 
-.new{
+.new {
   position: absolute;
   background: #2c7700;
   color: white;
@@ -214,22 +215,28 @@ body {
   right: 16px;
 }
 
-.clock{
+.clock {
   max-width: 100%;
   display: block;
   margin: auto;
 }
 
-.flex{
+.flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.tab-content{
+.tab-content {
   padding-left: 16px;
 }
 
-.relate-tittle{
+.relate-tittle {
   margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 575px){
+  .flex{
+    flex-direction: row;
+  }
 }
