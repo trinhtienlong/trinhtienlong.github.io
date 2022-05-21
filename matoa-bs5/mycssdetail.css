@@ -291,8 +291,15 @@ body {
 }
 
 .border1{
+  display: flex;
+  justify-content: center;
   border-top: solid 2px rgb(155, 155, 155) ;
   border-bottom: solid 2px rgb(155, 155, 155) ;
+}
+
+.border2{
+  display: flex;
+  justify-content: center;
 }
 
 .dislay11{
@@ -304,7 +311,7 @@ body {
 .dislay12{
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 0;
 }
 
