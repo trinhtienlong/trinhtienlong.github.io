@@ -176,20 +176,20 @@
         <div class="row">
             <div class="col-xl-2 col-sm-3 flex">
                 <div>
-                    <img class="clock" src="img/image 37.png" alt="">
+                    <img id="imgmini" class="clock" src="img/image 37.png" alt="">
                 </div>
                 <div>
-                    <img class="clock" src="img/image-removebg-preview 1.png" alt="">
+                    <img id="imgmini1" class="clock" src="img/image-removebg-preview 1.png" alt="">
                 </div>
                 <div>
-                    <img class="clock" src="img/image-removebg-preview1 1.png" alt="">
+                    <img id="imgmini2" class="clock" src="img/image-removebg-preview1 1.png" alt="">
                 </div>
                 <div>
-                    <img class="clock" src="img/image-removebg-preview2 1.png" alt="">
+                    <img id="imgmini3" class="clock" src="img/image-removebg-preview2 1.png" alt="">
                 </div>
             </div>
             <div class="col-xl-4 col-sm-9">
-                <img class="clock" src="img/dongho.png" alt="">
+                <img id="rp-img" class="clock" src="img/dongho.png" alt="">
             </div>
             <div class="col-xl-6 col-sm-12">
                 <p class="name">WAY KAMBAS MINI EBONY</p>
@@ -205,9 +205,9 @@
                     </div>
                 </div>
                 <div class="addcart">
-                    <button type="button" class="btn btn-outline-danger add">-</button>
-                    <span class="number">1</span>
-                    <button type="button" class="btn btn-outline-danger add">+</button>
+                    <button id="down" type="button" class="btn btn-outline-danger add">-</button>
+                    <span id="num" class="number">1</span>
+                    <button id="up" type="button" class="btn btn-outline-danger add">+</button>
                     <div class="btn btn-outline-danger add1 add2">
                         <i class="fas fa-cart-plus"></i>
                         <span>Add to cart</span>
@@ -468,6 +468,50 @@
             </div>
         </div>
     </div>
+
+
+    <!-- js-detail -->
+    <script>
+        // transfer photos
+        function tfPhotos() {
+            let imgMini = document.getElementById('imgmini').getAttribute('src')
+            document.getElementById('rp-img').setAttribute('src', imgMini)
+        }
+        function tfPhotos1() {
+            let imgMini = document.getElementById('imgmini1').getAttribute('src')
+            document.getElementById('rp-img').setAttribute('src', imgMini)
+        }
+        function tfPhotos2() {
+            let imgMini = document.getElementById('imgmini2').getAttribute('src')
+            document.getElementById('rp-img').setAttribute('src', imgMini)
+        }
+        function tfPhotos3() {
+            let imgMini = document.getElementById('imgmini3').getAttribute('src')
+            document.getElementById('rp-img').setAttribute('src', imgMini)
+        }
+        document.getElementById('imgmini').addEventListener('click', tfPhotos)
+        document.getElementById('imgmini1').addEventListener('click', tfPhotos1)
+        document.getElementById('imgmini2').addEventListener('click', tfPhotos2)
+        document.getElementById('imgmini3').addEventListener('click', tfPhotos3)
+
+        //up and down and addtocard
+        let cout = document.getElementById('num')
+        let cout1 = cout.innerHTML
+        function up() {
+            cout1 = parseInt(cout1) + 1
+            cout.innerHTML = cout1
+        }
+        document.getElementById('up').addEventListener('click', up)
+
+        function down() {
+            if (cout1 > 0) {
+                cout1 = parseInt(cout1) - 1
+                cout.innerHTML = cout1
+            }
+        }
+        document.getElementById('down').addEventListener('click', down)
+
+    </script>
     <!-- (Optional) Use CSS or JS implementation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
         integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ=="
