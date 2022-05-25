@@ -54,7 +54,7 @@
                                 class="fas fa-user icon"></i> Log In</a>
                     </li>
                     <li class="nav-item px-2 posi" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <span>0</span>
+                        <span id="withaddcart" class="openoff">0</span>
                         <a class="nav-link cus-menu-item" href="#"><i class="fas fa-briefcase"></i></a>
                     </li>
                 </ul>
@@ -208,7 +208,7 @@
                     <button id="down" type="button" class="btn btn-outline-danger add">-</button>
                     <span id="num" class="number">1</span>
                     <button id="up" type="button" class="btn btn-outline-danger add">+</button>
-                    <div class="btn btn-outline-danger add1 add2">
+                    <div id="addtocart" class="btn btn-outline-danger add1 add2">
                         <i class="fas fa-cart-plus"></i>
                         <span>Add to cart</span>
                     </div>
@@ -472,46 +472,57 @@
 
     <!-- js-detail -->
     <script>
-        // transfer photos
-        function tfPhotos() {
-            let imgMini = document.getElementById('imgmini').getAttribute('src')
-            document.getElementById('rp-img').setAttribute('src', imgMini)
-        }
-        function tfPhotos1() {
-            let imgMini = document.getElementById('imgmini1').getAttribute('src')
-            document.getElementById('rp-img').setAttribute('src', imgMini)
-        }
-        function tfPhotos2() {
-            let imgMini = document.getElementById('imgmini2').getAttribute('src')
-            document.getElementById('rp-img').setAttribute('src', imgMini)
-        }
-        function tfPhotos3() {
-            let imgMini = document.getElementById('imgmini3').getAttribute('src')
-            document.getElementById('rp-img').setAttribute('src', imgMini)
-        }
-        document.getElementById('imgmini').addEventListener('click', tfPhotos)
-        document.getElementById('imgmini1').addEventListener('click', tfPhotos1)
-        document.getElementById('imgmini2').addEventListener('click', tfPhotos2)
-        document.getElementById('imgmini3').addEventListener('click', tfPhotos3)
-
-        //up and down and addtocard
-        let cout = document.getElementById('num')
-        let cout1 = cout.innerHTML
-        function up() {
-            cout1 = parseInt(cout1) + 1
-            cout.innerHTML = cout1
-        }
-        document.getElementById('up').addEventListener('click', up)
-
-        function down() {
-            if (cout1 > 0) {
-                cout1 = parseInt(cout1) - 1
-                cout.innerHTML = cout1
-            }
-        }
-        document.getElementById('down').addEventListener('click', down)
 
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        // transfer photos
+        $('.flex div img').click(function () {
+            let src = $(this).attr('src')
+            $('#rp-img').attr('src', src)
+        })
+
+        //up and down and addtocard
+
+        function up() {
+            let cout = $('#num').text()
+            let cout1 = parseInt(cout) + 1
+            $('#num').text(cout1)
+        }
+        $('#up').click(up)
+
+        function down() {
+            let cout = $('#num').text()
+            let coutn = parseInt(cout)
+            if (coutn > 0) {
+                coutn = coutn - 1
+                $('#num').text(coutn)
+            }
+        }
+        $('#down').click(down)
+
+        function upcart() {
+            let up1 = $('#withaddcart')
+            up1.text($('#num').text())
+        }
+        $('#addtocart').click(upcart)
+
+        // opencart
+        function openCart(){
+            let open = $('#num').text()
+            console.log(typeof(parseInt(open)))
+            if( parseInt(open) > 0 ){
+                $('#withaddcart').removeClass('openoff')
+            }else{
+                $('#withaddcart').addClass('openoff')
+            }         
+        }
+        $('#addtocart').click(openCart)
+
+        
+    </script>
+
     <!-- (Optional) Use CSS or JS implementation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
         integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ=="

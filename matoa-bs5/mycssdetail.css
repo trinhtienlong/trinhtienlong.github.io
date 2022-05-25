@@ -320,6 +320,10 @@ body {
   text-decoration: line-through #da3915;
 }
 
+.openoff{
+  display: none;
+}
+
 @media only screen and (max-width: 575px) {
   .flex {
     flex-direction: row;
