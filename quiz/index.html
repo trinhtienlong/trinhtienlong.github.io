@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(139, 187, 170);
+            height: 90vh;
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quiz-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+            width: 600px;
+        }
+
+        .quiz-header {
+            padding: 4rem;
+        }
+
+        h2 {
+            padding: 1rem;
+            text-align: center;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        ul li label {
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #03cae4;
+            color: #fff;
+            border: none;
+            border-radius: 0 0 10px 10px;
+            display: block;
+            width: 100%;
+            font-size: 1.1rem;
+            padding: 1.3rem;
+        }
+
+        button:hover {
+            background-color: #04adc4;
+
+        }
+
+        button:focus {
+            outline: none;
+            background-color: #44b927;
+        }
+
+        .abc {
+            max-width: 100%;
+            background-color: red;
+        }
+
+        h1{
+            padding: 1.5rem 1rem 1rem;
+            font-weight: bolder;
+            text-align: center;
+            color: #ffca8d;
+        }
+
+        .vk{
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz-container" id="quiz">
+        <div class="quiz-header">
+            <h2 id="question">Question Text</h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="a" class="answer">
+                    <label for="a" id="a_text">Answer</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="answer" id="b" class="answer">
+                    <label for="b" id="b_text">Answer</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="answer" id="c" class="answer">
+                    <label for="c" id="c_text">Answer</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="answer" id="d" class="answer">
+                    <label for="d" id="d_text">Answer</label>
+                </li>
+
+            </ul>
+        </div>
+        
+
+        <button id="submit">Submit</button>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+
+        const quizdata = [
+            {
+                question: "Ngày kỉ niệm yêu nhau của 2 đứa là ngày bao nhiêu?",
+                a: "31/1",
+                b: "29/2",
+                c: "30/3",
+                d: "31/12",
+                correct: "d",
+            },
+            {
+                question: "Con chanh được mua vào ngày nào?",
+                a: "28/1",
+                b: "22/4",
+                c: "1/5",
+                d: "Ai mà nhớ nổi!",
+                correct: "d",
+            },
+            {
+                question: "Anh thích màu nào nhất trong các màu sau?",
+                a: "vàng",
+                b: "đỏ thẫm",
+                c: "be",
+                d: "chấm bi",
+                correct: "d",
+            },
+            {
+                question: "Anh thích ăn gì nhất ?",
+                a: "gà nướng",
+                b: "nước dừa",
+                c: "cháo ngao",
+                d: "cả b và c ",
+                correct: "d",
+            }
+        ]
+
+        const quiz = document.getElementById('quiz')
+        const answers = document.querySelectorAll('.answer')
+        const question = document.getElementById('question')
+        const a_text = document.getElementById('a_text')
+        const b_text = document.getElementById('b_text')
+        const c_text = document.getElementById('c_text')
+        const d_text = document.getElementById('d_text')
+        const submit = document.getElementById('submit')
+
+
+        let currentQuiz = 0
+        let score = 0
+
+        loadQuiz()
+
+        function loadQuiz() {
+            deselectAnswers()
+
+            const currentQuizData = quizdata[currentQuiz]
+            question.innerText = currentQuizData.question
+            a_text.innerText = currentQuizData.a
+            b_text.innerText = currentQuizData.b
+            c_text.innerText = currentQuizData.c
+            d_text.innerText = currentQuizData.d
+        }
+
+        function deselectAnswers() {
+            answers.forEach(answer => answer.checked = false)
+        }
+
+        function getSelected() {
+            let answer1
+            answers.forEach(answer => {
+                if (answer.checked) {
+                    answer1 = answer.id
+                }
+            })
+            return answer1
+        }
+
+        submit.addEventListener('click', () => {
+            const answer = getSelected()
+            if (answer) {
+                if (answer === quizdata[currentQuiz].correct) {
+                    score++
+                }
+
+                currentQuiz++
+
+                if (currentQuiz < quizdata.length) {
+                    loadQuiz()
+                } else {
+                    quiz.innerHTML = `
+                <h1>Số điểm tình yêu của vk là ${score}/${quizdata.length}</h1>
+
+                <img class="vk" src="vk.jpg" alt="">
+                <button onclick="location.reload()">Reload</button>
+           `
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
