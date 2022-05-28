@@ -505,22 +505,35 @@
         function upcart() {
             let up1 = $('#withaddcart')
             up1.text($('#num').text())
+            localStorage.setItem('test', up1.text())
+            console.log(localStorage.getItem('test'))
         }
         $('#addtocart').click(upcart)
 
-        // opencart
-        function openCart(){
-            let open = $('#num').text()
-            console.log(typeof(parseInt(open)))
-            if( parseInt(open) > 0 ){
-                $('#withaddcart').removeClass('openoff')
-            }else{
-                $('#withaddcart').addClass('openoff')
-            }         
-        }
-        $('#addtocart').click(openCart)
+        $(document).ready(function () {
+            let up1 = $('#withaddcart')
+            up1.text(localStorage.getItem('test'))
+        });
 
-        
+        // opencart
+        // function openCart() {
+        //     let open = $('#num').text()
+        //     console.log(typeof (parseInt(open)))
+        //     if (parseInt(open) > 0) {
+        //         $('#withaddcart').removeClass('openoff')
+        //     } else {
+        //         $('#withaddcart').addClass('openoff')
+        //     }
+        // }
+        // $('#addtocart').click(openCart)
+        // let ab = {
+        //     name : "long",
+        //     number : 13
+        // }
+
+        // console.log( localStorage.setItem('test', JSON.stringify(ab)))
+        // console.log(localStorage.getItem('test'))
+        // console.log( JSON.parse(JSON.stringify(ab)).number)
     </script>
 
     <!-- (Optional) Use CSS or JS implementation -->

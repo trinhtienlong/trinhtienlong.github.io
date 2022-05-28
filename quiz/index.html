@@ -15,12 +15,12 @@
     <style>
         * {
             box-sizing: border-box;
+            font-weight: bolder;
         }
 
         body {
             background-color: rgb(139, 187, 170);
             height: 90vh;
-            font-family: sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -51,10 +51,28 @@
         ul li {
             font-size: 1.2rem;
             margin: 1rem 0;
+            display: flex;
+            align-items: baseline;
+            color: #04adc4;
+        }
+
+        li:hover {
+            color: #ff9f31;
+        }
+
+        li input:checked+label {
+            color: #ffffff;
+            background-color: #ff9f31;
+            border-radius: 5px;
+            padding: 2px 5px 3px;
         }
 
         ul li label {
             cursor: pointer;
+        }
+
+        ul li input {
+            display: none;
         }
 
         button {
@@ -78,20 +96,33 @@
             background-color: #44b927;
         }
 
+        .answer {
+            margin-right: 15px;
+        }
+
         .abc {
             max-width: 100%;
             background-color: red;
         }
 
-        h1{
-            padding: 1.5rem 1rem 1rem;
+        h1 {
+            padding: 1.5rem 1rem 0;
             font-weight: bolder;
             text-align: center;
-            color: #ffca8d;
+            margin: 0;
+            color: #03cae4;
         }
 
-        .vk{
-            max-width: 100%;
+        h2 {
+            font-weight: bolder;
+            color: #44b927;
+
+        }
+
+        .win {
+            display: block;
+            max-width: 50%;
+            margin: auto;
         }
     </style>
 </head>
@@ -124,7 +155,7 @@
 
             </ul>
         </div>
-        
+
 
         <button id="submit">Submit</button>
 
@@ -137,36 +168,36 @@
 
         const quizdata = [
             {
-                question: "Ngày kỉ niệm yêu nhau của 2 đứa là ngày bao nhiêu?",
-                a: "31/1",
-                b: "29/2",
-                c: "30/3",
-                d: "31/12",
+                question: "Trong Javascript sự kiện Onclick xảy ra khi nào?",
+                a: "Khi một đối tượng trong form mất focus",
+                b: "Khi một đối tượng trong form có focus",
+                c: "Khi click chuột vào một đối tượng trong form",
+                d: "Khi click chuột vào nút lệnh",
                 correct: "d",
             },
             {
-                question: "Con chanh được mua vào ngày nào?",
-                a: "28/1",
-                b: "22/4",
-                c: "1/5",
-                d: "Ai mà nhớ nổi!",
-                correct: "d",
+                question: "Thẻ <input type='text'> dùng để làm gì?",
+                a: "Tạo một ô text để nhập dữ liệu 1 dòng",
+                b: " Tạo một ô password",
+                c: " Tạo một  textbox cho phép nhập liệu nhiều dòng",
+                d: " Tất cả các ý trên",
+                correct: "a",
             },
             {
-                question: "Anh thích màu nào nhất trong các màu sau?",
-                a: "vàng",
-                b: "đỏ thẫm",
-                c: "be",
-                d: "chấm bi",
-                correct: "d",
+                question: "Thẻ <input type='Password'> dùng để làm gì?",
+                a: "Tạo một ô text để nhập dữ liệu 1 dòng",
+                b: " Tạo một ô password",
+                c: " Tạo một  textbox cho phép nhập liệu nhiều dòng",
+                d: " Tất cả các ý trên",
+                correct: "b",
             },
             {
-                question: "Anh thích ăn gì nhất ?",
-                a: "gà nướng",
-                b: "nước dừa",
-                c: "cháo ngao",
-                d: "cả b và c ",
-                correct: "d",
+                question: "Trong Javascript sự kiện Onchange thực hiện khi nào?",
+                a: "Khi một đối tượng trong form mất focus",
+                b: "Khi một đối tượng trong form có focus",
+                c: "Khi giá trị của một trường trong form được người dùng thay đổi",
+                d: "Khi click chuột vào nút lệnh",
+                correct: "c",
             }
         ]
 
@@ -222,12 +253,22 @@
                 if (currentQuiz < quizdata.length) {
                     loadQuiz()
                 } else {
-                    quiz.innerHTML = `
-                <h1>Số điểm tình yêu của vk là ${score}/${quizdata.length}</h1>
-
-                <img class="vk" src="vk.jpg" alt="">
-                <button onclick="location.reload()">Reload</button>
-           `
+                    if ( score == 3 ) {
+                        quiz.innerHTML = `
+                <h1>Số điểm của bạn là ${score}/${quizdata.length} <br> Bạn được xếp hạng 2</h1>
+                <img class="win" src="cupbac.png" alt="">
+                <button onclick="location.reload()">Reload</button>`
+                    } else if ( score == 4 ) {
+                        quiz.innerHTML = `
+                <h1>Số điểm của bạn là ${score}/${quizdata.length} <br> Bạn được xếp hạng 1</h1>
+                <img class="win" src="win.png" alt="">
+                <button onclick="location.reload()">Reload</button>`
+                    }else{
+                        quiz.innerHTML = `
+                <h1>Số điểm của bạn là ${score}/${quizdata.length} <br> Hãy cố gắng lần sau nhé.</h1>
+                <img class="win" src="khoc.png" alt="">
+                <button onclick="location.reload()">Reload</button>`
+                    }
                 }
             }
         })
