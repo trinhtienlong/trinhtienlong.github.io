@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        height: 90vh;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: antiquewhite;
+    }
+
+    .clock {
+        position: relative;
+        width: 350px;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(donghokkim.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 500px;
+        box-shadow: 11px 11px 22px #9b9b9b,
+            -11px -11px 22px #ffffff;
+    }
+
+    .clock::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 50%;
+        z-index: 1000;
+    }
+
+    .clock .hour,
+    .clock .min,
+    .clock .secon {
+        position: absolute;
+    }
+
+    .clock .hour,
+    .hr {
+        width: 160px;
+        height: 160px;
+    }
+
+    .clock .min,
+    .mn {
+        width: 190px;
+        height: 190px;
+    }
+
+    .clock .secon,
+    .sc {
+        width: 230px;
+        height: 230px;
+    }
+
+    .hr,
+    .mn,
+    .sc {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hr::before {
+        content: "";
+        width: 8px;
+        height: 80px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 6px 6px 0 0;
+        z-index: 10;
+        position: absolute;
+    }
+
+    .mn::before {
+        content: "";
+        width: 4px;
+        height: 90px;
+        background-color: rgb(86, 185, 182);
+        border-radius: 6px 6px 0 0;
+        z-index: 11;
+        position: absolute;
+    }
+
+    .sc::before {
+        content: "";
+        width: 2px;
+        height: 150px;
+        background-color: rgb(255, 0, 0);
+        border-radius: 6px 6px 0 0;
+        z-index: 13;
+        position: absolute;
+    }
+</style>
+
+<body>
+
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="secon">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+    <script>
+        const deg = 6;
+        const hr = $('#hr')
+        const mn = $('#mn')
+        const sc = $('#sc')
+
+        // function time() {
+        //     let day = new Date()
+        //     let hh = day.getHours() * 30
+        //     let mm = day.getMinutes() * deg
+        //     let ss = day.getSeconds() * deg
+        //     hr.css('transform',`rotate(${(hh) + (mm/12)}deg)`)
+        //     mn.css('transform', `rotate(${mm}deg)`)
+        //     sc.css('transform', `rotate(${ss}deg)`)
+        //     setTimeout(() => {
+        //         time()
+        //     },500)
+        // }
+        // time()
+
+        setInterval(() =>{
+            let day = new Date()
+            let hh = day.getHours() * 30
+            let mm = day.getMinutes() * deg
+            let ss = day.getSeconds() * deg
+            hr.css('transform',`rotate(${(hh) + (mm/12)}deg)`)
+            mn.css('transform', `rotate(${mm}deg)`)
+            sc.css('transform', `rotate(${ss}deg)`)
+        })
+    </script>
+</body>
+
+</html>
