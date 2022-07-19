@@ -31,6 +31,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
             width: 600px;
+            margin: 0 20px;
         }
 
         .quiz-header {
@@ -152,7 +153,6 @@
                     <input type="radio" name="answer" id="d" class="answer">
                     <label for="d" id="d_text">Answer</label>
                 </li>
-
             </ul>
         </div>
 
@@ -243,7 +243,7 @@
 
         submit.addEventListener('click', () => {
             const answer = getSelected()
-            if (answer) {
+            // if (answer) {
                 if (answer === quizdata[currentQuiz].correct) {
                     score++
                 }
@@ -270,7 +270,7 @@
                 <button onclick="location.reload()">Reload</button>`
                     }
                 }
-            }
+            // }
         })
 
     </script>
