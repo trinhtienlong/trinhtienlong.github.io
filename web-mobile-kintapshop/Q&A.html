@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/imgs/logo-knibctap.png">
+    <!-- FontAwesome 6.1.1 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/Q&A.css">
+
+    <!-- slick css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- sticky header -->
+    <div class="sticky-top">
+        <!-- header -->
+        <div class="container-fluid ctn-color">
+            <div class="container-md">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-color">
+                    <i class="fa-solid fa-align-justify d-lg-none d-block icon-btn" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></i>
+                    <div class="offcanvas offcanvas-start bg-offcanvas" data-bs-scroll="true" tabindex="-1"
+                        id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                        <div class="offcanvas-header pb-2">
+                            <h5></h5>
+                            <i data-bs-dismiss="offcanvas" aria-label="Close" class="fa-solid fa-xmark icon"></i>
+                        </div>
+                        <div class="offcanvas-body p-0">
+                            <form class="d-flex m-2">
+                                <input class="form-control" type="search"
+                                    placeholder="Nhập tên điện thoại, máy tính, phụ kiện, ... ,cần tìm "
+                                    aria-label="Search">
+                                <button class="btn btn-outline" type="submit">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </form>
+
+                            <ul class="nav-canvas mt-4">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-solid fa-mobile me-2"></i>
+                                        <span>Điện thoại</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-solid fa-laptop me-2"></i>
+                                        <span>Laptop</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-brands fa-apple me-2"></i>
+                                        <span>Apple</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-solid fa-mobile-screen me-2"></i>
+                                        <span>Samsung</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-solid fa-tablet me-2"></i>
+                                        <span>Tablet</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-solid fa-headphones-simple me-2"></i>
+                                        <span>Phụ kiện</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-solid fa-gift me-2"></i>
+                                        <span>Khuyến mãi</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item text-end">
+                                    <a class="nav-link" aria-current="page" href="#">Hỏi đáp</a>
+                                </li>
+                                <hr>
+                                <li class="nav-item text-end">
+                                    <a class="nav-link" aria-current="page" href="#">Tin hay</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a class="navbar-brand me-0 me-lg-3" href="#">
+                        <img class="logo" src="assets/imgs/logo.png" alt="">
+                    </a>
+
+                    <i class="fa-solid fa-cart-shopping d-lg-none d-block icon-btn" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions1" aria-controls="offcanvasWithBothOptions"></i>
+                    <div class="offcanvas offcanvas-end bg-offcanvas" data-bs-scroll="true" tabindex="-1"
+                        id="offcanvasWithBothOptions1" aria-labelledby="offcanvasWithBothOptionsLabel">
+                        <div class="offcanvas-header">
+                            <h5></h5>
+                            <i data-bs-dismiss="offcanvas" aria-label="Close" class="fa-solid fa-xmark icon"></i>
+                        </div>
+                        <div class="offcanvas-body ">
+                            <div class="tet1">
+                                <div class="row justify-content-center">
+                                    <span class="text-center mb-3">
+                                        GIỎ HÀNG TRỐNG
+                                    </span>
+                                    <hr>
+                                    <div class="order empty-flex"><a href="product-portfolio.html"><button type="button" class="btn mt-1 fs-6">VÀO CỬA HÀNG</button></a></div>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="d-flex mt-2 mt-lg-0 mb-2 mb-lg-0">
+                            <input class="form-control" type="search"
+                                placeholder="Nhập tên điện thoại, máy tính, phụ kiện, ... ,cần tìm "
+                                aria-label="Search">
+                            <button class="btn btn-outline" type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
+
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item me-1">
+                                <a class="nav-link active" aria-current="page" href="#">Tin tức</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Hỏi đáp</a>
+                            </li>
+                        </ul>
+
+                        <div class="navbar-nav mb-2 mb-lg-0">
+                            <div class="nav-item">
+                                <a class="nav-link active cus-iconCart" aria-current="page" href="empty-product.html">Giỏ hàng<i
+                                        class="fa-solid fa-cart-shopping icon-cart ms-3"></i></a>
+                                <div class="tet">
+                                    <div class="row">
+                                        <span class="text-center">
+                                            GIỎ HÀNG TRỐNG
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- menu navbar -->
+        <div class="container-fluid ctn-color1 d-lg-block d-none">
+            <div class="container-md">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i style="font-size: 1.2rem;" class="fa-solid fa-mobile me-2"></i>
+                            Điện
+                            thoại</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i style="font-size: 1.2rem;" class="fa-solid fa-laptop me-2"></i>
+                            Laptop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i style="font-size: 1.2rem;" class="fa-brands fa-apple me-2"></i>
+                            Apple</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i style="font-size: 1.2rem;"
+                                class="fa-solid fa-mobile-screen me-2"></i>
+                            Samsung</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i style="font-size: 1.2rem;" class="fa-solid fa-tablet me-2"></i>
+                            Tablet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i style="font-size: 1.2rem;"
+                                class="fa-solid fa-headphones-simple me-2"></i> Phụ kiện</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i style="font-size: 1.2rem;" class="fa-solid fa-gift me-2"></i>
+                            Khuyến
+                            mãi</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- main -->
+    <div class="container-md mt-5 mb-5">
+        <div class="row gx-lg-5">
+            <p class="text-center tital-size mb-4">FAQs</p>
+            <div class="col-lg-6">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                Các sản phẩm lỗi được bảo hành trong thời gian bao lâu?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Các sản phẩm lỗi sẽ được bảo hành trong khoảng thời gian dự kiến là 5-7 ngày, không tính thời gian chuyển hàng đi và về.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                Tôi có thể hủy hay thay đổi các giao dịch đã thực hiện hay không ?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Rất tiếc chúng tôi chưa hỗ trợ hủy, hoàn lại hoặc thay đổi giao dịch đã hoàn thành.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapsefour" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                Tôi nhập sai số điện thoại ( email ) nhận mã có thể gửi lại cho tôi với số điện thoại ( email ) đúng được không
+                            </button>
+                        </h2>
+                        <div id="flush-collapsefour" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Chúng tôi hiện chưa hỗ trợ gửi lại mã thẻ cho bất kỳ số điện thoại hoặc email nào khác ngoài email 
+                                và số điện thoại đã đăng ký khi giao dịch.
+                                 Rất mong quý khách thông cảm vui lòng kiểm tra lại thông tin nhận mã trước khi hoàn tất thanh toán.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapsefive" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                Trường hợp nào thì tôi được đổi sản phẩm ? 
+                            </button>
+                        </h2>
+                        <div id="flush-collapsefive" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Chúng tôi chỉ đổi sản phẩm trong trường hợp sản phẩm bị lỗi không phát sinh từ phía khách hàng, cụ thể gồm những trường hợp dưới đây:
+                                <ul>
+                                    <li>Lỗi kỹ thuật của sản phẩm</li>
+                                    <li>Hàng hóa bị bể vỡ trước khi đến tay khách hàng</li>
+                                    <li>Giao sai sản phẩm</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapsesix" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                Trong Trường Hợp Giỏ Hàng Của Tôi Vừa Có Sản Phẩm Được Giao Trong 2 Tiếng Vừa Có Sản Phẩm Không Được Giao Trong 2 Tiếng Thì Tôi Sẽ Nhận Hàng Khi Nào? 
+                            </button>
+                        </h2>
+                        <div id="flush-collapsesix" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Trong trường hợp đơn hàng của bạn vừa có sản phẩm được giao trong 2 tiếng vừa có sản phẩm không được giao trong 2 tiếng thì cả đơn hàng sẽ được áp dụng gói giao hàng tiêu chuẩn (giao thường).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-lg-0 mt-3 ">
+                <img class="w-100" src="assets/imgs/FAQs-x2.png" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <div class="container-fluid ctn-color">
+        <div class="container-md pb-4 pt-4">
+            <div class="row footer">
+                <div class="col-lg-3 col-sm-6">
+                    <p>HOTLINE HỖ TRỢ</p>
+                    <P>Hỗ trợ mua hàng: 0123456789</P>
+                    <p>Hỗ trợ kĩ thuật: 0123456789</p>
+                    <p>Hỗ trợ bảo hành: 0123456789</p>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <a class="logo-footer" href="#">
+                        <img class="logo" src="assets/imgs/logo.png" alt="">
+                    </a>
+                    <P>Hỗ trợ mua hàng: 0123456789</P>
+                    <p>Email: Someting123@.gmai.com</p>
+                    <p>skype: Something</p>
+                    <p>Something</p>
+                </div>
+                <div class="col-lg-6 col-sm-12 mt-lg-0 mt-3">
+                    <div class="paymen">
+                        <span>Hỗ trợ thanh toán</span>
+                        <a class="paymen-if" href="#">
+                            <img class="paymen-img" src="assets/imgs/icon_payment.png" alt="">
+                        </a>
+                    </div>
+                    <div class="footer-time">
+                        <div class="time1">
+                            <p>Tư vấn miễn phí ( 24 / 7)</p>
+                            <p>0123456789</p>
+                        </div>
+                        <div class="time2">
+                            <p>Góp ý phản ánh (8h00 - 22h00)</p>
+                            <p>0123456789</p>
+                        </div>
+                    </div>
+                    <div class="footer-cn">
+                        <img class="cn-img" src="assets/imgs/icon_cong_nhan.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Design -->
+    <div class="container-fluid">
+        <div class="title-design">
+            <span>© All rights reserved. Design by</span><span> Tien Long</span>
+        </div>
+    </div>
+
+
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+        integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- slick slider -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- my-js -->
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

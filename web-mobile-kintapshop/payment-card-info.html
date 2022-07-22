@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/imgs/logo-knibctap.png">
+    <!-- FontAwesome 6.1.1 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/payment-card-info.css">
+
+    <!-- slick css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- sticky header -->
+    <div class="sticky-top">
+        <!-- header -->
+        <div class="container-fluid ctn-color">
+            <div class="container-md">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-color">
+                    <i class="fa-solid fa-align-justify d-lg-none d-block icon-btn" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></i>
+                    <div class="offcanvas offcanvas-start bg-offcanvas" data-bs-scroll="true" tabindex="-1"
+                        id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                        <div class="offcanvas-header pb-2">
+                            <h5></h5>
+                            <i data-bs-dismiss="offcanvas" aria-label="Close" class="fa-solid fa-xmark icon"></i>
+                        </div>
+                        <div class="offcanvas-body p-0">
+                            <form class="d-flex m-2">
+                                <input class="form-control" type="search"
+                                    placeholder="Nhập tên điện thoại, máy tính, phụ kiện, ... ,cần tìm "
+                                    aria-label="Search">
+                                <button class="btn btn-outline" type="submit">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </form>
+
+                            <ul class="nav-canvas mt-4">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="dienthoai.html"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-solid fa-mobile me-2"></i>
+                                        <span>Điện thoại</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="laptop.html"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-solid fa-laptop me-2"></i>
+                                        <span>Laptop</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="apple.html"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-brands fa-apple me-2"></i>
+                                        <span>Apple</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="samsung.html"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-solid fa-mobile-screen me-2"></i>
+                                        <span>Samsung</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="tablet.html"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-solid fa-tablet me-2"></i>
+                                        <span>Tablet</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="phukien.html"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-solid fa-headphones-simple me-2"></i>
+                                        <span>Phụ kiện</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="product-portfolio.html"><i style="font-size: 1.2rem; width: 30px;"
+                                            class="fa-solid fa-gift me-2"></i>
+                                        <span>Khuyến mãi</span></a>
+                                </li>
+                                <hr>
+                                <li class="nav-item text-end">
+                                    <a class="nav-link" aria-current="page" href="Q&A.html">Hỏi đáp</a>
+                                </li>
+                                <hr>
+                                <li class="nav-item text-end">
+                                    <a class="nav-link" aria-current="page" href="news.html">Tin tức</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a class="navbar-brand me-0 me-lg-3" href="index.html">
+                        <img class="logo" src="assets/imgs/logo.png" alt="">
+                    </a>
+
+                    <i class="fa-solid fa-cart-shopping d-lg-none d-block icon-btn" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions1" aria-controls="offcanvasWithBothOptions"></i>
+                    <div class="offcanvas offcanvas-end bg-offcanvas" data-bs-scroll="true" tabindex="-1"
+                        id="offcanvasWithBothOptions1" aria-labelledby="offcanvasWithBothOptionsLabel">
+                        <div class="offcanvas-header">
+                            <h5></h5>
+                            <i data-bs-dismiss="offcanvas" aria-label="Close" class="fa-solid fa-xmark icon"></i>
+                        </div>
+                        <div class="offcanvas-body ">
+                            <div class="tet1">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img class="w-100" src="assets/imgs/op-deo-hinh-thu-01-300x300.jpg" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p style="margin: 0;">Ốp Lưng Dẻo Cho iPhone 6 Plus/6s Plus - Gấu Kèm Thú Nổi
+                                        </p>
+                                        <div class="tet-flex">
+                                            <div class="flex-child"><span>1</span><span> x </span><span>90,000 ₫</span>
+                                            </div>
+                                            <i class="fa-solid fa-trash-can scan"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img class="w-100" src="assets/imgs/macbook-air-2017-01-300x300.jpg" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p style="margin: 0;">Apple Macbook Pro 2017 13.3 Inch Touch Bar & ID MPXW2
+                                            Gray – Hàng Chính Hãng</p>
+                                        <div class="tet-flex">
+                                            <div class="flex-child"><span>1</span><span> x </span><span>31,990,000
+                                                    ₫</span></div>
+                                            <i class="fa-solid fa-trash-can scan"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="tong" style="text-align: center ;">
+                                    <span>Tổng cộng : </span><span>32,080,000 ₫</span>
+                                </div>
+                                <hr>
+                                <button type="button" class="btn mb-2 w-100">
+                                    <a href="payment-card.html" class="text-deco1">XEM GIỎ HÀNG</a>
+                                </button>
+                                <button type="button" class="btn w-100 ">
+                                    <a href="payment-card-info.html" class="text-deco1">THANH TOÁN</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="d-flex mt-2 mt-lg-0 mb-2 mb-lg-0">
+                            <input class="form-control" type="search"
+                                placeholder="Nhập tên điện thoại, máy tính, phụ kiện, ... ,cần tìm "
+                                aria-label="Search">
+                            <button class="btn btn-outline" type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
+
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item me-1">
+                                <a class="nav-link active" aria-current="page" href="news.html">Tin hay</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="Q&A.html">Hỏi đáp</a>
+                            </li>
+                        </ul>
+
+                        <div class="navbar-nav mb-2 mb-lg-0">
+                            <div class="nav-item">
+                                <a class="nav-link active cus-iconCart" aria-current="page" href="#">Giỏ hàng<i
+                                        class="fa-solid fa-cart-shopping icon-cart ms-3"></i></a>
+                                <div class="tet">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img class="w-100" src="assets/imgs/op-deo-hinh-thu-01-300x300.jpg" alt="">
+                                        </div>
+                                        <div class="col-9">
+                                            <p style="margin: 0;">Ốp Lưng Dẻo Cho iPhone 6 Plus/6s Plus - Gấu Kèm Thú
+                                                Nổi</p>
+                                            <div class="tet-flex">
+                                                <div class="flex-child"><span>1</span><span> x </span><span>90,000
+                                                        ₫</span></div>
+                                                <i class="fa-solid fa-trash-can scan"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img class="w-100" src="assets/imgs/macbook-air-2017-01-300x300.jpg" alt="">
+                                        </div>
+                                        <div class="col-9">
+                                            <p style="margin: 0;">Apple Macbook Pro 2017 13.3 Inch Touch Bar & ID MPXW2
+                                                Gray – Hàng Chính Hãng</p>
+                                            <div class="tet-flex">
+                                                <div class="flex-child"><span>1</span><span> x </span><span>31,990,000
+                                                        ₫</span></div>
+                                                <i class="fa-solid fa-trash-can scan"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="tong" style="text-align: center ;">
+                                        <span>Tổng cộng : </span><span>32,080,000 ₫</span>
+                                    </div>
+                                    <hr>
+                                    <button type="button" class="btn mb-2 w-100">
+                                        <a class="text-deco1" href="payment-card.html">XEM GIỎ HÀNG</a>
+                                    </button>
+                                    <button type="button" class="btn w-100 ">
+                                        <a href="payment-card-info.html" class="text-deco1">THANH TOÁN</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- menu navbar -->
+        <div class="container-fluid ctn-color1 d-lg-block d-none">
+            <div class="container-md">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dienthoai.html"><i style="font-size: 1.2rem;" class="fa-solid fa-mobile me-2"></i>
+                            Điện
+                            thoại</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="laptop.html"><i style="font-size: 1.2rem;" class="fa-solid fa-laptop me-2"></i>
+                            Laptop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="apple.html"><i style="font-size: 1.2rem;" class="fa-brands fa-apple me-2"></i>
+                            Apple</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="samsung.html"><i style="font-size: 1.2rem;"
+                                class="fa-solid fa-mobile-screen me-2"></i>
+                            Samsung</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tablet.html"><i style="font-size: 1.2rem;" class="fa-solid fa-tablet me-2"></i>
+                            Tablet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="phukien.html"><i style="font-size: 1.2rem;"
+                                class="fa-solid fa-headphones-simple me-2"></i> Phụ kiện</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product-portfolio.html"><i style="font-size: 1.2rem;" class="fa-solid fa-gift me-2"></i>
+                            Khuyến
+                            mãi</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- main -->
+
+    <div class="container-md mt-5 mb-5">
+        <div class="row">
+            <div class="log-in mb-3">
+                <div class="d-flex justify-content-lg-start justify-content-center">
+                    <span>Bạn đã có tài khoản&nbsp?&nbsp</span>
+                    <a class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                        aria-controls="collapseExample"> Ấn vào đây để đăng nhập
+                    </a>
+                </div>
+                <div class="collapse mt-2" id="collapseExample">
+                    <div class="card card-body">
+                        <p>Nếu trước đây bạn đã mua hàng của chúng tôi, vui lòng ghi đầy đủ thông tin trong các hộp
+                            dưới đây.
+                            Nếu bạn là khách hàng mới, vui lòng chuyển tới phần Đơn hàng & Giao hàng.</p>
+                        <div class="row form">
+                            <div class="col-md-6 col-12 dis">
+                                <label for="username">Tên đăng nhập hoặc email <span class="required">*</span></label>
+                                <input type="text" class="input-text mt-2 p-1" name="username" id="username">
+                            </div>
+                            <div class="col-md-6 col-12 dis">
+                                <label for="password">Mật khẩu <span class="required">*</span></label>
+                                <input class="input-text mt-2 p-1" type="password" name="password" id="password">
+                            </div>
+                            <div class="btn-login mt-3">
+                                <button type="button" class="btn me-2">ĐĂNG NHẬP&nbsp;
+                                    <i class="fa-solid fa-right-to-bracket"></i>
+                                </button>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Ghi nhớ mật khẩu
+                                    </label>
+                                </div>
+                            </div>
+                            <p class="mt-3">
+                                <a href="#">Quên mật khẩu ?</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="discount">
+                <div class="d-flex justify-content-lg-start justify-content-center">
+                    <i class="fa-solid fa-tags"></i>&nbspBạn có mã ưu đãi&nbsp?&nbsp
+                    <a class="" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
+                        aria-controls="collapseExample"> Ấn vào đây để nhập mã
+                    </a>
+                </div>
+                <div class="collapse mt-2" id="collapseExample1">
+                    <div class="card card-body">
+                        <div class="row form gx-0">
+                            <div class="col-md-9 col-12 dis1">
+                                <input type="text" class="input-text p-1 w-100" name="username" id="username">
+                            </div>
+                            <div class="col-md-3 col-12 mt-md-0 mt-2">
+                                <button type="button" class="btn w-100">ÁP DỤNG MÃ ƯU ĐÃI&nbsp;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-12 mt-3">
+                <div class="register">
+                    <h4 class="mt-3">THÔNG TIN THANH TOÁN</h4>
+                    <div class="row form">
+                        <div class="col-md-6 col-12 dis">
+                            <label for="username">Họ..*</label>
+                            <input type="text" class="input-text mt-2 p-1" name="username" id="username">
+                        </div>
+                        <div class="col-md-6 col-12 dis">
+                            <label for="username">Tên..*</label>
+                            <input type="text" class="input-text mt-2 p-1" name="username" id="username">
+                        </div>
+                        <div class="col-12 dis mt-3">
+                            <label for="username">Địa chỉ..*</label>
+                            <input type="text" placeholder="số nhà và tên đường" class="input-text mt-2 p-1"
+                                name="username" id="username">
+                        </div>
+                        <div class="col-12 dis mt-3 mb-3">
+                            <label for="username">Tỉnh / Thành phố..*</label>
+                            <input type="text" class="input-text mt-2 p-1" name="username" id="username">
+                        </div>
+                        <div class="col-md-6 col-12 dis">
+                            <label for="username">Số điện thoại..*</label>
+                            <input type="tel" class="input-text mt-2 p-1" name="username" id="username">
+                        </div>
+                        <div class="col-md-6 col-12 dis">
+                            <label for="username">Địa chỉ email..*</label>
+                            <input type="email" class="input-text mt-2 p-1" name="username" id="username">
+                        </div>
+                        <div class="col-12 dis mt-3">
+                            <span>Ghi chú đơn hàng</span>
+                            <textarea name="order_comments" class="input-text mt-2 p-1" id="order_comments"
+                                placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."
+                                rows="5" cols="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-12 mt-3">
+                <div class="order-cart p-3">
+                    <h4>ĐƠN HÀNG CỦA BẠN</h4>
+                    <div class="d-flex justify-content-between">
+                        <p>SẢN PHẨM</p>
+                        <P>TỔNG CỘNG</P>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <div class="order-inner me-5">
+                            <span>Ốp Lưng Dẻo Cho iPhone 6 Plus/6s Plus - Gấu Kèm Thú Nổi</span> <span>× 1</span>
+                        </div>
+                        <span>90,000&nbsp;₫</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <div class="order-inner me-5">
+                            <span>Apple Macbook Pro 2017 13.3 Inch Touch Bar & ID MPXW2 Gray – Hàng Chính
+                                Hãng</span> <span>× 1</span>
+                        </div>
+                        <span>31,990,000&nbsp;₫</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <P>TỔNG CỘNG</P>
+                        <p class="color-total">32,080,000&nbsp;₫</p>
+                    </div>
+                    <hr>
+                    <p>kiểm tra thanh toán</p>
+                    <p>Vui lòng gửi chi phiếu của bạn đến Tên cửa hàng, Đường của cửa hàng, Thị trấn của cửa hàng,
+                        Mã bưu điện cửa hàng.</p>
+                    <div class="order">
+                        <a href="cart-success.html"><button type="button" class="btn mt-1">ĐẶT HÀNG</button></div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="container-fluid ctn-color">
+        <div class="container-md pb-4 pt-4">
+            <div class="row footer">
+                <div class="col-lg-3 col-sm-6">
+                    <p>HOTLINE HỖ TRỢ</p>
+                    <P>Hỗ trợ mua hàng: 0123456789</P>
+                    <p>Hỗ trợ kĩ thuật: 0123456789</p>
+                    <p>Hỗ trợ bảo hành: 0123456789</p>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <a class="logo-footer" href="#">
+                        <img class="logo" src="assets/imgs/logo.png" alt="">
+                    </a>
+                    <P>Hỗ trợ mua hàng: 0123456789</P>
+                    <p>Email: Someting123@.gmai.com</p>
+                    <p>skype: Something</p>
+                    <p>Something</p>
+                </div>
+                <div class="col-lg-6 col-sm-12 mt-lg-0 mt-3">
+                    <div class="paymen">
+                        <span>Hỗ trợ thanh toán</span>
+                        <a class="paymen-if" href="#">
+                            <img class="paymen-img" src="assets/imgs/icon_payment.png" alt="">
+                        </a>
+                    </div>
+                    <div class="footer-time">
+                        <div class="time1">
+                            <p>Tư vấn miễn phí ( 24 / 7)</p>
+                            <p>0123456789</p>
+                        </div>
+                        <div class="time2">
+                            <p>Góp ý phản ánh (8h00 - 22h00)</p>
+                            <p>0123456789</p>
+                        </div>
+                    </div>
+                    <div class="footer-cn">
+                        <img class="cn-img" src="assets/imgs/icon_cong_nhan.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Design -->
+    <div class="container-fluid">
+        <div class="title-design">
+            <span>© All rights reserved. Design by</span><span> Tien Long</span>
+        </div>
+    </div>
+
+
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+        integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- slick slider -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- my-js -->
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
