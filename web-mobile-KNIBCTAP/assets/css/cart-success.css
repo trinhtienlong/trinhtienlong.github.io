@@ -333,6 +333,7 @@ hr:not([size]) {
 
 .thank p{
     color: #8FA552;
+    font-size: 18px;
     text-align: center;
 }
 
