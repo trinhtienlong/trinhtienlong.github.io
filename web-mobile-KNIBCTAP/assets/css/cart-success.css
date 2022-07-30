@@ -1,6 +1,6 @@
 /* header + menu navba */
 body {
-  background-color: #303030 !important;
+  background-color: #f3f3f3 !important;
 }
 
 .logo {
@@ -15,12 +15,15 @@ body {
   background-color: black;
 }
 
+.ft-color {
+  background-color: #fff;
+}
+
 .ctn-color1 {
-  background-color: #181a1b;
+  background-color: #fff;
 }
 
 .d-flex .form-control {
-  background-color: transparent;
   border-radius: 0;
   font-size: 0.97rem;
 }
@@ -93,7 +96,7 @@ body {
 }
 
 .nav-item a {
-  color: white;
+  color: black;
 }
 
 .nav-item a:hover {
@@ -102,9 +105,9 @@ body {
 
 /* ----- */
 
-.container-md {
+/* .container-md {
   color: white;
-}
+} */
 
 hr:not([size]) {
   height: 0.5px !important;
@@ -122,7 +125,7 @@ hr:not([size]) {
 
 .offcanvas-start,
 .offcanvas-end {
-  background-color: #181a1bf5 !important;
+  background-color: #fff !important;
   width: 260px !important;
 }
 
@@ -148,13 +151,11 @@ hr:not([size]) {
 
 .nav-canvas hr {
   margin: 0;
-  background-color: #fff;
   height: 0.5px !important;
 }
 
 .offcanvas-header .icon {
   font-size: 25px;
-  color: white;
   animation: test 1.5s reverse infinite;
 }
 
@@ -180,17 +181,17 @@ hr:not([size]) {
   color: rgb(52, 191, 255) !important;
 }
 
-.tet {
+.tet{
   padding: 10px 10px;
   z-index: 1000;
   left: -184%;
   width: 350px;
   opacity: 0;
   visibility: hidden;
-  background-color: #303030;
+  background-color: #fff;
   position: absolute;
   transition: 0.2s linear;
-  border: solid 2px white;
+  border: solid 2px #aeaeae;
 }
 
 .tet button:nth-child(7),
@@ -284,7 +285,7 @@ hr:not([size]) {
 .footer {
   padding-bottom: 10px;
   align-items: flex-end;
-  color: white;
+  /* color: white; */
   font-weight: 500;
 }
 
@@ -302,9 +303,9 @@ hr:not([size]) {
   color: #858585;
 }
 
-.title-design span:last-child {
+/* .title-design span:last-child {
   color: white;
-}
+} */
 
 @media only screen and (max-width: 575px) {
   .footer {
@@ -317,7 +318,6 @@ hr:not([size]) {
 }
 
 .table{
-    color: white !important;
     line-height: 30px;
 }
 
@@ -339,6 +339,7 @@ hr:not([size]) {
 
 .thank ul{
     margin: 0;
+    color: white;
 }
 
 .color-price{

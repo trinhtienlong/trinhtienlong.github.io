@@ -1,6 +1,6 @@
 /* header + menu navba */
 body {
-  background-color: #303030 !important;
+  background-color: #f3f3f3 !important;
 }
 
 .logo {
@@ -15,12 +15,16 @@ body {
   background-color: black;
 }
 
+.ft-color {
+  background-color: #fff;
+}
+
 .ctn-color1 {
-  background-color: #181a1b;
+  background-color: #fff;
 }
 
 .d-flex .form-control {
-  background-color: transparent;
+  /* background-color: transparent; */
   border-radius: 0;
   font-size: 0.97rem;
 }
@@ -93,7 +97,7 @@ body {
 }
 
 .nav-item a {
-  color: white;
+  color: black;
 }
 
 .nav-item a:hover {
@@ -164,7 +168,7 @@ body {
 .footer {
   padding-bottom: 10px;
   align-items: flex-end;
-  color: white;
+  /* color: white; */
   font-weight: 500;
 }
 
@@ -182,9 +186,9 @@ body {
   color: #858585;
 }
 
-.title-design span:last-child {
+/* .title-design span:last-child {
   color: white;
-}
+} */
 
 @media only screen and (max-width: 575px) {
   .footer {
@@ -193,9 +197,9 @@ body {
 }
 /* main */
 
-.container-md {
+/* .container-md {
   color: white;
-}
+} */
 
 .breadcrumb-item a {
   text-decoration: 0;
@@ -203,7 +207,7 @@ body {
 }
 
 .breadcrumb-item a:hover {
-  color: white;
+  color: black;
 }
 
 .nav-col {
@@ -213,7 +217,7 @@ body {
 .nav-col .nav-item {
   margin: 0;
   list-style: none;
-  border: 1px solid #636363;
+  border: 1px solid #ced4da;
   border-radius: 5px;
   margin-bottom: 10px;
   transition: 0.2s linear;
@@ -236,7 +240,7 @@ body {
 }
 
 .box-pk {
-  border: 1px solid #636363;
+  border: 1px solid #ced4da;
   border-radius: 5px;
   padding: 10px;
 }
@@ -244,7 +248,7 @@ body {
 .box-pk a {
   display: block;
   text-decoration: none;
-  color: white;
+  color: black;
   transition: 0.2s linear;
 }
 
@@ -274,9 +278,9 @@ hr:not([size]) {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #181a1b;
+  background-color: #fff;
   padding: 20px;
-  color: white;
+  color: black;
   height: 100%;
 }
 
@@ -295,18 +299,20 @@ hr:not([size]) {
 
 .page-item.active .page-link {
   background-color: #425E81 !important;
+  color: #fff !important;
 }
 
 .page-link {
   padding: 0.4rem 0.881rem !important;
   border-radius: 50px !important;
-  border: 2px solid white !important;
+  border: 2px solid #858585 !important;
   background-color: transparent !important;
-  color: white !important;
+  color: black !important;
 }
 
 .page-link:hover{
   background-color: #425E81 !important;
+  color: #fff !important;
 }
 
 .navbar-nav {
@@ -316,7 +322,7 @@ hr:not([size]) {
 
 .offcanvas-start,
 .offcanvas-end {
-  background-color: #181a1bf5 !important;
+  background-color: #fff !important;
   width: 260px !important;
 }
 
@@ -342,13 +348,11 @@ hr:not([size]) {
 
 .nav-canvas hr{
     margin: 0;
-    background-color: #fff;
     height: 0.5px !important;
 }
 
 .offcanvas-header .icon{
     font-size: 25px;
-    color: white;
     animation : test 1.5s reverse infinite;
 }
 
@@ -382,10 +386,10 @@ hr:not([size]) {
   width: 350px;
   opacity: 0;
   visibility: hidden;
-  background-color: #303030;
+  background-color: #fff;
   position: absolute;
   transition: 0.2s linear;
-  border: solid 2px white;
+  border: solid 2px #aeaeae;
 }
 
 .tet button:nth-child(7){

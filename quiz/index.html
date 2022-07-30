@@ -228,7 +228,10 @@
         }
 
         function deselectAnswers() {
-            answers.forEach(answer => answer.checked = false)
+            // answers.forEach(answer => answer.checked = false)
+            answers.forEach((item) => {
+                item.checked = false
+            })
         }
 
         function getSelected() {
@@ -243,7 +246,7 @@
 
         submit.addEventListener('click', () => {
             const answer = getSelected()
-            // if (answer) {
+            if (answer) {
                 if (answer === quizdata[currentQuiz].correct) {
                     score++
                 }
@@ -270,7 +273,7 @@
                 <button onclick="location.reload()">Reload</button>`
                     }
                 }
-            // }
+            }
         })
 
     </script>
