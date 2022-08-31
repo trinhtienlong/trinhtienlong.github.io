@@ -13,7 +13,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- css -->
-    <link rel="stylesheet" href="assets/css/product-portfolio.css">
+    <link rel="stylesheet" href="assets/css/product-portfolio1.css">
 
     <!-- slick css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -27,78 +27,70 @@
 
 <body>
     <!-- sticky header -->
-    <div class="sticky-top">
+    <div class="gototop" id="gototop">
+        <a href="#"><i class="fa-solid fa-angle-up"></i></a>
+    </div>
+    <div class="header" id="header">
         <!-- header -->
         <div class="container-fluid ctn-color">
             <div class="container-md">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-color">
                     <i class="fa-solid fa-align-justify d-lg-none d-block icon-btn" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></i>
-                    <div class="offcanvas offcanvas-start bg-offcanvas" data-bs-scroll="true" tabindex="-1"
+                    <div class="offcanvas offcanvas-start bg-offcanvas" data-bs-scroll="false" tabindex="-1"
                         id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                         <div class="offcanvas-header pb-2">
                             <h5></h5>
                             <i data-bs-dismiss="offcanvas" aria-label="Close" class="fa-solid fa-xmark icon"></i>
                         </div>
                         <div class="offcanvas-body p-0">
-                            <form class="d-flex m-2">
-                                <input class="form-control" type="search"
+                            <form class="d-flex mt-2 mt-lg-0 mb-2 mb-lg-0 formbox">
+                                <input class="form-control" type="search" id="form-control1"
                                     placeholder="Nhập tên điện thoại, máy tính, phụ kiện, ... ,cần tìm "
                                     aria-label="Search">
-                                <button class="btn btn-outline" type="submit">
+                                <div class="allProduct1">
+                                    <!-- <div class="row infoProduct p-2 gx-3">
+                                        <div class="col-2 productimg">
+                                            <img class="w-100" src="assets/imgs/ip-6s-gold-2.jpg" alt="">
+                                        </div>
+                                        <div class="col-10 productinfo">
+                                            <p class="producttitle">dgssssssss</p>
+                                            <span class="productprice">13213</span>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <label class="search" for="form-control1">
                                     <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
+                                </label>
                             </form>
 
-                            <ul class="nav-canvas mt-4">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="dienthoai.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-solid fa-mobile me-2"></i>
-                                        <span>Điện thoại</span></a>
+                            <ul class="nav justify-content-center borderNav">
+                                <li class="item w-100" name="điện thoại">
+                                    <i style="font-size: 1.2rem; width: 50px;" class="fa-solid fa-mobile me-3"></i>Điện thoại
                                 </li>
                                 <hr>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="laptop.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-solid fa-laptop me-2"></i>
-                                        <span>Laptop</span></a>
+                                <li class="item w-100" name="laptop">
+                                    <i style="font-size: 1.2rem; width: 50px" class="fa-solid fa-laptop me-3"></i>Laptop
                                 </li>
                                 <hr>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="apple.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-brands fa-apple me-2"></i>
-                                        <span>Apple</span></a>
+                                <li class="item w-100" name="tablet">
+                                    <i style="font-size: 1.2rem; width: 50px" class="fa-solid fa-tablet me-3"></i>Tablet
                                 </li>
                                 <hr>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="samsung.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-solid fa-mobile-screen me-2"></i>
-                                        <span>Samsung</span></a>
+                                <li class="item w-100" name="phụ kiện">
+                                    <i style="font-size: 1.2rem; width: 50px" class="fa-solid fa-headphones-simple me-3"></i>Phụ kiện
                                 </li>
                                 <hr>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="tablet.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-solid fa-tablet me-2"></i>
-                                        <span>Tablet</span></a>
+                                <li class="item w-100" name="tất cả sản phẩm">
+                                    <i style="font-size: 1.2rem; width: 50px" class="fa-brands fa-app-store me-3"></i>Cửa hàng
                                 </li>
                                 <hr>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="phukien.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-solid fa-headphones-simple me-2"></i>
-                                        <span>Phụ kiện</span></a>
+                                <li class="item w-100 text-end">
+                                    <a aria-current="page" href="Q&A.html">Hỏi đáp</a>
                                 </li>
                                 <hr>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="product-portfolio.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-solid fa-gift me-2"></i>
-                                        <span>Khuyến mãi</span></a>
-                                </li>
-                                <hr>
-                                <li class="nav-item text-end">
-                                    <a class="nav-link" aria-current="page" href="Q&A.html">Hỏi đáp</a>
-                                </li>
-                                <hr>
-                                <li class="nav-item text-end">
-                                    <a class="nav-link" aria-current="page" href="news.html">Tin tức</a>
+                                <li class="item w-100 text-end">
+                                    <a aria-current="page" href="news.html">Tin tức</a>
                                 </li>
                             </ul>
                         </div>
@@ -108,9 +100,15 @@
                         <img class="logo" src="assets/imgs/logo.png" alt="">
                     </a>
 
-                    <i class="fa-solid fa-cart-shopping d-lg-none d-block icon-btn" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasWithBothOptions1" aria-controls="offcanvasWithBothOptions"></i>
-                    <div class="offcanvas offcanvas-end bg-offcanvas" data-bs-scroll="true" tabindex="-1"
+                    <div class="position-relative d-lg-none d-block" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions1" aria-controls="offcanvasWithBothOptions">
+                        <i class="fa-solid fa-cart-shopping icon-btn"></i>
+                        <span
+                            class="position-absolute translate-middle top-0 start-100 badge rounded-pill bg-danger">0</span>
+                    </div>
+
+
+                    <div class="offcanvas offcanvas-end bg-offcanvas" data-bs-scroll="false" tabindex="-1"
                         id="offcanvasWithBothOptions1" aria-labelledby="offcanvasWithBothOptionsLabel">
                         <div class="offcanvas-header">
                             <h5></h5>
@@ -163,13 +161,24 @@
                     </div>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <form class="d-flex mt-2 mt-lg-0 mb-2 mb-lg-0">
-                            <input class="form-control" type="search"
+                        <form class="d-flex mt-2 mt-lg-0 mb-2 mb-lg-0 formbox">
+                            <input class="form-control" type="search" id="form-control"
                                 placeholder="Nhập tên điện thoại, máy tính, phụ kiện, ... ,cần tìm "
                                 aria-label="Search">
-                            <button class="btn btn-outline" type="submit">
+                            <div class="allProduct">
+                                <!-- <div class="row infoProduct p-2 gx-3">
+                                    <div class="col-2 productimg">
+                                        <img class="w-100" src="assets/imgs/ip-6s-gold-2.jpg" alt="">
+                                    </div>
+                                    <div class="col-10 productinfo">
+                                        <p class="producttitle">dgssssssss</p>
+                                        <span class="productprice">13213</span>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <label class="search" for="form-control">
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
+                            </label>
                         </form>
 
                         <ul class="navbar-nav mb-2 mb-lg-0">
@@ -183,8 +192,11 @@
 
                         <div class="navbar-nav mb-2 mb-lg-0">
                             <div class="nav-item">
-                                <a class="nav-link active cus-iconCart" aria-current="page" href="payment-card.html">Giỏ hàng<i
-                                        class="fa-solid fa-cart-shopping icon-cart ms-3"></i></a>
+                                <span class="position-absolute translate-middle badge rounded-pill bg-danger">0</span>
+                                <a class="nav-link active cus-iconCart" aria-current="page" href="payment-card.html">Giỏ
+                                    hàng
+                                    <i class="fa-solid fa-cart-shopping icon-cart ms-3 "></i>
+                                </a>
                                 <div class="tet">
                                     <div class="row">
                                         <div class="col-3">
@@ -209,8 +221,7 @@
                                             <p style="margin: 0;">Apple Macbook Pro 2017 13.3 Inch Touch Bar & ID MPXW2
                                                 Gray – Hàng Chính Hãng</p>
                                             <div class="tet-flex">
-                                                <div class="flex-child"><span>1</span><span> x </span><span>31,990,000
-                                                        ₫</span></div>
+                                                <div class="flex-child"><span>1</span><span> x </span><span>31,990,000 ₫</span></div>
                                                 <i class="fa-solid fa-trash-can scan"></i>
                                             </div>
                                         </div>
@@ -237,36 +248,20 @@
         <div class="container-fluid ctn-color1 d-lg-block d-none">
             <div class="container-md">
                 <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="dienthoai.html"><i style="font-size: 1.2rem;" class="fa-solid fa-mobile me-2"></i>
-                            Điện
-                            thoại</a>
+                    <li class="item" name="điện thoại">
+                        <i style="font-size: 1.2rem;" class="fa-solid fa-mobile me-2"></i>Điện thoại
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="laptop.html"><i style="font-size: 1.2rem;" class="fa-solid fa-laptop me-2"></i>
-                            Laptop</a>
+                    <li class="item" name="laptop">
+                        <i style="font-size: 1.2rem;" class="fa-solid fa-laptop me-2"></i>Laptop
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="apple.html"><i style="font-size: 1.2rem;" class="fa-brands fa-apple me-2"></i>
-                            Apple</a>
+                    <li class="item" name="tablet">
+                        <i style="font-size: 1.2rem;" class="fa-solid fa-tablet me-2"></i>Tablet
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="samsung.html"><i style="font-size: 1.2rem;"
-                                class="fa-solid fa-mobile-screen me-2"></i>
-                            Samsung</a>
+                    <li class="item" name="phụ kiện">
+                        <i style="font-size: 1.2rem;" class="fa-solid fa-headphones-simple me-2"></i>Phụ kiện
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="tablet.html"><i style="font-size: 1.2rem;" class="fa-solid fa-tablet me-2"></i>
-                            Tablet</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="phukien.html"><i style="font-size: 1.2rem;"
-                                class="fa-solid fa-headphones-simple me-2"></i> Phụ kiện</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="product-portfolio.html"><i style="font-size: 1.2rem;" class="fa-solid fa-gift me-2"></i>
-                            Khuyến
-                            mãi</a>
+                    <li class="item" name="tất cả sản phẩm">
+                        <i style="font-size: 1.2rem;" class="fa-brands fa-app-store me-2"></i>Cửa hàng
                     </li>
                 </ul>
             </div>
@@ -275,18 +270,19 @@
 
     <!-- main -->
     <div class="container-md mt-lg-5 mt-4">
-        <div class="mb-4">
+        <div class="row mb-4">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-lg-start justify-content-center">
                     <li class="breadcrumb-item"><a href="index.html">TRANG CHỦ</a></li>
                     <li class="breadcrumb-item">CỬA HÀNG</li>
+                    <li class="breadcrumb-item"></li>
                 </ol>
             </nav>
         </div>
 
         <div class="d-flex justify-content-center mb-4 d-lg-none d-block">
             <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions2"
-                aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-filter icon-btn"></i>&nbsp&nbspLỌC
+                aria-controls="offcanvasWithBothOptions"><i style="color: #019efb;" class="fa-solid fa-filter icon-btn"></i>&nbsp&nbspLỌC
             </div>
         </div>
         <div class="offcanvas offcanvas-start bg-offcanvas" data-bs-scroll="true" tabindex="-1"
@@ -298,105 +294,59 @@
             <div class="offcanvas-body ">
                 <!-- portfolio -->
                 <div class="mb-4">
-                    <div class="portfolio-title mb-4">
-                        <h5>DANH MỤC SẢN PHẨM</h5>
-                    </div>
-                    <div class="">
-                        <ul class="nav-col">
-                            <li class="nav-item">
-                                <a class="nav-link" href="dienthoai.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-solid fa-mobile me-2"></i>
-                                    <span>Điện thoại</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="laptop.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-solid fa-laptop me-2"></i>
-                                    <span>Laptop</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="apple.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-brands fa-apple me-2"></i>
-                                    <span>Apple</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="samsung.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-solid fa-mobile-screen me-2"></i>
-                                    <span>Samsung</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="tablet.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-solid fa-tablet me-2"></i>
-                                    <span>Tablet</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="phukien.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-solid fa-headphones-simple me-2"></i>
-                                    <span>Phụ kiện</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="product-portfolio.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-solid fa-gift me-2"></i>
-                                    <span>Khuyến mãi</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- price -->
-                <div class="mb-4">
-                    <div class="portfolio-price mb-4">
-                        <h5>GIÁ BÁN</h5>
-                    </div>
-                    <div class="">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                value="option1">
-                            <label class="form-check-label" for="exampleRadios1">
-                                Dưới 5 triệu
+                    <div id="accordion">
+                        <div class="cap mb-2">DANH MỤC SẢN PHẨM</div>
+                        <div class="ct">
+                            <input type="radio" class="thuonghieu" name="all" id="7" value="điện thoại">
+                            <label class="changeColor" for="7">
+                            <i style="font-size: 1.2rem; width: 30px;"class="fa-solid fa-mobile me-2"></i>
+                                Điện thoại
+                            </label>
+                            <input type="radio" class="thuonghieu" name="all" id="8" value="laptop">
+                            <label class="changeColor" for="8">
+                                <i style="font-size: 1.2rem; width: 30px;"class="fa-solid fa-laptop me-2"></i>
+                                Laptop
+                            </label>
+                            <input type="radio" class="thuonghieu" name="all" id="9" value="apple">
+                            <label class="changeColor" for="9">
+                                <i style="font-size: 1.2rem; width: 30px;"class="fa-brands fa-apple me-2"></i>
+                                Apple
+                            </label>
+                            <input type="radio" class="thuonghieu" name="all" id="10" value="samsung">
+                            <label class="changeColor" for="10">
+                                <i style="font-size: 1.2rem; width: 30px;"class="fa-solid fa-mobile-screen me-2"></i>
+                                Samsung
+                            </label>
+                            <input type="radio" class="thuonghieu" name="all" id="11" value="tablet">
+                            <label class="changeColor" for="11">
+                                <i style="font-size: 1.2rem; width: 30px;"class="fa-solid fa-tablet me-2"></i>
+                                Tablet
+                            </label>
+                            <input type="radio" class="thuonghieu" name="all" id="12" value="phụ kiện">
+                            <label class="changeColor" for="12">
+                                <i style="font-size: 1.2rem; width: 30px;"class="fa-solid fa-headphones-simple me-2"></i>
+                                Phụ kiện
                             </label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                                value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
-                                Từ 5 đến 10 triệu
-                            </label>
+                        <div class="cap mb-2">GIÁ BÁN</div>
+                        <div class="ct">
+                            <label><input type="checkbox" class="giaban" value="Dưới 5 triệu">Dưới 5 triệu</label>
+                            <label><input type="checkbox" class="giaban" value="Từ 5 đến 10 triệu">Từ 5 đến 10 triệu</label>
+                            <label><input type="checkbox" class="giaban" value="Từ 10 đến 15 triệu">Từ 10 đến 15 triệu</label>
+                            <label><input type="checkbox" class="giaban" value="Trên 15 triệu">Trên 15 triệu</label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
-                                value="option1">
-                            <label class="form-check-label" for="exampleRadios3">
-                                Từ 10 đến 15 triệu
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4"
-                                value="option2">
-                            <label class="form-check-label" for="exampleRadios4">
-                                Trên 15 triệu
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <!-- product -->
-                <div class="mb-4">
-                    <div class="portfolio-prd mb-4">
-                        <h5>SẢN PHẨM</h5>
-                    </div>
-                    <div class="box-pk">
-                        <a href="oplungdeo.html">
+                        <div class="cap mb-2">SẢN PHẨM</div>
+                        <div class="box-pk">
                             <div class="row gx-3">
-                                <a href=""><div class="col-3">
+                                <div class="col-3">
                                     <img class="w-100" src="assets/imgs/op-deo-hinh-thu-01-300x300.jpg" alt="">
                                 </div>
                                 <div class="col-9 pk-portfolio">
-                                    <p>Ốp Lưng Dẻo Cho iPhone 6 Plus/6s Plus - Gấu Kèm Thú Nổi</p>
+                                    <p>Ốp Lưng Dẻo Cho iPhone 6 Plus/6s Plus – Gấu Kèm Thú Nổi</p>
                                     <span>90,000 ₫</span>
-                                </div></a>
-                                
+                                </div>
                             </div>
-                        </a>
-                        <hr>
-                        <a href="uag.html">
+                            <hr>
                             <div class="row gx-3">
                                 <div class="col-3">
                                     <img class="w-100" src="assets/imgs/uag-ipad-01-300x300.jpg" alt="">
@@ -406,9 +356,7 @@
                                     <span>1,034,000 ₫</span>
                                 </div>
                             </div>
-                        </a>
-                        <hr>
-                        <a href="kaisimura.html">
+                            <hr>
                             <div class="row gx-3">
                                 <div class="col-3">
                                     <img class="w-100" src="assets/imgs/Kashimura-BL-40-01.jpg" alt="">
@@ -418,9 +366,7 @@
                                     <span>749,000 đ</span>
                                 </div>
                             </div>
-                        </a>
-                        <hr>
-                        <a href="hd-headphone.html">
+                            <hr>
                             <div class="row gx-3">
                                 <div class="col-3">
                                     <img class="w-100" src="assets/imgs/Blaster-E3-01.jpg" alt="">
@@ -430,7 +376,7 @@
                                     <span>3,245,000 đ</span>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -440,104 +386,59 @@
             <div class="col-3 d-lg-block d-none">
                 <!-- portfolio -->
                 <div class="mb-4">
-                    <div class="portfolio-title mb-4">
-                        <h5>DANH MỤC SẢN PHẨM</h5>
-                    </div>
-                    <div class="">
-                        <ul class="nav-col">
-                            <li class="nav-item">
-                                <a class="nav-link" href="dienthoai.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-solid fa-mobile me-2"></i>
-                                    <span>Điện thoại</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="laptop.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-solid fa-laptop me-2"></i>
-                                    <span>Laptop</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="apple.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-brands fa-apple me-2"></i>
-                                    <span>Apple</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="samsung.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-solid fa-mobile-screen me-2"></i>
-                                    <span>Samsung</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="tablet.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-solid fa-tablet me-2"></i>
-                                    <span>Tablet</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="phukien.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-solid fa-headphones-simple me-2"></i>
-                                    <span>Phụ kiện</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="product-portfolio.html"><i style="font-size: 1.2rem; width: 30px;"
-                                        class="fa-solid fa-gift me-2"></i>
-                                    <span>Khuyến mãi</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- price -->
-                <div class="mb-4">
-                    <div class="portfolio-price mb-4">
-                        <h5>GIÁ BÁN</h5>
-                    </div>
-                    <div class="">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5"
-                                value="option1">
-                            <label class="form-check-label" for="exampleRadios5">
-                                Dưới 5 triệu
+                    <div id="accordion">
+                        <div class="cap mb-2">DANH MỤC SẢN PHẨM</div>
+                        <div class="ct">
+                            <input type="radio" class="thuonghieu" name="all" id="1" value="điện thoại">
+                            <label class="changeColor" for="1">
+                            <i style="font-size: 1.2rem; width: 30px;"class="fa-solid fa-mobile me-2"></i>
+                                Điện thoại
+                            </label>
+                            <input type="radio" class="thuonghieu" name="all" id="2" value="laptop">
+                            <label class="changeColor" for="2">
+                                <i style="font-size: 1.2rem; width: 30px;"class="fa-solid fa-laptop me-2"></i>
+                                Laptop
+                            </label>
+                            <input type="radio" class="thuonghieu" name="all" id="3" value="apple">
+                            <label class="changeColor" for="3">
+                                <i style="font-size: 1.2rem; width: 30px;"class="fa-brands fa-apple me-2"></i>
+                                Apple
+                            </label>
+                            <input type="radio" class="thuonghieu" name="all" id="4" value="samsung">
+                            <label class="changeColor" for="4">
+                                <i style="font-size: 1.2rem; width: 30px;"class="fa-solid fa-mobile-screen me-2"></i>
+                                Samsung
+                            </label>
+                            <input type="radio" class="thuonghieu" name="all" id="5" value="tablet">
+                            <label class="changeColor" for="5">
+                                <i style="font-size: 1.2rem; width: 30px;"class="fa-solid fa-tablet me-2"></i>
+                                Tablet
+                            </label>
+                            <input type="radio" class="thuonghieu" name="all" id="6" value="phụ kiện">
+                            <label class="changeColor" for="6">
+                                <i style="font-size: 1.2rem; width: 30px;"class="fa-solid fa-headphones-simple me-2"></i>
+                                Phụ kiện
                             </label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios6"
-                                value="option2">
-                            <label class="form-check-label" for="exampleRadios6">
-                                Từ 5 đến 10 triệu
-                            </label>
+                        <div class="cap mb-2">GIÁ BÁN</div>
+                        <div class="ct">
+                            <label><input type="checkbox" class="giaban" value="Dưới 5 triệu">Dưới 5 triệu</label>
+                            <label><input type="checkbox" class="giaban" value="Từ 5 đến 10 triệu">Từ 5 đến 10 triệu</label>
+                            <label><input type="checkbox" class="giaban" value="Từ 10 đến 15 triệu">Từ 10 đến 15 triệu</label>
+                            <label><input type="checkbox" class="giaban" value="Trên 15 triệu">Trên 15 triệu</label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios7"
-                                value="option1">
-                            <label class="form-check-label" for="exampleRadios7">
-                                Từ 10 đến 15 triệu
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios8"
-                                value="option2">
-                            <label class="form-check-label" for="exampleRadios8">
-                                Trên 15 triệu
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <!-- product -->
-                <div class="mb-4">
-                    <div class="portfolio-prd mb-4">
-                        <h5>SẢN PHẨM</h5>
-                    </div>
-                    <div class="box-pk">
-                        <a href="oplungdeo.html">
+                        <div class="cap mb-2">SẢN PHẨM</div>
+                        <div class="box-pk">
                             <div class="row gx-3">
                                 <div class="col-3">
                                     <img class="w-100" src="assets/imgs/op-deo-hinh-thu-01-300x300.jpg" alt="">
                                 </div>
                                 <div class="col-9 pk-portfolio">
-                                    <p>Ốp Lưng Dẻo Cho iPhone 6 Plus/6s Plus - Gấu Kèm Thú Nổi</p>
+                                    <p>Ốp Lưng Dẻo Cho iPhone 6 Plus/6s Plus – Gấu Kèm Thú Nổi</p>
                                     <span>90,000 ₫</span>
                                 </div>
                             </div>
-                        </a>
-                        <hr>
-                        <a href="uag.html">
+                            <hr>
                             <div class="row gx-3">
                                 <div class="col-3">
                                     <img class="w-100" src="assets/imgs/uag-ipad-01-300x300.jpg" alt="">
@@ -547,9 +448,7 @@
                                     <span>1,034,000 ₫</span>
                                 </div>
                             </div>
-                        </a>
-                        <hr>
-                        <a href="kaisimura.html">
+                            <hr>
                             <div class="row gx-3">
                                 <div class="col-3">
                                     <img class="w-100" src="assets/imgs/Kashimura-BL-40-01.jpg" alt="">
@@ -559,9 +458,7 @@
                                     <span>749,000 đ</span>
                                 </div>
                             </div>
-                        </a>
-                        <hr>
-                        <a href="hd-headphone.html">
+                            <hr>
                             <div class="row gx-3">
                                 <div class="col-3">
                                     <img class="w-100" src="assets/imgs/Blaster-E3-01.jpg" alt="">
@@ -571,96 +468,21 @@
                                     <span>3,245,000 đ</span>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-9 col-12 por-pro">
-                <div class="row mb-4">
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 por-flex">
-                        <a href="lt-lenovo.html" class="h-100 por-flex text-deco">
-                            <div class="porfolio-img">
-                                <img class="w-100" src="assets/imgs/lenovo-ThinkPad-T470-01.jpg" alt="">
-                            </div>
-                            <div class="porfolio-title text-deco">
-                                <p>Laptop Lenovo ThinkPad T470 20HEA03LVA Core i5-7200U/DOS 14 inch – Hàng Chính Hãng
-                                </p>
-                                <span>29,690,000 ₫</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 por-flex">
-                        <a href="lt-lenovoideir.html" class="h-100 por-flex text-deco">
-                            <div class="porfolio-img">
-                                <img class="w-100" src="assets/imgs/lenovo-IdeaPad-Y520-01.jpg" alt="">
-                            </div>
-                            <div class="porfolio-title text-deco">
-                                <p>Laptop Lenovo IdeaPad Y520-15IKBN 80WK00GBVN Core i7-7700HQ / Free Dos (15.6inch) –
-                                    Hàng Chính Hãng</p>
-                                <span>21,920,000 ₫</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 por-flex">
-                        <a href="cuteipab.html" class="h-100 por-flex text-deco">
-                            <div class="porfolio-img">
-                                <img class="w-100" src="assets/imgs/cutepad-m7089-01.jpg" alt="">
-                            </div>
-                            <div class="porfolio-title text-deco">
-                                <p>Máy Tính Bảng cutePAD M7089 – Hàng Chính Hãng</p>
-                                <span>1,449,000 ₫</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 por-flex">
-                        <a href="ipab-bevene.html" class="h-100 por-flex text-deco">
-                            <div class="porfolio-img">
-                                <img class="w-100" src="assets/imgs/beneve-m1022h-02.jpg" alt="">
-                            </div>
-                            <div class="porfolio-title text-deco">
-                                <p>Máy Tính Bảng Beneve M1022H – Hàng Chính Hãng</p>
-                                <span>4,490,000 ₫</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 por-flex">
-                        <a href="ipad-wifi.html" class="h-100 por-flex text-deco">
-                            <div class="porfolio-img">
-                                <img class="w-100" src="assets/imgs/ipad-pro-9.7-wifi-4g-32gb-rose-gold-01.jpg" alt="">
-                            </div>
-                            <div class="porfolio-title text-deco">
-                                <p>iPad WiFi 128GB New 2017 – Hàng Nhập Khẩu</p>
-                                <span>10,990,000 ₫</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 por-flex">
-                        <a href="ipad-wifipro.html" class="h-100 por-flex text-deco">
-                            <div class="porfolio-img">
-                                <img class="w-100" src="assets/imgs/ipad-wifi-128Gb-2017-01.jpg" alt="">
-                            </div>
-                            <div class="porfolio-title text-deco">
-                                <p>iPad Pro 9.7 inch Wifi Cellular 32GB – Hàng Chính Hãng</p>
-                                <span>16,320,000 ₫</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <nav aria-label="...">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item me-2">
-                                <a class="page-link" href="product-portfolio.html">
-                                    <i class="fa-solid fa-angle-left"></i>
-                                </a>
-                            </li>
-                            <li class="page-item me-2 "><a class="page-link" href="product-portfolio.html">1</a></li>
-                            <li class="page-item me-2 active" aria-current="page">
-                                <span class="page-link">2</span>
-                            </li>
-                        </ul>
-                    </nav>
+                <div class="row mb-4" id="list1">
+                    <!-- <div class="col-lg-3 col-md-4 col-6 mb-4 por-flex">
+                        <div class="porfolio-img">
+                            <img class="w-100" src="assets/imgs/lenovo-ThinkPad-T470-01.jpg" alt="">
+                        </div>
+                        <div class="porfolio-title text-deco">
+                            <p>Laptop Lenovo ThinkPad T470 20HEA03LVA Core i5-7200U/DOS 14 inch – Hàng Chính Hãng</p>
+                            <span>29,690,000 ₫</span>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -736,7 +558,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <!-- my-js -->
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/test.js"></script>
 </body>
 
 </html>

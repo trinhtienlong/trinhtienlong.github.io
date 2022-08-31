@@ -28,78 +28,70 @@
 
 <body>
     <!-- sticky header -->
-    <div class="sticky-top">
+    <div class="gototop" id="gototop">
+        <a href="#"><i class="fa-solid fa-angle-up"></i></a>
+    </div>
+    <div class="header" id="header">
         <!-- header -->
         <div class="container-fluid ctn-color">
             <div class="container-md">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-color">
                     <i class="fa-solid fa-align-justify d-lg-none d-block icon-btn" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></i>
-                    <div class="offcanvas offcanvas-start bg-offcanvas" data-bs-scroll="true" tabindex="-1"
+                    <div class="offcanvas offcanvas-start bg-offcanvas" data-bs-scroll="false" tabindex="-1"
                         id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                         <div class="offcanvas-header pb-2">
                             <h5></h5>
                             <i data-bs-dismiss="offcanvas" aria-label="Close" class="fa-solid fa-xmark icon"></i>
                         </div>
                         <div class="offcanvas-body p-0">
-                            <form class="d-flex m-2">
-                                <input class="form-control" type="search"
+                            <form class="d-flex mt-2 mt-lg-0 mb-2 mb-lg-0 formbox">
+                                <input class="form-control" type="search" id="form-control1"
                                     placeholder="Nhập tên điện thoại, máy tính, phụ kiện, ... ,cần tìm "
                                     aria-label="Search">
-                                <button class="btn btn-outline" type="submit">
+                                <div class="allProduct1">
+                                    <!-- <div class="row infoProduct p-2 gx-3">
+                                        <div class="col-2 productimg">
+                                            <img class="w-100" src="assets/imgs/ip-6s-gold-2.jpg" alt="">
+                                        </div>
+                                        <div class="col-10 productinfo">
+                                            <p class="producttitle">dgssssssss</p>
+                                            <span class="productprice">13213</span>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <label class="search" for="form-control1">
                                     <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
+                                </label>
                             </form>
 
-                            <ul class="nav-canvas mt-4">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="dienthoai.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-solid fa-mobile me-2"></i>
-                                        <span>Điện thoại</span></a>
+                            <ul class="nav justify-content-center borderNav">
+                                <li class="item w-100" name="điện thoại">
+                                    <i style="font-size: 1.2rem; width: 50px;" class="fa-solid fa-mobile me-3"></i>Điện thoại
                                 </li>
                                 <hr>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="laptop.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-solid fa-laptop me-2"></i>
-                                        <span>Laptop</span></a>
+                                <li class="item w-100" name="laptop">
+                                    <i style="font-size: 1.2rem; width: 50px" class="fa-solid fa-laptop me-3"></i>Laptop
                                 </li>
                                 <hr>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="apple.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-brands fa-apple me-2"></i>
-                                        <span>Apple</span></a>
+                                <li class="item w-100" name="tablet">
+                                    <i style="font-size: 1.2rem; width: 50px" class="fa-solid fa-tablet me-3"></i>Tablet
                                 </li>
                                 <hr>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="samsung.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-solid fa-mobile-screen me-2"></i>
-                                        <span>Samsung</span></a>
+                                <li class="item w-100" name="phụ kiện">
+                                    <i style="font-size: 1.2rem; width: 50px" class="fa-solid fa-headphones-simple me-3"></i>Phụ kiện
                                 </li>
                                 <hr>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="tablet.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-solid fa-tablet me-2"></i>
-                                        <span>Tablet</span></a>
+                                <li class="item w-100" name="tất cả sản phẩm">
+                                    <i style="font-size: 1.2rem; width: 50px" class="fa-brands fa-app-store me-3"></i>Cửa hàng
                                 </li>
                                 <hr>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="phukien.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-solid fa-headphones-simple me-2"></i>
-                                        <span>Phụ kiện</span></a>
+                                <li class="item w-100 text-end">
+                                    <a aria-current="page" href="Q&A.html">Hỏi đáp</a>
                                 </li>
                                 <hr>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="product-portfolio.html"><i style="font-size: 1.2rem; width: 30px;"
-                                            class="fa-solid fa-gift me-2"></i>
-                                        <span>Khuyến mãi</span></a>
-                                </li>
-                                <hr>
-                                <li class="nav-item text-end">
-                                    <a class="nav-link" aria-current="page" href="Q&A.html">Hỏi đáp</a>
-                                </li>
-                                <hr>
-                                <li class="nav-item text-end">
-                                    <a class="nav-link" aria-current="page" href="news.html">Tin tức</a>
+                                <li class="item w-100 text-end">
+                                    <a aria-current="page" href="news.html">Tin tức</a>
                                 </li>
                             </ul>
                         </div>
@@ -109,9 +101,15 @@
                         <img class="logo" src="assets/imgs/logo.png" alt="">
                     </a>
 
-                    <i class="fa-solid fa-cart-shopping d-lg-none d-block icon-btn" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasWithBothOptions1" aria-controls="offcanvasWithBothOptions"></i>
-                    <div class="offcanvas offcanvas-end bg-offcanvas" data-bs-scroll="true" tabindex="-1"
+                    <div class="position-relative d-lg-none d-block" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions1" aria-controls="offcanvasWithBothOptions">
+                        <i class="fa-solid fa-cart-shopping icon-btn"></i>
+                        <span
+                            class="position-absolute translate-middle top-0 start-100 badge rounded-pill bg-danger">0</span>
+                    </div>
+
+
+                    <div class="offcanvas offcanvas-end bg-offcanvas" data-bs-scroll="false" tabindex="-1"
                         id="offcanvasWithBothOptions1" aria-labelledby="offcanvasWithBothOptionsLabel">
                         <div class="offcanvas-header">
                             <h5></h5>
@@ -164,13 +162,24 @@
                     </div>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <form class="d-flex mt-2 mt-lg-0 mb-2 mb-lg-0">
-                            <input class="form-control" type="search"
+                        <form class="d-flex mt-2 mt-lg-0 mb-2 mb-lg-0 formbox">
+                            <input class="form-control" type="search" id="form-control"
                                 placeholder="Nhập tên điện thoại, máy tính, phụ kiện, ... ,cần tìm "
                                 aria-label="Search">
-                            <button class="btn btn-outline" type="submit">
+                            <div class="allProduct">
+                                <!-- <div class="row infoProduct p-2 gx-3">
+                                    <div class="col-2 productimg">
+                                        <img class="w-100" src="assets/imgs/ip-6s-gold-2.jpg" alt="">
+                                    </div>
+                                    <div class="col-10 productinfo">
+                                        <p class="producttitle">dgssssssss</p>
+                                        <span class="productprice">13213</span>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <label class="search" for="form-control">
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
+                            </label>
                         </form>
 
                         <ul class="navbar-nav mb-2 mb-lg-0">
@@ -184,8 +193,11 @@
 
                         <div class="navbar-nav mb-2 mb-lg-0">
                             <div class="nav-item">
-                                <a class="nav-link active cus-iconCart" aria-current="page" href="payment-card.html">Giỏ hàng<i
-                                        class="fa-solid fa-cart-shopping icon-cart ms-3"></i></a>
+                                <span class="position-absolute translate-middle badge rounded-pill bg-danger">0</span>
+                                <a class="nav-link active cus-iconCart" aria-current="page" href="payment-card.html">Giỏ
+                                    hàng
+                                    <i class="fa-solid fa-cart-shopping icon-cart ms-3 "></i>
+                                </a>
                                 <div class="tet">
                                     <div class="row">
                                         <div class="col-3">
@@ -210,8 +222,7 @@
                                             <p style="margin: 0;">Apple Macbook Pro 2017 13.3 Inch Touch Bar & ID MPXW2
                                                 Gray – Hàng Chính Hãng</p>
                                             <div class="tet-flex">
-                                                <div class="flex-child"><span>1</span><span> x </span><span>31,990,000
-                                                        ₫</span></div>
+                                                <div class="flex-child"><span>1</span><span> x </span><span>31,990,000 ₫</span></div>
                                                 <i class="fa-solid fa-trash-can scan"></i>
                                             </div>
                                         </div>
@@ -238,36 +249,20 @@
         <div class="container-fluid ctn-color1 d-lg-block d-none">
             <div class="container-md">
                 <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="dienthoai.html"><i style="font-size: 1.2rem;" class="fa-solid fa-mobile me-2"></i>
-                            Điện
-                            thoại</a>
+                    <li class="item" name="điện thoại">
+                        <i style="font-size: 1.2rem;" class="fa-solid fa-mobile me-2"></i>Điện thoại
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="laptop.html"><i style="font-size: 1.2rem;" class="fa-solid fa-laptop me-2"></i>
-                            Laptop</a>
+                    <li class="item" name="laptop">
+                        <i style="font-size: 1.2rem;" class="fa-solid fa-laptop me-2"></i>Laptop
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="apple.html"><i style="font-size: 1.2rem;" class="fa-brands fa-apple me-2"></i>
-                            Apple</a>
+                    <li class="item" name="tablet">
+                        <i style="font-size: 1.2rem;" class="fa-solid fa-tablet me-2"></i>Tablet
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="samsung.html"><i style="font-size: 1.2rem;"
-                                class="fa-solid fa-mobile-screen me-2"></i>
-                            Samsung</a>
+                    <li class="item" name="phụ kiện">
+                        <i style="font-size: 1.2rem;" class="fa-solid fa-headphones-simple me-2"></i>Phụ kiện
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="tablet.html"><i style="font-size: 1.2rem;" class="fa-solid fa-tablet me-2"></i>
-                            Tablet</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="phukien.html"><i style="font-size: 1.2rem;"
-                                class="fa-solid fa-headphones-simple me-2"></i> Phụ kiện</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="product-portfolio.html"><i style="font-size: 1.2rem;" class="fa-solid fa-gift me-2"></i>
-                            Khuyến
-                            mãi</a>
+                    <li class="item" name="tất cả sản phẩm">
+                        <i style="font-size: 1.2rem;" class="fa-brands fa-app-store me-2"></i>Cửa hàng
                     </li>
                 </ul>
             </div>
@@ -280,44 +275,28 @@
             <div class="col-lg-8 col-md-12 mb-3">
                 <div class="carousel-slider">
                     <div class="carousel1-item ">
-                        <a class="text-deco" href="apple.html">
-                            <img src="assets/imgs/banner-H1.jpg" class="d-block w-100" alt="...">
-                            <div class="caption text-deco">
-                                <span>iPhone x mở bán chính thức</span>
-                            </div>
-                        </a>
+                        <img src="assets/imgs/banner-H1.jpg" class="d-block w-100" alt="...">
+                        <div class="caption" name="apple" >
+                            <span>iPhone x mở bán chính thức</span>
+                        </div>
                     </div>
                     <div class="carousel1-item">
-                        <a href="samsung.html" class="text-deco">
-                            <img src="assets/imgs/banner-H1-Samsung-Subsidy.jpg" class="d-block w-100" alt="...">
-                            <div class="caption text-deco">
-                                <span >Samsung trợ giá 8.5 triệu</span>
-                            </div>
-                        </a>
+                        <img src="assets/imgs/banner-H1-Samsung-Subsidy.jpg" class="d-block w-100" alt="...">
+                        <div class="caption" name="samsung">
+                            <span>Samsung trợ giá 8.5 triệu</span>
+                        </div>
                     </div>
                     <div class="carousel1-item">
-                        <a href="samsung.html" class="text-deco">
-                            <img src="assets/imgs/banner-NoteFE-H1.jpg" class="d-block w-100" alt="...">
-                            <div class="caption text-deco">
-                                <span >Note FE trợ giá 5.5 triệu</span>
-                            </div>
-                        </a>
+                        <img src="assets/imgs/banner-NoteFE-H1.jpg" class="d-block w-100" alt="...">
+                        <div class="caption" name="samsung">
+                            <span>Note FE trợ giá 5.5 triệu</span>
+                        </div>
                     </div>
                     <div class="carousel1-item">
-                        <a href="laptop.html" class="text-deco">
-                            <img src="assets/imgs/banner-TranVien-H1.jpg" class="d-block w-100" alt="...">
-                            <div class="caption text-deco">
-                                <span >Tràn màn hình, tràn quà</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="carousel1-item">
-                        <a href="dienthoai.html" class="text-deco">
-                            <img src="assets/imgs/banner-vivo-H1.jpg" class="d-block w-100" alt="...">
-                            <div class="caption text-deco">
-                                <span >Vivo V7 | V7+</span>
-                            </div>
-                        </a>
+                        <img src="assets/imgs/banner-TranVien-H1.jpg" class="d-block w-100" alt="...">
+                        <div class="caption" name="laptop">
+                            <span>Tràn màn hình, tràn quà</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -379,70 +358,60 @@
             <div class="mb-4">
                 <div class="belt-title">
                     <span>ĐIỆN THOẠI ĐƯỢC QUAN TÂM</span>
-                    <span>
-                        <a class="text-deco" href="dienthoai.html">Xem tất cả Điện thoại</a>
+                    <span name="điện thoại" id="mobile">
+                        XEM TẤT CẢ ĐIỆN THOẠI
                     </span>
                 </div>
-                <div class="image-slider">
-                    <div class="image-item">
-                        <a href="blabery.html" class="text-deco">
-                            <div class="img">
-                                <img src="assets/imgs/bb-key-one-01.jpg" alt="">
-                            </div>
-                            <div class="title-price text-deco">
-                                <p> Điện Thoại BlackBerry KEYone – Hàng Chính Hãng</p>
-                                <span class="color-red">14,990,000 ₫</span>
-                            </div>
-                        </a>
+                <div class="image-slider" id="mobileSlider">
+                    <!-- <div class="image-item">
+                        <div class="img">
+                            <img src="assets/imgs/bb-key-one-01.jpg" alt="">
+                        </div>
+                        <div class="title-price text-deco">
+                            <p> Điện Thoại BlackBerry KEYone – Hàng Chính Hãng</p>
+                            <span class="color-red">14,990,000 ₫</span>
+                        </div>
                     </div>
 
                     <div class="image-item">
-                        <a href="ip-x.html" class="text-deco">
-                            <div class="img">
-                                <img src="assets/imgs/iphone-X-64Gb-01.jpg" alt="">
-                            </div>
-                            <div class="title-price text-deco">
-                                <p>Điện Thoại iPhone X 64GB – Hàng Chính Hãng</p>
-                                <span class="color-red">29,990,000 ₫</span>
-                            </div>
-                        </a>
+                        <div class="img">
+                            <img src="assets/imgs/iphone-X-64Gb-01.jpg" alt="">
+                        </div>
+                        <div class="title-price text-deco">
+                            <p>Điện Thoại iPhone X 64GB – Hàng Chính Hãng</p>
+                            <span class="color-red">29,990,000 ₫</span>
+                        </div>
                     </div>
 
                     <div class="image-item">
-                        <a href="iphone6s.html" class="text-deco">
-                            <div class="img">
-                                <img src="assets/imgs/iphone-6-s-32Gb-01.jpg" alt="">
-                            </div>
-                            <div class="title-price text-deco">
-                                <p>Điện Thoại iPhone 6s 32GB – Hàng Chính Hãng</p>
-                                <span class="color-red">6,100,000 ₫</span>
-                            </div>
-                        </a>
+                        <div class="img">
+                            <img src="assets/imgs/iphone-6-s-32Gb-01.jpg" alt="">
+                        </div>
+                        <div class="title-price text-deco">
+                            <p>Điện Thoại iPhone 6s 32GB – Hàng Chính Hãng</p>
+                            <span class="color-red">6,100,000 ₫</span>
+                        </div>
                     </div>
 
                     <div class="image-item">
-                        <a href="ss-notfe.html" class="text-deco">
-                            <div class="img">
-                                <img src="assets/imgs/ss-galaxy-note-fe-01.jpg" alt="">
-                            </div>
-                            <div class="title-price text-deco">
-                                <p>Điện Thoại Samsung Galaxy Note FE – Hàng Chính Hãng</p>
-                                <span class="color-red">13,990,000 ₫</span>
-                            </div>
-                        </a>
+                        <div class="img">
+                            <img src="assets/imgs/ss-galaxy-note-fe-01.jpg" alt="">
+                        </div>
+                        <div class="title-price text-deco">
+                            <p>Điện Thoại Samsung Galaxy Note FE – Hàng Chính Hãng</p>
+                            <span class="color-red">13,990,000 ₫</span>
+                        </div>
                     </div>
 
                     <div class="image-item">
-                        <a href="ss-note8.html" class="text-deco">
-                            <div class="img">
-                                <img src="assets/imgs/ss-galaxy-note-8-01.jpg" alt="">
-                            </div>
-                            <div class="title-price text-deco">
-                                <p>Điện Thoại Samsung Galaxy Note 8 – Hàng Chính Hãng</p>
-                                <span class="color-red">19,990,000 ₫</span>
-                            </div>
-                        </a>
-                    </div>
+                        <div class="img">
+                            <img src="assets/imgs/ss-galaxy-note-8-01.jpg" alt="">
+                        </div>
+                        <div class="title-price text-deco">
+                            <p>Điện Thoại Samsung Galaxy Note 8 – Hàng Chính Hãng</p>
+                            <span class="color-red">19,990,000 ₫</span>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -520,64 +489,54 @@
             <div class="mb-4">
                 <div class="belt-title">
                     <span>LAPTOP ĐƯỢC QUAN TÂM</span>
-                    <span>
-                        <a class="text-deco" href="laptop.html">Xem tất cả Laptop</a>
+                    <span name="laptop" id="laptop">
+                        XEM TẤT CẢ LAPTOP
                     </span>
                 </div>
                 <div class="row">
-                    <div class="col-3 banner d-none d-md-block">
-                        <a href="laptop.html" class="text-deco">
-                            <img class="banner-img" src="assets/imgs/banner-H3_Laptop_T12.jpg" alt="">
-                        </a>
+                    <div class="col-3 banner d-none d-md-block" name="laptop">
+                        <img class="banner-img" src="assets/imgs/banner-H3_Laptop_T12.jpg" alt="">
                     </div>
-                    <div class="col-md-9 col-12 banner-slider">
-                        <div class="banner-item">
-                            <a href="lt-hpbook.html" class="text-deco">
-                                <div class="img">
-                                    <img src="assets/imgs/hp-probook-440-g3-t9s24pa-01.jpg" alt="">
-                                </div>
-                                <div class="title-price text-deco">
-                                    <p>Laptop HP ProBook 440 G3 T9S24PA Bạc – Hàng Chính Hãng</p>
-                                    <span class="color-red">10,920,000 ₫</span>
-                                </div>
-                            </a>
+                    <div class="col-md-9 col-12 banner-slider" id="laptopSlider">
+                        <!-- <div class="image-item">
+                            <div class="img">
+                                <img src="assets/imgs/hp-probook-440-g3-t9s24pa-01.jpg" alt="">
+                            </div>
+                            <div class="title-price text-deco">
+                                <p>Laptop HP ProBook 440 G3 T9S24PA Bạc</p>
+                                <span class="color-red">10,920,000 ₫</span>
+                            </div>
                         </div>
 
-                        <div class="banner-item">
-                            <a href="lt-hpenvy.html" class="text-deco">
-                                <div class="img">
-                                    <img src="assets/imgs/hp-envy-13-01.jpg" alt="">
-                                </div>
-                                <div class="title-price text-deco">
-                                    <p>Laptop HP Envy 13-ad074TU Core i7-7500U/Win10 (13.3 inch) – Hàng Chính Hãng</p>
-                                    <span class="color-red">24,280,000 ₫</span>
-                                </div>
-                            </a>
+                        <div class="image-item">
+                            <div class="img">
+                                <img src="assets/imgs/hp-envy-13-01.jpg" alt="">
+                            </div>
+                            <div class="title-price text-deco">
+                                <p>Laptop HP Envy 13-ad074TU 2LR92PA Core i7-7500U/Win10 (13.3 inch) – Hàng Chính Hãng</p>
+                                <span class="color-red">24,280,000 ₫</span>
+                            </div>
                         </div>
 
-                        <div class="banner-item">
-                            <a href="lt-lenovo.html" class="text-deco">
-                                <div class="img">
-                                    <img src="assets/imgs/lenovo-ThinkPad-T470-01.jpg" alt="">
-                                </div>
-                                <div class="title-price text-deco">
-                                    <p>Laptop Lenovo ThinkPad Core i5-7200U/DOS 14 inch – Hàng Chính Hãng</p>
-                                    <span class="color-red">29,690,000 ₫</span>
-                                </div>
-                            </a>
+                        <div class="image-item">
+                            <div class="img">
+                                <img src="assets/imgs/lenovo-ThinkPad-T470-01.jpg" alt="">
+                            </div>
+                            <div class="title-price text-deco">
+                                <p>Laptop Lenovo ThinkPad T470 20HEA03LVA Core i5-7200U/DOS 14 inch – Hàng Chính Hãng</p>
+                                <span class="color-red">29,690,000 ₫</span>
+                            </div>
                         </div>
 
-                        <div class="banner-item">
-                            <a href="lt-lenovoideir.html" class="text-deco">
-                                <div class="img">
-                                    <img src="assets/imgs/lenovo-IdeaPad-Y520-01.jpg" alt="">
-                                </div>
-                                <div class="title-price text-deco">
-                                    <p>Laptop Lenovo IdeaPad Core i7-7700HQ / Free Dos (15.6inch) – Hàng Chính Hãng</p>
-                                    <span class="color-red">21,920,000 ₫</span>
-                                </div>
-                            </a>
-                        </div>
+                        <div class="image-item">
+                            <div class="img">
+                                <img src="assets/imgs/lenovo-IdeaPad-Y520-01.jpg" alt="">
+                            </div>
+                            <div class="title-price text-deco">
+                                <p>Laptop Lenovo IdeaPad Y520-15IKBN 80WK00GBVN Core i7-7700HQ / Free Dos (15.6inch) – Hàng Chính Hãng</p>
+                                <span class="color-red">21,920,000 ₫</span>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -588,64 +547,54 @@
             <div class="mb-4">
                 <div class="belt-title">
                     <span>TABLET ĐƯỢC QUAN TÂM</span>
-                    <span>
-                        <a href="tablet.html" class="text-deco">Xem tất cả Tablet</a>
+                    <span name="tablet" id="tablet">
+                        XEM TẤT CẢ TABLET
                     </span>
                 </div>
                 <div class="row">
-                    <div class="col-3 banner d-none d-md-block">
-                        <a href="tablet.html" class="text-deco">
-                            <img class="banner-img" src="assets/imgs/banner_LenovoYogaBook-H3.jpg" alt="">
-                        </a>
+                    <div class="col-3 banner d-none d-md-block" name="tablet">
+                        <img class="banner-img" src="assets/imgs/banner_LenovoYogaBook-H3.jpg" alt="">
                     </div>
-                    <div class="col-md-9 col-12  banner-slider">
-                        <div class="banner-item">
-                            <a href="cuteipab.html" class="text-deco">
-                                <div class="img">
-                                    <img src="assets/imgs/cutepad-m7089-01.jpg" alt="">
-                                </div>
-                                <div class="title-price text-deco">
-                                    <p>Máy Tính Bảng cutePAD M7089 – Hàng Chính Hãng</p>
-                                    <span class="color-red">1,449,000 ₫</span>
-                                </div>
-                            </a>
+                    <div class="col-md-9 col-12  banner-slider" id="tabletSlider">
+                        <!-- <div class="image-item">
+                            <div class="img">
+                                <img src="assets/imgs/cutepad-m7089-01.jpg" alt="">
+                            </div>
+                            <div class="title-price text-deco">
+                                <p>Máy Tính Bảng cutePAD M7089 – Hàng Chính Hãng</p>
+                                <span class="color-red">1,449,000 ₫</span>
+                            </div>
                         </div>
 
-                        <div class="banner-item">
-                            <a href="ipab-bevene.html" class="text-deco">
-                                <div class="img">
-                                    <img src="assets/imgs/beneve-m1022h-02.jpg" alt="">
-                                </div>
-                                <div class="title-price text-deco">
-                                    <p>Máy Tính Bảng Beneve M1022H – Hàng Chính Hãng</p>
-                                    <span class="color-red">4,490,000 ₫</span>
-                                </div>
-                            </a>
+                        <div class="image-item">
+                            <div class="img">
+                                <img src="assets/imgs/beneve-m1022h-02.jpg" alt="">
+                            </div>
+                            <div class="title-price text-deco">
+                                <p>Máy Tính Bảng Beneve M1022H – Hàng Chính Hãng</p>
+                                <span class="color-red">4,490,000 ₫</span>
+                            </div>
                         </div>
 
-                        <div class="banner-item">
-                            <a href="ipad-wifi.html" class="text-deco">
-                                <div class="img">
-                                    <img src="assets/imgs/ipad-wifi-128Gb-2017-01.jpg" alt="">
-                                </div>
-                                <div class="title-price text-deco">
-                                    <p>iPad WiFi 128GB New 2017 – Hàng Nhập Khẩu</p>
-                                    <span class="color-red">10,990,000 ₫</span>
-                                </div>
-                            </a>
+                        <div class="image-item">
+                            <div class="img">
+                                <img src="assets/imgs/ipad-wifi-128Gb-2017-01.jpg" alt="">
+                            </div>
+                            <div class="title-price text-deco">
+                                <p>iPad WiFi 128GB New 2017 – Hàng Nhập Khẩu</p>
+                                <span class="color-red">10,990,000 ₫</span>
+                            </div>
                         </div>
 
-                        <div class="banner-item">
-                            <a href="ipad-wifipro.html" class="text-deco">
-                                <div class="img">
-                                    <img src="assets/imgs/ipad-pro-9.7-wifi-4g-32gb-rose-gold-01.jpg" alt="">
-                                </div>
-                                <div class="title-price text-deco">
-                                    <p>iPad Pro 9.7 inch Wifi Cellular 32GB – Hàng Chính Hãng</p>
-                                    <span class="color-red">16,320,000 ₫</span>
-                                </div>
-                            </a>
-                        </div>
+                        <div class="image-item">
+                            <div class="img">
+                                <img src="assets/imgs/ipad-pro-9.7-wifi-4g-32gb-rose-gold-01.jpg" alt="">
+                            </div>
+                            <div class="title-price text-deco">
+                                <p>iPad Pro 9.7 inch Wifi Cellular 32GB – Hàng Chính Hãng</p>
+                                <span class="color-red">16,320,000 ₫</span>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -656,69 +605,60 @@
             <div class="mb-4">
                 <div class="belt-title">
                     <span>PHỤ KIỆN HOT</span>
-                    <span>
-                        <a href="phukien.html" class="text-deco">Xem tất cả Phụ kiện</a>
+                    <span name="phụ kiện" id="phukien">
+                        XEM TẤT CẢ PHỤ KIỆN
                     </span>
                 </div>
-                <div class="image-slider">
-                    <div class="image-item">
-                        <a href="hd-headphone.html" class="text-deco">
-                            <div class="img">
-                                <img src="assets/imgs/Blaster-E3-01.jpg" alt="">
-                            </div>
-                            <div class="title-price text-deco">
-                                <p>HD Headphone Amplifier Creative Sound Blaster E3 – Hàng Chính Hãng</p>
-                                <span class="color-red">3,245,000 ₫</span>
-                            </div>
-                        </a>
+                <div class="image-slider" id="pkSlider">
+                    <!-- <div class="image-item">
+                        <div class="img">
+                            <img src="assets/imgs/Blaster-E3-01.jpg" alt="">
+                        </div>
+                        <div class="title-price text-deco">
+                            <p>HD Headphone Amplifier Creative Sound Blaster E3 – Hàng Chính Hãng</p>
+                            <span class="color-red">3,245,000 ₫</span>
+                        </div>
                     </div>
 
                     <div class="image-item">
-                        <a href="kaisimura.html" class="text-deco">
-                            <div class="img">
-                                <img src="assets/imgs/Kashimura-BL-40-01.jpg" alt="">
-                            </div>
-                            <div class="title-price text-deco">
-                                <p>Thiết Bị Kết Nối Bluetooth Với Điện Thoại Kashimura BL-40 3.0</p>
-                                <span class="color-red">749,000 ₫</span>
-                            </div>
-                        </a>
+                        <div class="img">
+                            <img src="assets/imgs/Kashimura-BL-40-01.jpg" alt="">
+                        </div>
+                        <div class="title-price text-deco">
+                            <p>Thiết Bị Kết Nối Bluetooth Với Điện Thoại Kashimura BL-40 3.0</p>
+                            <span class="color-red">749,000 ₫</span>
+                        </div>
                     </div>
 
                     <div class="image-item">
-                        <a href="uag.html" class="text-deco">
-                            <div class="img">
-                                <img src="assets/imgs/uag-ipad-01.jpg" alt="">
-                            </div>
-                            <div class="title-price text-deco">
-                                <p>Bao Da iPad Pro 10.5 inch UAG Metropolis – Hàng Chính Hãng</p>
-                                <span class="color-red">14,990,000 ₫</span>
-                            </div>
-                        </a>
+                        <div class="img">
+                            <img src="assets/imgs/uag-ipad-01.jpg" alt="">
+                        </div>
+                        <div class="title-price text-deco">
+                            <p>Bao Da iPad Pro 10.5 inch UAG Metropolis – Hàng Chính Hãng</p>
+                            <span class="color-red">14,990,000 ₫</span>
+                        </div>
                     </div>
 
                     <div class="image-item">
-                        <a href="oplungdeo.html" class="text-deco">
-                            <div class="img">
-                                <img src="assets/imgs/op-deo-hinh-thu-01.jpg" alt="">
-                            </div>
-                            <div class="title-price text-deco">
-                                <p>Ốp Lưng Dẻo Cho iPhone 6 Plus/6s Plus – Gấu Kèm Thú Nổi</p>
-                                <span class="color-red">90,000 ₫</span>
-                            </div>
-                        </a>
+                        <div class="img">
+                            <img src="assets/imgs/op-deo-hinh-thu-01.jpg" alt="">
+                        </div>
+                        <div class="title-price text-deco">
+                            <p>Ốp Lưng Dẻo Cho iPhone 6 Plus/6s Plus – Gấu Kèm Thú Nổi</p>
+                            <span class="color-red">90,000 ₫</span>
+                        </div>
                     </div>
 
                     <div class="image-item">
-                        <a href="jbl.html" class="text-deco">
-                            <div class="img">
+                        <div class="img">
                             <img src="assets/imgs/jbl-t450-02.jpg" alt="">
                         </div>
                         <div class="title-price text-deco">
                             <p>Tai Nghe JBL T450BT – Hàng Chính Hãng</p>
                             <span class="color-red">1,600,000 ₫</span>
-                        </div></a>
-                    </div>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>
