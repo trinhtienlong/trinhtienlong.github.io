@@ -5,8 +5,8 @@ function myFunction() {
   let header = document.getElementById("header");
   let gototop = document.getElementById("gototop");
   if (
-    document.body.scrollTop > 200 ||
-    document.documentElement.scrollTop > 200
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
   ) {
     header.style.position = "fixed";
     header.style.top = 0;
@@ -19,7 +19,7 @@ function myFunction() {
     gototop.style.opacity = "1";
     gototop.style.transition = "0.38s linear";
   } else {
-    header.style.position = "relative";
+    header.style.position = "sticky";
     header.classList.remove("slideUp");
 
     gototop.style.display = "hidden";

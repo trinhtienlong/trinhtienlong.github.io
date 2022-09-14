@@ -1,6 +1,29 @@
 /* header + menu navba */
 body {
   background-color: rgb(243, 243, 243) !important;
+  font-weight: 600 !important;
+}
+
+.btnaddtocard,
+.btnSeeCard{
+  font-weight: 700 !important;
+  background-color: #425E81 !important;
+  color: #fff !important;
+}
+
+.btnaddtocard:hover,
+.btnSeeCard:hover{
+  background-color: #2b496e !important;
+}
+
+.btnPayCard{
+  font-weight: 700 !important;
+  background-color: #d70909  !important;
+  color: #fff !important;
+}
+
+.btnPayCard:hover{
+  background-color: #af0303  !important;
 }
 
 .logo {
@@ -102,30 +125,39 @@ body {
   margin: 0 1rem;
 }
 
-@media only screen and (max-width: 991px) {
-  .navbar-nav {
-    width: 100%;
-  }
-}
-
 .navbar-nav .nav-item {
   padding-left: 0 !important;
   padding-right: 0 !important;
   margin: 0;
 }
 
-
 .tet{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px 10px;
   z-index: 1000;
-  left: -184%;
+  left: -180%;
   width: 350px;
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
   background-color: #fff;
   position: absolute;
   transition: 0.2s linear;
-  border: solid 2px #aeaeae;
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 353px;
+  border-radius: 5px;
+}
+
+.tet hr{
+  width: 100%;
+  margin: 8px 0;
+}
+
+hr {
+  color: #afafaf !important;
+  border: solid 0.5px !important;
 }
 
 .nav-item{
@@ -158,10 +190,6 @@ body {
 
 .tet button:nth-child(8):hover{
   background-color: #af0303 !important;
-}
-
-.tet hr{
-  margin: 10px 0;
 }
 
 .tet1 button:nth-child(7){
@@ -287,21 +315,8 @@ body {
   color: #858585;
 }
 
-/* .title-design span:last-child {
-  color: white;
-} */
-
-@media only screen and (max-width: 575px) {
-  .footer {
-    text-align: center;
-  }
-}
 
 /* main */
-
-/* .container-md {
-  color: white;
-} */
 
 .slick-prev {
   visibility: hidden;
@@ -500,9 +515,6 @@ input::-webkit-inner-spin-button {
   color: white;
 }
 
-hr:not([size]) {
-  height: 0.5px !important;
-}
 
 tbody {
   line-height: 2.3em;
@@ -587,7 +599,7 @@ tr {
 }
 
 .belt-title {
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 .size {
@@ -699,36 +711,20 @@ tr {
   color: black;
 }
 
+
 .slideUp {
-  animation:slideUp 0.7s;
-  visibility: visible;
+  animation:slideUp 0.9s;
 }
 
 @keyframes slideUp {
   0% {
-    opacity: 0;
     transform: translateY(-100%);
   } 
   100% {
-    opacity: 1;
     transform: translateY(0%);
   }
 }
 
-.slideUp1 {
-  animation:slideUp1 0.7s reverse;
-}
-
-@keyframes slideUp1 {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  } 
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
 
 .item{
   padding: 10px 20px;
@@ -813,7 +809,7 @@ tr {
   visibility: hidden;
   position: fixed;
   right: 2rem;
-  bottom: 2rem;
+  bottom: 4rem;
   z-index: 1000;
 }
 
@@ -837,3 +833,31 @@ tr {
   text-decoration: none;
   color: #000000;
 }
+
+.nav-link:hover {
+  color: rgb(52, 191, 255) !important;
+}
+
+.fontStyle{
+  font-family: 'Combo', cursive;
+  margin: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .collapse .d-flex {
+    margin-left: 2.5rem
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-nav {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .footer {
+    text-align: center;
+  }
+}
+

@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   window.onscroll = function () {
     myFunction();
   };
@@ -6,8 +7,8 @@ $(document).ready(function () {
     let header = document.getElementById("header");
     let gototop = document.getElementById("gototop");
     if (
-      document.body.scrollTop > 200 ||
-      document.documentElement.scrollTop > 200
+      document.body.scrollTop > 100 ||
+      document.documentElement.scrollTop > 100
     ) {
       header.style.position = "fixed";
       header.style.top = 0;
@@ -20,7 +21,7 @@ $(document).ready(function () {
       gototop.style.opacity = "1";
       gototop.style.transition = "0.38s linear";
     } else {
-      header.style.position = "relative";
+      header.style.position = "sticky";
       header.classList.remove("slideUp");
 
       gototop.style.display = "hidden";
@@ -250,22 +251,7 @@ breadcrumbStore.onclick = () => {
   location.href = "product-portfolio1.html";
 };
 
-let proList = document.querySelectorAll(".image-item");
-for (let i = 0; i < proList.length; i++) {
-  proList[i].onclick = () => {
-    let proTitle = proList[i].querySelector(".title-price p").innerText;
-    let proPrice = proList[i].querySelector(".title-price span").innerText;
-    let boxList = [
-      {
-        title: proTitle,
-        price: proPrice,
-      },
-    ];
-    let json = JSON.stringify(boxList);
-    localStorage.setItem("data", json);
-    location.href = "product.html";
-  };
-}
+
 
 function movePoduct(boxqrAll, qrText) {
   let proList = document.querySelectorAll(boxqrAll);
@@ -375,3 +361,135 @@ function similarProduct() {
   movePoduct(".image-item", "p");
 }
 similarProduct();
+
+
+// tăng giảm số lượng
+let innerNumer = document.querySelector(".updow input")
+let upNumber = document.querySelector("#up")
+let downNumber = document.querySelector("#down")
+function up(){
+  let cout = innerNumer.value
+  let cout1 = parseInt(cout) + 1;
+  innerNumer.value = cout1
+}
+upNumber.onclick = up
+
+function down(){
+  let cout = innerNumer.value;
+  let cout1 = parseInt(cout);
+  if( cout1 > 0 ){
+    cout1 -= 1;
+    innerNumer.value = cout1
+  }
+}
+downNumber.onclick = down
+
+
+let Card = JSON.parse(localStorage.getItem("cart")) || [];
+let cardMini = document.querySelector(".cus-iconCart");
+let cardMini1 = document.querySelector(".tet")
+function showCart(){
+  let ttgh = "";
+  let tong = 0;
+  for(let i = 0; i < Card.length; i++){
+    tong += Card[i].solg * Card[i].price.replaceAll(",", "");
+    ttgh +=
+    '<div class="row">' +
+      '<div class="col-3">' +
+          '<img class="w-100" src="'+Card[i].image+'" alt="">' +
+      '</div>' +
+      '<div class="col-9">' +
+        '<p style="margin: 0;">'+Card[i].title+'</p>' +
+        '<div class="tet-flex">' +
+            '<div class="flex-child"><span>'+Card[i].solg+'</span><span> x </span><span>'+Card[i].price+' ₫</span></div>' +
+            '<i class="fa-solid fa-trash-can scan"></i>' +
+        '</div>' +
+      '</div>' +
+    '</div>'+
+    '<hr>'
+  }
+  ttgh += 
+    '<div class="tong" style="text-align: center ;">'+
+        '<span>Tổng cộng : </span><span>'+tong.toLocaleString("en")+' ₫</span>'+
+    '</div>'+
+    '<hr>'+
+    '<button type="button" class="btn mb-2 w-100 btnSeeCard">'+
+        'XEM GIỎ HÀNG'+
+    '</button>'+
+    '<button type="button" class="btn w-100 btnPayCard">'+
+        'THANH TOÁN'+
+    '</button>'
+  document.querySelector('.tet').innerHTML = ttgh;
+  let btnSeeCard = document.querySelector(".btnSeeCard");
+  let btnPayCard = document.querySelector(".btnPayCard");
+  btnSeeCard.onclick = () =>{location.href = "payment-card.html";}
+  btnPayCard.onclick = () =>{location.href = "payment-card-info.html";}
+}
+
+
+function change(){
+  if( Card.length == 0 ){
+    cardMini1.innerHTML = 
+    '<img src="assets/imgs/empty-cart.svg" class="w-50" alt="">'+
+    '<h5 class="text-center fontStyle">Cart Is Empty</h5>'+
+    '<hr>'+
+    '<button type="button" name="tất cả sản phẩm" class="btn w-100 btnaddtocard">CỬA HÀNG</button>'
+    let btnaddtocard = document.querySelector(".btnaddtocard")
+    let boxEmpty = [];
+    btnaddtocard.onclick = () =>{
+      let btnName = btnaddtocard.getAttribute("name");
+      let boxlist = localStorage.getItem("dataBox");
+      let boxLists = JSON.parse(boxlist);
+      for (let i = 0; i < boxLists.length; i++) {
+        if (btnName === "tất cả sản phẩm"){
+          boxEmpty.push(boxLists[i]);
+        }
+      }
+      let json = JSON.stringify(boxEmpty);
+      localStorage.setItem("datas", json);
+      location.href = "product-portfolio1.html";
+    }
+  }
+  if( Card.length > 0 ){
+    showCart();
+  }
+}
+cardMini.onmouseover = change
+function changeNumber(){
+  let numberCard = document.querySelectorAll(".badge")
+  for(let i=0 ; i <numberCard.length ; i++ ){
+    numberCard[i].innerText = Card.length
+    if( numberCard[i].innerText == 0 ){
+      numberCard[i].style.display = "none"
+    }else{
+      numberCard[i].style.display = "inline-block"
+    }
+  }
+}
+changeNumber()
+
+// let tt = document.querySelector('#addToCard')
+// let tt1 = tt.parentNode.parentNode
+// console.log(tt1);
+
+function selectPoduct() {
+  let proList = document.querySelector(".info-prd");
+  let addToCard = document.querySelector('#addToCard');
+  addToCard.onclick = () => {
+    let soluong = document.querySelector(".updow input");
+    let soluongsf = soluong.value;
+    let proTitle = proList.querySelector("p:nth-child(1)").innerText;
+    let box = localStorage.getItem("dataBox");
+    let boxs = JSON.parse(box);
+    for (let i = 0; i < boxs.length; i++) {
+      if (proTitle === boxs[i].title) {
+        Card.push(boxs[i]);
+        Card[Card.length-1].solg = soluongsf
+        let json = JSON.stringify(Card);
+        localStorage.setItem("cart", json);
+      }
+    }
+    changeNumber()
+  }
+}
+selectPoduct();

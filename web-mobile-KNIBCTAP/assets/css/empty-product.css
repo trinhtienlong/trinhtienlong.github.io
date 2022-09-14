@@ -1,6 +1,7 @@
 /* header + menu navba */
 body {
   background-color: #f3f3f3 !important;
+  font-weight: 600 !important;
 }
 
 .logo {
@@ -56,13 +57,6 @@ body {
 .collapse .d-flex {
   margin-left: 10rem;
   width: 50%;
-}
-
-@media only screen and (max-width: 991px) {
-  .collapse .d-flex {
-    margin-left: 0;
-    width: 100%;
-  }
 }
 
 .navbar-expand-lg .navbar-collapse {
@@ -305,15 +299,6 @@ hr:not([size]) {
   color: #858585;
 }
 
-/* .title-design span:last-child {
-  color: white;
-} */
-
-@media only screen and (max-width: 575px) {
-  .footer {
-    text-align: center;
-  }
-}
 /* main */
 
 .order button {
@@ -448,7 +433,7 @@ hr:not([size]) {
   visibility: hidden;
   position: fixed;
   right: 2rem;
-  bottom: 2rem;
+  bottom: 4rem;
   z-index: 1000;
 }
 
@@ -481,4 +466,22 @@ hr:not([size]) {
 .search,
 .badge{
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  .collapse .d-flex {
+    margin-left: 2.5rem
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-nav {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .footer {
+    text-align: center;
+  }
 }
