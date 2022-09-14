@@ -365,8 +365,8 @@ hr:not([size]) {
   z-index: 1000;
   left: -180%;
   width: 350px;
-  /* opacity: 0;
-  visibility: hidden; */
+  opacity: 0;
+  visibility: hidden;
   background-color: #fff;
   position: absolute;
   transition: 0.2s linear;
