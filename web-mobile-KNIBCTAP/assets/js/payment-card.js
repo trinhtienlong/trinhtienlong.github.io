@@ -130,7 +130,9 @@ function showCart(){
         '<p style="margin: 0;">'+Card[i].title+'</p>' +
         '<div class="tet-flex">' +
             '<div class="flex-child"><span>'+Card[i].solg+'</span><span> x </span><span>'+Card[i].price+' ₫</span></div>' +
+            '<div class="delete">'+
             '<i class="fa-solid fa-trash-can scan"></i>' +
+            '</div>'+
         '</div>' +
       '</div>' +
     '</div>'+
@@ -152,17 +154,30 @@ function showCart(){
   let btnPayCard = document.querySelector(".btnPayCard");
   btnSeeCard.onclick = () =>{location.href = "payment-card.html";}
   btnPayCard.onclick = () =>{location.href = "payment-card-info.html";}
+  // remove sf
+  let removes = cardMini1.querySelectorAll('.delete');
+  for (let i = 0; i < removes.length ; i++  ){
+    removes[i].onclick = () =>{
+      let rowCart = removes[i].parentElement.parentElement.parentElement;
+      let tensp = removes[i].parentElement.parentElement.querySelector('p').innerText
+      rowCart.remove() 
+      for( j = 0 ; j < Card.length ; j++ ){
+        if( Card[j].title == tensp ){
+          Card.splice(j, 1);
+          let json = JSON.stringify(Card);
+          localStorage.setItem("cart", json);
+        }
+      }
+      showCart();
+      change();
+      changeNumber()
+    }
+  }
 }
 
 
-function change(){
-  if( Card.length == 0 ){
-    cardMini1.innerHTML = 
-    '<img src="assets/imgs/empty-cart.svg" class="w-50" alt="">'+
-    '<h5 class="text-center fontStyle">Cart Is Empty</h5>'+
-    '<hr>'+
-    '<button type="button" name="tất cả sản phẩm" class="btn w-100 btnaddtocard">CỬA HÀNG</button>'
-    let btnaddtocard = document.querySelector(".btnaddtocard")
+function moverCard(btnCard){
+  let btnaddtocard = document.querySelector(btnCard)
     let boxEmpty = [];
     btnaddtocard.onclick = () =>{
       let btnName = btnaddtocard.getAttribute("name");
@@ -176,7 +191,18 @@ function change(){
       let json = JSON.stringify(boxEmpty);
       localStorage.setItem("datas", json);
       location.href = "product-portfolio1.html";
-    }
+  }
+}
+
+
+function change(){
+  if( Card.length == 0 ){
+    cardMini1.innerHTML = 
+    '<img src="assets/imgs/empty-cart.svg" class="w-50" alt="">'+
+    '<h5 class="text-center fontStyle">Cart Is Empty</h5>'+
+    '<hr>'+
+    '<button type="button" name="tất cả sản phẩm" class="btn w-100 btnaddtocard">CỬA HÀNG</button>'
+    moverCard(".btnaddtocard")
   }
   if( Card.length > 0 ){
     showCart();
@@ -196,6 +222,21 @@ function changeNumber(){
 }
 changeNumber()
 
+function ktgh(){
+  if( Card.length == 0 ){
+    document.querySelector('#boxPaymentCard').innerHTML = 
+    '<div class="col-12 p-4 empty-flex justify-content-center">'+
+        '<p>Chưa có sản phẩm nào trong giỏ hàng.</p>'+
+        '<button type="button" name="tất cả sản phẩm" class="btn mt-1 btnSeeCard">QUAY TRỞ LẠI CỬA HÀNG</button>'+
+    '</div>'
+    moverCard(".btnSeeCard")
+  }
+  if( Card.length > 0 ){
+    showMyCart()
+  }
+}
+ktgh()
+
 function showMyCart(){
   let ttgh = "";
   let tong = 0;
@@ -206,8 +247,10 @@ function showMyCart(){
     '<tr>'+
       '<th scope="row" class="c1">'+
           '<div class="ccc">'+
-              '<i class="fa-solid fa-trash-can me-3 fs-5 delete"></i>'+
-              '<img width="60px" class="me-3" src="'+Card[i].image+'" alt="">'+
+              '<div class="deletes me-3">'+
+                '<i class="fa-solid fa-trash-can fs-5"></i>'+
+              '</div>'+
+              '<img width="100px" class="me-3" src="'+Card[i].image+'" alt="">'+
               '<span>'+Card[i].title+'</span>'+
           '</div>'+
       '</th>'+
@@ -224,6 +267,29 @@ function showMyCart(){
   }
   document.querySelector('#tongPayment').innerHTML = tong.toLocaleString("en")+'&nbsp;₫'
   document.querySelector('#mycart').innerHTML = ttgh;
+  // remove sf
+  let removes = document.querySelectorAll('.deletes');
+  console.log(removes);
+  for (let i = 0; i < removes.length ; i++  ){
+    removes[i].onclick = () =>{
+      let trCart = removes[i].parentElement.parentElement.parentElement;
+      let tensp = removes[i].parentElement.querySelector('span').innerText;
+      console.log(tensp);
+      trCart.remove() 
+      for( j = 0 ; j < Card.length ; j++ ){
+        if( Card[j].title == tensp ){
+          Card.splice(j, 1);
+          let json = JSON.stringify(Card);
+          localStorage.setItem("cart", json);
+        }
+      }
+      console.log(Card);
+      showMyCart();
+      change();
+      changeNumber();
+      ktgh()
+    }
+  }
 }
 showMyCart()
 

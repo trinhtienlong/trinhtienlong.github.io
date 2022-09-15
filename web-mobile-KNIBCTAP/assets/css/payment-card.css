@@ -618,6 +618,18 @@ hr {
   top: 120px;
 }
 
+.deletes:hover,
+.delete:hover{
+  cursor: pointer;
+}
+
+.empty-flex{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media only screen and (max-width: 1200px) {
   .collapse .d-flex {
     margin-left: 2.5rem

@@ -570,6 +570,10 @@ hr {
   border: solid 0.5px !important;
 }
 
+.deletes:hover,
+.delete:hover{
+  cursor: pointer;
+}
 
 @media only screen and (max-width: 1200px) {
   .collapse .d-flex {

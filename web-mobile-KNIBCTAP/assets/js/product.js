@@ -402,7 +402,9 @@ function showCart(){
         '<p style="margin: 0;">'+Card[i].title+'</p>' +
         '<div class="tet-flex">' +
             '<div class="flex-child"><span>'+Card[i].solg+'</span><span> x </span><span>'+Card[i].price+' ₫</span></div>' +
+            '<div class="delete">'+
             '<i class="fa-solid fa-trash-can scan"></i>' +
+            '</div>'+
         '</div>' +
       '</div>' +
     '</div>'+
@@ -424,6 +426,25 @@ function showCart(){
   let btnPayCard = document.querySelector(".btnPayCard");
   btnSeeCard.onclick = () =>{location.href = "payment-card.html";}
   btnPayCard.onclick = () =>{location.href = "payment-card-info.html";}
+  // remove sf
+  let removes = cardMini1.querySelectorAll('.delete');
+  for (let i = 0; i < removes.length ; i++  ){
+    removes[i].onclick = () =>{
+      let rowCart = removes[i].parentElement.parentElement.parentElement;
+      let tensp = removes[i].parentElement.parentElement.querySelector('p').innerText
+      rowCart.remove() 
+      for( j = 0 ; j < Card.length ; j++ ){
+        if( Card[j].title == tensp ){
+          Card.splice(j, 1);
+          let json = JSON.stringify(Card);
+          localStorage.setItem("cart", json);
+        }
+      }
+      showCart();
+      change();
+      changeNumber()
+    }
+  }
 }
 
 
@@ -506,3 +527,4 @@ function selectPoduct() {
   }
 }
 selectPoduct();
+

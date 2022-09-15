@@ -44,7 +44,9 @@ function showCart(){
         '<p style="margin: 0;">'+Card[i].title+'</p>' +
         '<div class="tet-flex">' +
             '<div class="flex-child"><span>'+Card[i].solg+'</span><span> x </span><span>'+Card[i].price+' ₫</span></div>' +
+            '<div class="delete">'+
             '<i class="fa-solid fa-trash-can scan"></i>' +
+            '</div>'+
         '</div>' +
       '</div>' +
     '</div>'+
@@ -66,6 +68,25 @@ function showCart(){
   let btnPayCard = document.querySelector(".btnPayCard");
   btnSeeCard.onclick = () =>{location.href = "payment-card.html";}
   btnPayCard.onclick = () =>{location.href = "payment-card-info.html";}
+  // remove sf
+  let removes = cardMini1.querySelectorAll('.delete');
+  for (let i = 0; i < removes.length ; i++  ){
+    removes[i].onclick = () =>{
+      let rowCart = removes[i].parentElement.parentElement.parentElement;
+      let tensp = removes[i].parentElement.parentElement.querySelector('p').innerText
+      rowCart.remove() 
+      for( j = 0 ; j < Card.length ; j++ ){
+        if( Card[j].title == tensp ){
+          Card.splice(j, 1);
+          let json = JSON.stringify(Card);
+          localStorage.setItem("cart", json);
+        }
+      }
+      showCart();
+      change();
+      changeNumber()
+    }
+  }
 }
 
 
@@ -109,6 +130,33 @@ function changeNumber(){
   }
 }
 changeNumber()
+
+let infoCart = document.querySelector('#boxInfo');
+let infototal = document.querySelector('.color-total')
+console.log(infototal);
+function showInfoCart(){
+  let ttgh = "";
+  let tong = 0;
+  for(let i = 0; i < Card.length; i++){
+    tong += Card[i].solg * Card[i].price.replaceAll(",", "");
+    ttgh +=
+    '<div class="d-flex justify-content-between">'+
+    '<div class="order-inner me-5">'+
+        '<span>'+Card[i].title+'</span> <span>× '+Card[i].solg+'</span>'+
+    '</div>'+
+    '<span>'+Card[i].price+'&nbsp;₫</span>'+
+    '</div>'+
+    '<hr>'
+  }
+  infoCart.innerHTML = ttgh;
+  infototal.innerHTML = tong.toLocaleString("en")+'&nbsp;₫';
+  // let btnSeeCard = document.querySelector(".btnSeeCard");
+  // let btnPayCard = document.querySelector(".btnPayCard");
+  // btnSeeCard.onclick = () =>{location.href = "payment-card.html";}
+  // btnPayCard.onclick = () =>{location.href = "payment-card-info.html";}
+}
+showInfoCart()
+
 
 // tạo thanh search cho navbar và di chuyển sang trang product
 let box = localStorage.getItem("dataBox");
@@ -290,13 +338,12 @@ function getFieldName(input) {
 
 form.addEventListener("click", function (e) {
   e.preventDefault();
-  // let emptyCheck = checkEmpty([userName ,password ,namelogin ,name ,city ,number ,email]);
   let emailCheck = checkEmail(email);
   let userNameLengthCheck = checkLength(userName, 3, 10);
   let passwordLengthCheck = checkLength(password, 6, 1000);
   let nameLengthCheck = checkLength(name, 2, 10);
   let nameloginLengthCheck = checkLength(namelogin, 6, 20);
-  let cityLengthCheck = checkLength(city, 6, 50);
+  let cityLengthCheck = checkLength(city, 10, 50);
   let numberLengthCheck = checkLength(number, 10, 13);
 
   if (

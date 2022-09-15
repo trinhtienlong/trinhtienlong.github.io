@@ -139,8 +139,8 @@ body {
   z-index: 1000;
   left: -180%;
   width: 350px;
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
   background-color: #fff;
   position: absolute;
   transition: 0.2s linear;
@@ -841,6 +841,11 @@ tr {
 .fontStyle{
   font-family: 'Combo', cursive;
   margin: 0;
+}
+
+.deletes:hover,
+.delete:hover{
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1200px) {
