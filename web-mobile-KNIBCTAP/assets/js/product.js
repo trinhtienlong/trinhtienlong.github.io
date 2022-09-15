@@ -483,10 +483,23 @@ function selectPoduct() {
     let boxs = JSON.parse(box);
     for (let i = 0; i < boxs.length; i++) {
       if (proTitle === boxs[i].title) {
-        Card.push(boxs[i]);
-        Card[Card.length-1].solg = soluongsf
-        let json = JSON.stringify(Card);
-        localStorage.setItem("cart", json);
+        // kiểm tra trùng lặp sf,nếu trùng tăng sl và ngắt vòng for
+        let kt = 0;
+        for ( let j = 0; j < Card.length; j++ ){
+          if( Card[j].title == proTitle ){
+            kt = 1;
+            Card[j].solg += parseInt(soluongsf);
+            let json = JSON.stringify(Card);
+            localStorage.setItem("cart", json);
+            break;
+          }
+        }
+        if( kt == 0 ){
+          Card.push(boxs[i]);
+          Card[Card.length-1].solg = parseInt(soluongsf);
+          let json = JSON.stringify(Card);
+          localStorage.setItem("cart", json);
+        }
       }
     }
     changeNumber()
