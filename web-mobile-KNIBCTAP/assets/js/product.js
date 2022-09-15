@@ -150,7 +150,7 @@ seeMore.onclick = () => {
   seeMore.classList.toggle("see-more-bler");
 };
 
-
+// so sánh title để lấy ra data trong local
 let dataTes = localStorage.getItem("data");
 let datas = JSON.parse(dataTes);
 let boxlist = localStorage.getItem("dataChageImg");
@@ -174,7 +174,7 @@ let productImg = document.querySelectorAll(".product-img");
 let productImgitem = document.querySelectorAll(".product-nav1 img");
 $(".color-prd span:nth-child(2)").css("color", "#d70909");
 
-
+// sau khi có mảng trong local thì đổi src của img 
 function loopChangeImg(bxImg) {
   for (let i = 0; i < productImg.length; i++) {
     productImg[i].setAttribute("src", bxImg[i]);
