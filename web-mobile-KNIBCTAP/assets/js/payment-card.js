@@ -5,8 +5,8 @@ function myFunction() {
   let header = document.getElementById("header");
   let gototop = document.getElementById("gototop");
   if (
-    document.body.scrollTop > 10 ||
-    document.documentElement.scrollTop > 10
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
   ) {
     header.style.position = "fixed";
     header.style.top = 0;
@@ -246,23 +246,6 @@ function changeNumber(){
 }
 changeNumber()
 
-function ktgh(){
-  if( Card.length == 0 ){
-    document.querySelector('#boxPaymentCard').innerHTML = 
-    '<div class="row pt-5 pb-5">'+
-      '<div class="col-12 p-4 empty-flex justify-content-center">'+
-          '<p>Chưa có sản phẩm nào trong giỏ hàng.</p>'+
-          '<button type="button" name="tất cả sản phẩm" class="btn mt-1 btnSeeCard">QUAY TRỞ LẠI CỬA HÀNG</button>'+
-      '</div>'+
-    '</div>'
-    moverCard(".btnSeeCard")
-  }
-  if( Card.length > 0 ){
-    showMyCart();
-  }
-}
-ktgh()
-
 
 function showMyCart(){
   if ( Card.length == 0 ){
@@ -284,27 +267,33 @@ function showMyCart(){
       ttgh +=
       '<tr>'+
         '<th scope="row" class="c1">'+
-            '<div class="ccc">'+
-                '<div class="deletes me-3">'+
+            '<div class="ccc flex-md-row  flex-column-reverse ">'+
+              '<div class="d-flex align-items-center spay">'+
+                '<div class="deletes me-sm-3 me-2">'+
                   '<i class="fa-solid fa-trash-can fs-5"></i>'+
                 '</div>'+
-                '<img width="100px" class="me-3" src="'+Card[i].image+'" alt="">'+
-                '<span>'+Card[i].title+'</span>'+
+                '<img width="100px" class="me-sm-3" src="'+Card[i].image+'" alt="">'+
+              '</div>'+
+                '<span class="text-md-start text-center mb-md-0 mb-3">'+Card[i].title+'</span>'+
             '</div>'+
         '</th>'+
-        '<td class="text-end align-middle">'+Card[i].price+'&nbsp;₫</td>'+
+        '<td class="text-end align-middle d-md-table-cell d-none">'+Card[i].price+'&nbsp;₫</td>'+
         '<td class="align-middle">'+
-            '<div class="updow">'+
+            '<div class="updow flex-md-row flex-column align-items-center">'+
                 '<button type="button" id="down" class="btn btn-outline-secondary"><i class="fa-solid fa-minus"></i></button>'+
-                '<input style="font-weight: 600;" type="number" value="'+Card[i].solg+'">'+
+                '<input style="font-weight: 600;font-size: 24px;" type="number" value="'+Card[i].solg+'">'+
                 '<button type="button" id="up" class="btn btn-outline-secondary"><i class="fa-solid fa-plus"></i></button>'+
             '</div>'+
         '</td>'+
-        '<td id="price" class="text-center align-middle">'+tt.toLocaleString("en")+'&nbsp;₫</td>'+
+        '<td id="price" class="text-center align-middle">'+tt.toLocaleString("en")+'  ₫</td>'+
       '</tr>'
     }
     document.querySelector('#tongPayment').innerHTML = tong.toLocaleString("en")+'&nbsp;₫'
     document.querySelector('#mycart').innerHTML = ttgh;
+    let payer = document.querySelector('#Payer')
+    payer.onclick = () =>{
+      location.href = 'payment-card-info.html'
+    }
     // remove sf
     let removes = document.querySelectorAll('.deletes');
     for (let i = 0; i < removes.length ; i++  ){
@@ -324,7 +313,6 @@ function showMyCart(){
         change(cardMini1);
         change(cardMini3);
         changeNumber();
-        ktgh();
         tinhtong();
       }
     }
@@ -358,7 +346,7 @@ function tinhtong(){
           let tongPrices = tongPrice[j]
           let tt = Card[j].price.replaceAll(",", "") * Card[j].solg
           tong += tt;
-          tongPrices.innerHTML = tt.toLocaleString("en")+'&nbsp;₫';
+          tongPrices.innerHTML = tt.toLocaleString("en")+'  ₫';
         }
         tongPricess.innerHTML = tong.toLocaleString("en")+'&nbsp;₫';
       }
@@ -386,7 +374,4 @@ function tinhtong(){
 }
 tinhtong()
 
-let payer = document.querySelector('#Payer')
-payer.onclick = () =>{
-  location.href = 'payment-card-info.html'
-}
+

@@ -336,6 +336,7 @@ body {
 .ccc {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .ccc .delete:hover{
@@ -651,5 +652,9 @@ hr {
 @media only screen and (max-width: 575px) {
   .footer {
     text-align: center;
+  }
+  .spay {
+    width: 100%;
+    justify-content: space-evenly;
   }
 }
