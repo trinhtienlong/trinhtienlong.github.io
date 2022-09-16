@@ -683,7 +683,8 @@ function seeAllProduct(arrItem) {
 }
 seeAllProduct(".belt-title span:last-child");
 seeAllProduct(".item");
-seeAllProduct(".banner")
+seeAllProduct(".banner");
+seeAllProduct(".img-carousel")
 
 // chuyển trang carosell sang trang product-portfolio
 function moveCarosell() {
@@ -692,7 +693,6 @@ function moveCarosell() {
   for (let i = 0; i < proList.length; i++) {
     proList[i].onclick = () => {
       let proTitle = proList[i].querySelector(".caption").getAttribute("name");
-      console.log(proTitle);
       let box = localStorage.getItem("dataBox");
       let boxs = JSON.parse(box);
       for (i = 0; i < boxs.length; i++) {
