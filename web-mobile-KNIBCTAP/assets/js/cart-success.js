@@ -5,8 +5,8 @@ function myFunction() {
   let header = document.getElementById("header");
   let gototop = document.getElementById("gototop");
   if (
-    document.body.scrollTop > 100 ||
-    document.documentElement.scrollTop > 100
+    document.body.scrollTop > 10 ||
+    document.documentElement.scrollTop > 10
   ) {
     header.style.position = "fixed";
     header.style.top = 0;
@@ -113,65 +113,7 @@ seeAllProduct(".item");
 let Card = JSON.parse(localStorage.getItem("cart")) || [];
 let user = JSON.parse(localStorage.getItem("userName"));
 let cardMini = document.querySelector(".cus-iconCart");
-let cardMini1 = document.querySelector(".tet")
-function showCart(){
-  let ttgh = "";
-  let tong = 0;
-  for(let i = 0; i < Card.length; i++){
-    tong += Card[i].solg * Card[i].price.replaceAll(",", "");
-    ttgh +=
-    '<div class="row">' +
-      '<div class="col-3">' +
-          '<img class="w-100" src="'+Card[i].image+'" alt="">' +
-      '</div>' +
-      '<div class="col-9">' +
-        '<p style="margin: 0;">'+Card[i].title+'</p>' +
-        '<div class="tet-flex">' +
-            '<div class="flex-child"><span>'+Card[i].solg+'</span><span> x </span><span>'+Card[i].price+' ₫</span></div>' +
-            '<div class="delete">'+
-            '<i class="fa-solid fa-trash-can scan"></i>' +
-            '</div>'+
-        '</div>' +
-      '</div>' +
-    '</div>'+
-    '<hr>'
-  }
-  ttgh += 
-    '<div class="tong" style="text-align: center ;">'+
-        '<span>Tổng cộng : </span><span>'+tong.toLocaleString("en")+' ₫</span>'+
-    '</div>'+
-    '<hr>'+
-    '<button type="button" class="btn mb-2 w-100 btnSeeCard">'+
-        'XEM GIỎ HÀNG'+
-    '</button>'+
-    '<button type="button" class="btn w-100 btnPayCard">'+
-        'THANH TOÁN'+
-    '</button>'
-  document.querySelector('.tet').innerHTML = ttgh;
-  let btnSeeCard = document.querySelector(".btnSeeCard");
-  let btnPayCard = document.querySelector(".btnPayCard");
-  btnSeeCard.onclick = () =>{location.href = "payment-card.html";}
-  btnPayCard.onclick = () =>{location.href = "payment-card-info.html";}
-  // remove sf
-  let removes = cardMini1.querySelectorAll('.delete');
-  for (let i = 0; i < removes.length ; i++  ){
-    removes[i].onclick = () =>{
-      let rowCart = removes[i].parentElement.parentElement.parentElement;
-      let tensp = removes[i].parentElement.parentElement.querySelector('p').innerText
-      rowCart.remove() 
-      for( j = 0 ; j < Card.length ; j++ ){
-        if( Card[j].title == tensp ){
-          Card.splice(j, 1);
-          let json = JSON.stringify(Card);
-          localStorage.setItem("cart", json);
-        }
-      }
-      showCart();
-      change();
-      changeNumber()
-    }
-  }
-}
+let cardMini1 = document.querySelector(".tet");
 
 function moverCard(btnCard){
   let btnaddtocard = document.querySelector(btnCard)
@@ -201,12 +143,10 @@ function change(){
     moverCard(".btnaddtocard");
     changeNumber()
   }
-  if( Card.length > 0 ){
-    showCart();
-    changeNumber()
-  }
 }
 cardMini.onmouseover = change
+
+
 function changeNumber(){
   let numberCard = document.querySelectorAll(".badge")
   for(let i=0 ; i <numberCard.length ; i++ ){
@@ -218,7 +158,6 @@ function changeNumber(){
     }
   }
 }
-changeNumber()
 
 
 function showSuccessCart(){
@@ -271,7 +210,13 @@ function showSuccessCart(){
     document.querySelector('#thank li:nth-child(6)').innerHTML = 
     ("Thời gian:&nbsp;" + d.getHours() + "h : " + d.getMinutes() + "p");
   }
-  time()
+  time();
+  for ( i = 0 ; i < Card.length ; i++ ){
+    Card.splice(0, Card.length);
+    let json = JSON.stringify(Card);
+    localStorage.setItem("cart", json);
+  }
+  changeNumber()
 }
 showSuccessCart()
 

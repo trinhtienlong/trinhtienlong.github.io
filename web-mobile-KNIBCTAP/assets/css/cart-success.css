@@ -185,8 +185,8 @@ hr:not([size]) {
   z-index: 1000;
   left: -180%;
   width: 350px;
-  /* opacity: 0;
-  visibility: hidden; */
+  opacity: 0;
+  visibility: hidden;
   background-color: #fff;
   position: absolute;
   transition: 0.2s linear;
@@ -322,6 +322,7 @@ hr:not([size]) {
     background-color: #181a1b;
     font-weight: bold;
     line-height: 40px;
+    border-radius: 8px;
 }
 
 .thank p{
