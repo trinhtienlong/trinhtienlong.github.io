@@ -115,7 +115,9 @@ seeAllProduct(".btn-update button")
 
 let Card = JSON.parse(localStorage.getItem("cart")) || [];
 let cardMini = document.querySelector(".cus-iconCart");
-let cardMini1 = document.querySelector(".tet")
+let cardMini1 = document.querySelector(".tet");
+let cardMini2 = document.querySelector(".cus-iconCart1");
+let cardMini3 = document.querySelector(".tet1")
 function showCart(){
   let ttgh = "";
   let tong = 0;
@@ -149,31 +151,42 @@ function showCart(){
     '<button type="button" class="btn w-100 btnPayCard">'+
         'THANH TOÁN'+
     '</button>'
-  document.querySelector('.tet').innerHTML = ttgh;
-  let btnSeeCard = document.querySelector(".btnSeeCard");
-  let btnPayCard = document.querySelector(".btnPayCard");
-  btnSeeCard.onclick = () =>{location.href = "payment-card.html";}
-  btnPayCard.onclick = () =>{location.href = "payment-card-info.html";}
+  cardMini1.innerHTML = ttgh;
+  cardMini3.innerHTML = ttgh;
+  let btnSeeCard = document.querySelectorAll(".btnSeeCard");
+  for (let j = 0 ; j < btnSeeCard.length ; j++){
+    btnSeeCard[j].onclick = () =>{location.href = "payment-card.html";}
+  }
+  let btnPayCard = document.querySelectorAll(".btnPayCard");
+  for (let j = 0 ; j < btnSeeCard.length ; j++){
+    btnPayCard[j].onclick = () =>{location.href = "payment-card-info.html";}
+  }
   // remove sf
   let removes = cardMini1.querySelectorAll('.delete');
-  for (let i = 0; i < removes.length ; i++  ){
-    removes[i].onclick = () =>{
-      let rowCart = removes[i].parentElement.parentElement.parentElement;
-      let tensp = removes[i].parentElement.parentElement.querySelector('p').innerText
-      rowCart.remove() 
-      for( j = 0 ; j < Card.length ; j++ ){
-        if( Card[j].title == tensp ){
-          Card.splice(j, 1);
-          let json = JSON.stringify(Card);
-          localStorage.setItem("cart", json);
+  let removes1 = cardMini3.querySelectorAll('.delete');
+  function remove(iconRemove){
+    for (let i = 0; i < iconRemove.length ; i++  ){
+      iconRemove[i].onclick = () =>{
+        let rowCart = iconRemove[i].parentElement.parentElement.parentElement;
+        let tensp = iconRemove[i].parentElement.parentElement.querySelector('p').innerText
+        rowCart.remove() 
+        for( j = 0 ; j < Card.length ; j++ ){
+          if( Card[j].title == tensp ){
+            Card.splice(j, 1);
+            let json = JSON.stringify(Card);
+            localStorage.setItem("cart", json);
+          }
         }
+        showCart();
+        change(cardMini1);
+        change(cardMini3);
+        changeNumber();
+        showMyCart()
       }
-      showCart();
-      change();
-      changeNumber();
-      showMyCart()
     }
   }
+  remove(removes);
+  remove(removes1);
 }
 
 
@@ -196,9 +209,10 @@ function moverCard(btnCard){
 }
 
 
-function change(){
+function change(box){
   if( Card.length == 0 ){
-    cardMini1.innerHTML = 
+    console.log(1);
+    box.innerHTML = 
     '<img src="assets/imgs/empty-cart.svg" class="w-50" alt="">'+
     '<h5 class="text-center fontStyle">Cart Is Empty</h5>'+
     '<hr>'+
@@ -211,7 +225,13 @@ function change(){
     changeNumber()
   }
 }
-cardMini.onmouseover = change
+cardMini.onmouseover = () =>{
+  change(cardMini1);
+}
+cardMini2.onclick = () =>{
+  change(cardMini3);
+}
+
 function changeNumber(){
   let numberCard = document.querySelectorAll(".badge")
   for(let i=0 ; i <numberCard.length ; i++ ){

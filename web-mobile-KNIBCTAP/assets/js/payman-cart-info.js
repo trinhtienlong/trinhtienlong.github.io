@@ -30,6 +30,8 @@ function myFunction() {
 let Card = JSON.parse(localStorage.getItem("cart")) || [];
 let cardMini = document.querySelector(".cus-iconCart");
 let cardMini1 = document.querySelector(".tet")
+let cardMini2 = document.querySelector(".cus-iconCart1");
+let cardMini3 = document.querySelector(".tet1")
 function showCart(){
   let ttgh = "";
   let tong = 0;
@@ -63,32 +65,44 @@ function showCart(){
     '<button type="button" class="btn w-100 btnPayCard">'+
         'THANH TOÁN'+
     '</button>'
-  document.querySelector('.tet').innerHTML = ttgh;
-  let btnSeeCard = document.querySelector(".btnSeeCard");
-  let btnPayCard = document.querySelector(".btnPayCard");
-  btnSeeCard.onclick = () =>{location.href = "payment-card.html";}
-  btnPayCard.onclick = () =>{location.href = "payment-card-info.html";}
+  cardMini1.innerHTML = ttgh;
+  cardMini3.innerHTML = ttgh;
+  let btnSeeCard = document.querySelectorAll(".btnSeeCard");
+  for (let j = 0 ; j < btnSeeCard.length ; j++){
+    btnSeeCard[j].onclick = () =>{location.href = "payment-card.html";}
+  }
+  let btnPayCard = document.querySelectorAll(".btnPayCard");
+  for (let j = 0 ; j < btnSeeCard.length ; j++){
+    btnPayCard[j].onclick = () =>{location.href = "payment-card-info.html";}
+  }
   // remove sf
   let removes = cardMini1.querySelectorAll('.delete');
-  for (let i = 0; i < removes.length ; i++  ){
-    removes[i].onclick = () =>{
-      let rowCart = removes[i].parentElement.parentElement.parentElement;
-      let tensp = removes[i].parentElement.parentElement.querySelector('p').innerText
-      rowCart.remove() 
-      for( j = 0 ; j < Card.length ; j++ ){
-        if( Card[j].title == tensp ){
-          Card.splice(j, 1);
-          let json = JSON.stringify(Card);
-          localStorage.setItem("cart", json);
+  let removes1 = cardMini3.querySelectorAll('.delete');
+  function remove(iconRemove){
+    for (let i = 0; i < iconRemove.length ; i++  ){
+      iconRemove[i].onclick = () =>{
+        let rowCart = iconRemove[i].parentElement.parentElement.parentElement;
+        let tensp = iconRemove[i].parentElement.parentElement.querySelector('p').innerText
+        rowCart.remove() 
+        for( j = 0 ; j < Card.length ; j++ ){
+          if( Card[j].title == tensp ){
+            Card.splice(j, 1);
+            let json = JSON.stringify(Card);
+            localStorage.setItem("cart", json);
+          }
         }
+        showCart();
+        change(cardMini1);
+        change(cardMini3);
+        changeNumber();
+        showInfoCart()
       }
-      showCart();
-      change();
-      changeNumber();
-      showInfoCart()
     }
   }
+  remove(removes);
+  remove(removes1);
 }
+
 
 function moverCard(btnCard){
   let btnaddtocard = document.querySelector(btnCard)
@@ -108,34 +122,29 @@ function moverCard(btnCard){
   }
 }
 
-function change(){
+function change(box){
   if( Card.length == 0 ){
-    cardMini1.innerHTML = 
+    console.log(1);
+    box.innerHTML = 
     '<img src="assets/imgs/empty-cart.svg" class="w-50" alt="">'+
     '<h5 class="text-center fontStyle">Cart Is Empty</h5>'+
     '<hr>'+
     '<button type="button" name="tất cả sản phẩm" class="btn w-100 btnaddtocard">CỬA HÀNG</button>'
-    let btnaddtocard = document.querySelector(".btnaddtocard")
-    let boxEmpty = [];
-    btnaddtocard.onclick = () =>{
-      let btnName = btnaddtocard.getAttribute("name");
-      let boxlist = localStorage.getItem("dataBox");
-      let boxLists = JSON.parse(boxlist);
-      for (let i = 0; i < boxLists.length; i++) {
-        if (btnName === "tất cả sản phẩm"){
-          boxEmpty.push(boxLists[i]);
-        }
-      }
-      let json = JSON.stringify(boxEmpty);
-      localStorage.setItem("datas", json);
-      location.href = "product-portfolio1.html";
-    }
+    moverCard(".btnaddtocard");
+    changeNumber()
   }
   if( Card.length > 0 ){
     showCart();
+    changeNumber()
   }
 }
-cardMini.onmouseover = change
+cardMini.onmouseover = () =>{
+  change(cardMini1);
+}
+cardMini2.onclick = () =>{
+  change(cardMini3);
+}
+
 function changeNumber(){
   let numberCard = document.querySelectorAll(".badge")
   for(let i=0 ; i <numberCard.length ; i++ ){
@@ -156,7 +165,7 @@ function showInfoCart(){
     document.querySelector('#boxPaymentCard').innerHTML = 
     '<div class="row pt-5 pb-5">'+
       '<div class="col-12 p-4 empty-flex justify-content-center">'+
-          '<p>Sản phẩm đã bị xóa hết trong mini cart.</p>'+
+          '<p>Chưa có sản phẩm nào trong giỏ hàng.</p>'+
           '<button type="button" name="tất cả sản phẩm" class="btn mt-1 btnSeeCard">QUAY TRỞ LẠI CỬA HÀNG</button>'+
       '</div>'+
     '</div>'
@@ -427,7 +436,7 @@ formLogin.addEventListener("click", function (e) {
     $(".modal-body").removeClass("yellow").addClass("red");
     $(".modal-body")
       .html(`<i class="fa-solid fa-question" style="font-size: 45px;"></i>
-      <div class="mt-2">Mật khẩu hoặc địa chỉ của bạn không đủ điều kiện</div>`);
+      <div class="mt-2">Kiểm tra lại địa chỉ hoặc mật khẩu của bạn!</div>`);
   } else {
     let nameEmailVal = nameEmail.value;
     let passwordVal = passlogin.value;

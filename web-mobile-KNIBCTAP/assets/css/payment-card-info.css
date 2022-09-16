@@ -215,6 +215,17 @@ hr:not([size]) {
   border-radius: 5px;
 }
 
+.tet1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tet1 button:nth-child(7){
+  color: white !important;
+  background-color: #425E81 !important;
+}
+
 .tet button:nth-child(7),
 .tet1 button:nth-child(7) {
   color: white !important;

@@ -485,7 +485,9 @@ localStorage.setItem("dataChageImg", localChangeImgstr);
 // tạo form sp ra ngoài cart
 let Card = JSON.parse(localStorage.getItem("cart")) || [];
 let cardMini = document.querySelector(".cus-iconCart");
-let cardMini1 = document.querySelector(".tet")
+let cardMini2 = document.querySelector(".cus-iconCart1");
+let cardMini1 = document.querySelector(".tet");
+let cardMini3 = document.querySelector(".tet1")
 function showCart(){
   let ttgh = "";
   let tong = 0;
@@ -546,9 +548,9 @@ function showCart(){
 }
 
 // render dữ liệu cart khi hover( đọc từ localstr )
-function change(){
+function change(box){
   if( Card.length == 0 ){
-    cardMini1.innerHTML = 
+    box.innerHTML = 
     '<img src="assets/imgs/empty-cart.svg" class="w-50" alt="">'+
     '<h5 class="text-center fontStyle">Cart Is Empty</h5>'+
     '<hr>'+
@@ -573,7 +575,9 @@ function change(){
     showCart();
   }
 }
-cardMini.onmouseover = change
+cardMini.onmouseover = change(cardMini1);
+cardMini2.onclick = change(cardMini3);
+
 // thay đổi số lượng trong cart
 function changeNumber(){
   let numberCard = document.querySelectorAll(".badge")
