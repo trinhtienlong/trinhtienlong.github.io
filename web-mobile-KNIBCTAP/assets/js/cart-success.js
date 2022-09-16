@@ -109,3 +109,170 @@ function seeAllProduct(arrItem) {
   }
 }
 seeAllProduct(".item");
+
+let Card = JSON.parse(localStorage.getItem("cart")) || [];
+let user = JSON.parse(localStorage.getItem("userName"));
+let cardMini = document.querySelector(".cus-iconCart");
+let cardMini1 = document.querySelector(".tet")
+function showCart(){
+  let ttgh = "";
+  let tong = 0;
+  for(let i = 0; i < Card.length; i++){
+    tong += Card[i].solg * Card[i].price.replaceAll(",", "");
+    ttgh +=
+    '<div class="row">' +
+      '<div class="col-3">' +
+          '<img class="w-100" src="'+Card[i].image+'" alt="">' +
+      '</div>' +
+      '<div class="col-9">' +
+        '<p style="margin: 0;">'+Card[i].title+'</p>' +
+        '<div class="tet-flex">' +
+            '<div class="flex-child"><span>'+Card[i].solg+'</span><span> x </span><span>'+Card[i].price+' ₫</span></div>' +
+            '<div class="delete">'+
+            '<i class="fa-solid fa-trash-can scan"></i>' +
+            '</div>'+
+        '</div>' +
+      '</div>' +
+    '</div>'+
+    '<hr>'
+  }
+  ttgh += 
+    '<div class="tong" style="text-align: center ;">'+
+        '<span>Tổng cộng : </span><span>'+tong.toLocaleString("en")+' ₫</span>'+
+    '</div>'+
+    '<hr>'+
+    '<button type="button" class="btn mb-2 w-100 btnSeeCard">'+
+        'XEM GIỎ HÀNG'+
+    '</button>'+
+    '<button type="button" class="btn w-100 btnPayCard">'+
+        'THANH TOÁN'+
+    '</button>'
+  document.querySelector('.tet').innerHTML = ttgh;
+  let btnSeeCard = document.querySelector(".btnSeeCard");
+  let btnPayCard = document.querySelector(".btnPayCard");
+  btnSeeCard.onclick = () =>{location.href = "payment-card.html";}
+  btnPayCard.onclick = () =>{location.href = "payment-card-info.html";}
+  // remove sf
+  let removes = cardMini1.querySelectorAll('.delete');
+  for (let i = 0; i < removes.length ; i++  ){
+    removes[i].onclick = () =>{
+      let rowCart = removes[i].parentElement.parentElement.parentElement;
+      let tensp = removes[i].parentElement.parentElement.querySelector('p').innerText
+      rowCart.remove() 
+      for( j = 0 ; j < Card.length ; j++ ){
+        if( Card[j].title == tensp ){
+          Card.splice(j, 1);
+          let json = JSON.stringify(Card);
+          localStorage.setItem("cart", json);
+        }
+      }
+      showCart();
+      change();
+      changeNumber()
+    }
+  }
+}
+
+function moverCard(btnCard){
+  let btnaddtocard = document.querySelector(btnCard)
+    let boxEmpty = [];
+    btnaddtocard.onclick = () =>{
+      let btnName = btnaddtocard.getAttribute("name");
+      let boxlist = localStorage.getItem("dataBox");
+      let boxLists = JSON.parse(boxlist);
+      for (let i = 0; i < boxLists.length; i++) {
+        if (btnName === "tất cả sản phẩm"){
+          boxEmpty.push(boxLists[i]);
+        }
+      }
+      let json = JSON.stringify(boxEmpty);
+      localStorage.setItem("datas", json);
+      location.href = "product-portfolio1.html";
+  }
+}
+
+function change(){
+  if( Card.length == 0 ){
+    cardMini1.innerHTML = 
+    '<img src="assets/imgs/empty-cart.svg" class="w-50" alt="">'+
+    '<h5 class="text-center fontStyle">Cart Is Empty</h5>'+
+    '<hr>'+
+    '<button type="button" name="tất cả sản phẩm" class="btn w-100 btnaddtocard">CỬA HÀNG</button>'
+    moverCard(".btnaddtocard");
+    changeNumber()
+  }
+  if( Card.length > 0 ){
+    showCart();
+    changeNumber()
+  }
+}
+cardMini.onmouseover = change
+function changeNumber(){
+  let numberCard = document.querySelectorAll(".badge")
+  for(let i=0 ; i <numberCard.length ; i++ ){
+    numberCard[i].innerText = Card.length
+    if( numberCard[i].innerText == 0 ){
+      numberCard[i].style.display = "none"
+    }else{
+      numberCard[i].style.display = "inline-block"
+    }
+  }
+}
+changeNumber()
+
+
+function showSuccessCart(){
+  let ttgh = "";
+  let tong = 0;
+  for(let i = 0; i < Card.length; i++){
+    let tt = Card[i].price.replaceAll(",", "") * Card[i].solg
+    tong += tt;
+    ttgh +=
+    '<tr>'+
+      '<th scope="row" class="textcl">'+
+          '<span>'+Card[i].title+'</span> <span>× '+Card[i].solg+'</span>'+
+      '</th>'+
+      '<td class="text-end color-price">'+
+          '<span>'+tt.toLocaleString("en")+'&nbsp;₫'+'</span>'+
+      '</td>'+
+    '</tr>'
+  }
+  ttgh += 
+  '<tr>'+
+  '<th scope="row">GIAO NHẬN HÀNG</th>'+
+  '<td colspan="2" class="text-end color-price1">Kiểm tra thanh toán</td>'+
+  '</tr>'+
+  '<tr>'+
+  '<th scope="row">TỔNG CỘNG</th>'+
+  '<td colspan="2" class="text-end color-price">'+
+    '<span>'+tong.toLocaleString("en")+'&nbsp;₫'+'</span>'+
+  '</td>'+
+  '</tr>'
+  document.querySelector('#myBody').innerHTML = ttgh;
+  let thank = document.querySelector('#thank');
+  thank.innerHTML = 
+  `
+  <li>Họ tên: ${user.name} </li>
+  <li>Điện thoại: ${user.number} </li>
+  <li>Địa chỉ: ${user.city} </li>
+  <li>Email: ${user.email} </li>
+  <li></li>
+  <li></li>
+  <li>Tổng tiền đơn hàng: <span class="color-price">${tong.toLocaleString("en")}<span>&nbsp;đ</span></span></li>
+  <li>Phương thức thanh toán: Kiểm tra thanh toán </li>
+  `
+  function time(){
+    let d = new Date();
+    let thu = ["Chủ nhật","Thứ hai","Thứ ba","Thứ Tư","Thứ năm","Thứ sáu","Thứ bảy"];
+    let thang = d.getMonth() + 1;
+
+    document.querySelector('#thank li:nth-child(5)').innerHTML = ("Ngày đặt hàng:&nbsp;" + thu[d.getDay()] + " ngày " + d.getDate()
+    + " tháng " + thang + " năm " + d.getFullYear() + "<br>");
+    document.querySelector('#thank li:nth-child(6)').innerHTML = 
+    ("Thời gian:&nbsp;" + d.getHours() + "h : " + d.getMinutes() + "p");
+  }
+  time()
+}
+showSuccessCart()
+
+

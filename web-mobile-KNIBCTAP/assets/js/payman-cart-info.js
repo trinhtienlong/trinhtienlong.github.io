@@ -84,11 +84,29 @@ function showCart(){
       }
       showCart();
       change();
-      changeNumber()
+      changeNumber();
+      showInfoCart()
     }
   }
 }
 
+function moverCard(btnCard){
+  let btnaddtocard = document.querySelector(btnCard)
+    let boxEmpty = [];
+    btnaddtocard.onclick = () =>{
+      let btnName = btnaddtocard.getAttribute("name");
+      let boxlist = localStorage.getItem("dataBox");
+      let boxLists = JSON.parse(boxlist);
+      for (let i = 0; i < boxLists.length; i++) {
+        if (btnName === "tất cả sản phẩm"){
+          boxEmpty.push(boxLists[i]);
+        }
+      }
+      let json = JSON.stringify(boxEmpty);
+      localStorage.setItem("datas", json);
+      location.href = "product-portfolio1.html";
+  }
+}
 
 function change(){
   if( Card.length == 0 ){
@@ -133,8 +151,17 @@ changeNumber()
 
 let infoCart = document.querySelector('#boxInfo');
 let infototal = document.querySelector('.color-total')
-console.log(infototal);
 function showInfoCart(){
+  if ( Card.length == 0 ){
+    document.querySelector('#boxPaymentCard').innerHTML = 
+    '<div class="row pt-5 pb-5">'+
+      '<div class="col-12 p-4 empty-flex justify-content-center">'+
+          '<p>Sản phẩm đã bị xóa hết trong mini cart.</p>'+
+          '<button type="button" name="tất cả sản phẩm" class="btn mt-1 btnSeeCard">QUAY TRỞ LẠI CỬA HÀNG</button>'+
+      '</div>'+
+    '</div>'
+    moverCard(".btnSeeCard")
+  }else{
   let ttgh = "";
   let tong = 0;
   for(let i = 0; i < Card.length; i++){
@@ -154,6 +181,7 @@ function showInfoCart(){
   // let btnPayCard = document.querySelector(".btnPayCard");
   // btnSeeCard.onclick = () =>{location.href = "payment-card.html";}
   // btnPayCard.onclick = () =>{location.href = "payment-card-info.html";}
+  }
 }
 showInfoCart()
 
@@ -398,8 +426,8 @@ formLogin.addEventListener("click", function (e) {
   if (emptyCheck || passCheck) {
     $(".modal-body").removeClass("yellow").addClass("red");
     $(".modal-body")
-      .html(`<i class="fa-solid fa-triangle-exclamation" style="font-size: 50px;"></i>
-      <div class="mt-2">Kiểm tra lại mật khẩu hoặc địa chỉ của bạn ?</div>`);
+      .html(`<i class="fa-solid fa-question" style="font-size: 45px;"></i>
+      <div class="mt-2">Mật khẩu hoặc địa chỉ của bạn không đủ điều kiện</div>`);
   } else {
     let nameEmailVal = nameEmail.value;
     let passwordVal = passlogin.value;
@@ -412,11 +440,20 @@ formLogin.addEventListener("click", function (e) {
     ) {
       $(".modal-body").removeClass("yellow red").addClass("green");
       $(".modal-body")
-        .html(`<i class="fa-solid fa-circle-check" style="font-size: 50px;"></i>
-        <div class="mt-2">Tài khoản của bạn đã đăng nhập thành công !</div>`);
+        .html(`<i class="fa-solid fa-circle-check" style="font-size: 45px;"></i>
+        <div class="mt-2">Tài khoản của bạn đã đăng nhập thành công</div>`);
       setTimeout(() => {
         location.href = "cart-success.html";
       }, 850);
+    }
+    if (
+      (nameEmailVal !== data.email && passwordVal !== data.password) ||
+      (nameEmailVal !== data.namelogin && passwordVal !== data.password)
+    ) {
+      $(".modal-body").removeClass("green red").addClass("yellow");
+      $(".modal-body")
+        .html(`<i class="fa-solid fa-triangle-exclamation" style="font-size: 45px;"></i>
+        <div class="mt-2">Tài khoản của bạn đăng nhập không thành công</div>`);
     }
   }
 });

@@ -341,7 +341,7 @@ hr:not([size]) {
 }
 
 .color-price1{
-  color: #aeaeae;
+  color: #636363;
   font-weight: bold;
 }
 
@@ -540,6 +540,9 @@ hr {
   border: solid 0.5px !important;
 }
 
+.textcl{
+  color: #636363;
+}
 
 @media only screen and (max-width: 1200px) {
   .collapse .d-flex {
