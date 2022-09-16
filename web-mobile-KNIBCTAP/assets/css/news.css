@@ -215,6 +215,12 @@ hr:not([size]) {
   border-radius: 5px;
 }
 
+.tet1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .tet button:nth-child(7) {
   color: white !important;
   background-color: #425e81 !important;
@@ -233,9 +239,7 @@ hr:not([size]) {
   background-color: #af0303 !important;
 }
 
-.tet hr {
-  margin: 10px 0;
-}
+
 
 .tet1 button:nth-child(7) {
   color: white !important;
@@ -559,11 +563,12 @@ hr:not([size]) {
   background-color: #af0303  !important;
 }
 
-
-.tet hr{
+.tet hr,
+.tet1 hr{
   width: 100%;
   margin: 8px 0;
 }
+
 
 hr {
   color: #afafaf !important;

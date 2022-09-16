@@ -150,7 +150,8 @@ body {
   border-radius: 5px;
 }
 
-.tet hr{
+.tet hr,
+.tet1 hr{
   width: 100%;
   margin: 8px 0;
 }

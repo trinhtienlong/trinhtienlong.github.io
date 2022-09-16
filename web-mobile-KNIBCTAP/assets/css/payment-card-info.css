@@ -248,9 +248,6 @@ hr:not([size]) {
   background-color: #af0303 !important;
 }
 
-.tet hr {
-  margin: 10px 0;
-}
 
 .nav-item:hover .tet {
   visibility: visible;
@@ -676,8 +673,8 @@ small {
   background-color: #af0303  !important;
 }
 
-
-.tet hr{
+.tet hr,
+.tet1 hr{
   width: 100%;
   margin: 8px 0;
 }

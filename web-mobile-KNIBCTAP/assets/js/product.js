@@ -464,6 +464,7 @@ function showCart(){
 function change(box){
   if( Card.length == 0 ){
     console.log(1);
+    box.style.overflowY = "hidden";
     box.innerHTML = 
     '<img src="assets/imgs/empty-cart.svg" class="w-50" alt="">'+
     '<h5 class="text-center fontStyle">Cart Is Empty</h5>'+
