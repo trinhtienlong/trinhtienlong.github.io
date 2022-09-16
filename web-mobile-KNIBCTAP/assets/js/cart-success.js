@@ -204,7 +204,7 @@ function showSuccessCart(){
   let thank = document.querySelector('#thank');
   thank.innerHTML = 
   `
-  <li>Họ tên: ${user.name} </li>
+  <li>Họ tên: ${user.userName.toUpperCase() + " " + user.name.toUpperCase()} </li>
   <li>Điện thoại: ${user.number} </li>
   <li>Địa chỉ: ${user.city} </li>
   <li>Email: ${user.email} </li>

@@ -298,8 +298,8 @@ function showMyCart(){
     let removes = document.querySelectorAll('.deletes');
     for (let i = 0; i < removes.length ; i++  ){
       removes[i].onclick = () =>{
-        let trCart = removes[i].parentElement.parentElement.parentElement;
-        let tensp = removes[i].parentElement.querySelector('span').innerText;
+        let trCart = removes[i].parentElement.parentElement.parentElement.parentElement;
+        let tensp = removes[i].parentElement.parentElement.querySelector('span').innerText;
         console.log(tensp);
         trCart.remove() 
         for( j = 0 ; j < Card.length ; j++ ){
@@ -309,11 +309,11 @@ function showMyCart(){
             localStorage.setItem("cart", json);
           }
         }
-        showMyCart();
+        tinhtong();
         change(cardMini1);
         change(cardMini3);
         changeNumber();
-        tinhtong();
+        showMyCart();
       }
     }
   }

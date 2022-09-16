@@ -337,6 +337,7 @@ hr:not([size]) {
 .thank ul{
     margin: 0;
     color: white;
+    list-style: none;
 }
 
 .color-price{
@@ -448,6 +449,11 @@ hr:not([size]) {
 .slideUp {
   animation:slideUp 0.7s;
   visibility: visible;
+}
+
+.battay{
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes slideUp {
