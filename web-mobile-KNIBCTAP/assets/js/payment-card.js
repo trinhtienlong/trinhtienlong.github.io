@@ -202,10 +202,12 @@ function change(){
     '<h5 class="text-center fontStyle">Cart Is Empty</h5>'+
     '<hr>'+
     '<button type="button" name="tất cả sản phẩm" class="btn w-100 btnaddtocard">CỬA HÀNG</button>'
-    moverCard(".btnaddtocard")
+    moverCard(".btnaddtocard");
+    changeNumber()
   }
   if( Card.length > 0 ){
     showCart();
+    changeNumber()
   }
 }
 cardMini.onmouseover = change
@@ -225,17 +227,20 @@ changeNumber()
 function ktgh(){
   if( Card.length == 0 ){
     document.querySelector('#boxPaymentCard').innerHTML = 
-    '<div class="col-12 p-4 empty-flex justify-content-center">'+
-        '<p>Chưa có sản phẩm nào trong giỏ hàng.</p>'+
-        '<button type="button" name="tất cả sản phẩm" class="btn mt-1 btnSeeCard">QUAY TRỞ LẠI CỬA HÀNG</button>'+
+    '<div class="row pt-5 pb-5">'+
+      '<div class="col-12 p-4 empty-flex justify-content-center">'+
+          '<p>Chưa có sản phẩm nào trong giỏ hàng.</p>'+
+          '<button type="button" name="tất cả sản phẩm" class="btn mt-1 btnSeeCard">QUAY TRỞ LẠI CỬA HÀNG</button>'+
+      '</div>'+
     '</div>'
     moverCard(".btnSeeCard")
   }
   if( Card.length > 0 ){
-    showMyCart()
+    showMyCart();
   }
 }
 ktgh()
+
 
 function showMyCart(){
   let ttgh = "";
@@ -283,64 +288,71 @@ function showMyCart(){
           localStorage.setItem("cart", json);
         }
       }
-      console.log(Card);
       showMyCart();
       change();
       changeNumber();
-      ktgh()
+      ktgh();
+      tinhtong();
     }
   }
 }
 showMyCart()
 
 
-
-// tăng giảm số lượng và cập nhật tổng tiền
-let updow = document.querySelectorAll(".updow");
-let tongPrice = document.querySelectorAll("#price");
-let tongPricess = document.querySelector('#tongPayment');
-for(let i = 0 ; i < updow.length ; i++ ){
-  let innerNumer = updow[i].querySelector('input');
-  let upNumber = updow[i].querySelector("#up");
-  let downNumber = updow[i].querySelector("#down");
-  let upNbParent = upNumber.parentElement.parentElement.parentElement
-  let upNbChild = upNbParent.querySelector('.ccc span')
-// so sánh và thay đổi số lượng trong cart và tính lại tổng tiền
-  function plus(cout){
-    for (let i = 0; i < Card.length; i++) {
-      if (upNbChild.innerText === Card[i].title) {
-        Card[i].solg = cout
-        let json = JSON.stringify(Card);
-        localStorage.setItem("cart", json);
+function tinhtong(){
+  // tăng giảm số lượng và cập nhật tổng tiền
+  let updow = document.querySelectorAll(".updow");
+  let tongPrice = document.querySelectorAll("#price");
+  let tongPricess = document.querySelector('#tongPayment');
+  for(let i = 0 ; i < updow.length ; i++ ){
+    let innerNumer = updow[i].querySelector('input');
+    let upNumber = updow[i].querySelector("#up");
+    let downNumber = updow[i].querySelector("#down");
+    let upNbParent = upNumber.parentElement.parentElement.parentElement
+    let upNbChild = upNbParent.querySelector('.ccc span')
+  // so sánh và thay đổi số lượng trong cart và tính lại tổng tiền
+    function plus(cout){
+      for (let i = 0; i < Card.length; i++) {
+        if (upNbChild.innerText === Card[i].title) {
+          Card[i].solg = cout;
+          let json = JSON.stringify(Card);
+          localStorage.setItem("cart", json);
+        }
+        // duyệt lại Cart đã đc thay đổi số lượng và tính lại tổng tiền
+        let tong = 0;
+        for (let j = 0; j < Card.length; j++){
+          let tongPrices = tongPrice[j]
+          let tt = Card[j].price.replaceAll(",", "") * Card[j].solg
+          tong += tt;
+          tongPrices.innerHTML = tt.toLocaleString("en")+'&nbsp;₫';
+        }
+        tongPricess.innerHTML = tong.toLocaleString("en")+'&nbsp;₫';
       }
-      // duyệt lại Cart đã đc thay đổi số lượng và tính lại tổng tiền
-      let tong = 0;
-      for (let j = 0; j < Card.length; j++){
-        let tongPrices = tongPrice[j]
-        let tt = Card[j].price.replaceAll(",", "") * Card[j].solg
-        tong += tt;
-        tongPrices.innerHTML = tt.toLocaleString("en")+'&nbsp;₫';
-      }
-      tongPricess.innerHTML = tong.toLocaleString("en")+'&nbsp;₫';
     }
-  }
-// tăng tiền
-  function up(){
-    let cout = innerNumer.value
-    let cout1 = parseInt(cout) + 1;
-    innerNumer.value = cout1;
-    plus(cout1)
-  }
-  upNumber.onclick = up;
-// giảm tiền
-  function down(){
-    let cout = innerNumer.value;
-    let cout1 = parseInt(cout);
-    if( cout1 > 0 ){
-      cout1 -= 1;
+  // tăng tiền
+    function up(){
+      let cout = innerNumer.value
+      let cout1 = parseInt(cout) + 1;
       innerNumer.value = cout1;
       plus(cout1)
     }
+    upNumber.onclick = up;
+  // giảm tiền
+    function down(){
+      let cout = innerNumer.value;
+      let cout1 = parseInt(cout);
+      if( cout1 > 1 ){
+        cout1 -= 1;
+        innerNumer.value = cout1;
+        plus(cout1)
+      }
+    }
+    downNumber.onclick = down
   }
-  downNumber.onclick = down
+}
+tinhtong()
+
+let payer = document.querySelector('#Payer')
+payer.onclick = () =>{
+  location.href = 'payment-card-info.html'
 }
