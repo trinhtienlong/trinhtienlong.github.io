@@ -170,7 +170,8 @@ function showCart(){
       }
       showCart();
       change();
-      changeNumber()
+      changeNumber();
+      showMyCart()
     }
   }
 }
@@ -243,56 +244,68 @@ ktgh()
 
 
 function showMyCart(){
-  let ttgh = "";
-  let tong = 0;
-  for(let i = 0; i < Card.length; i++){
-    let tt = Card[i].price.replaceAll(",", "") * Card[i].solg
-    tong += tt;
-    ttgh +=
-    '<tr>'+
-      '<th scope="row" class="c1">'+
-          '<div class="ccc">'+
-              '<div class="deletes me-3">'+
-                '<i class="fa-solid fa-trash-can fs-5"></i>'+
-              '</div>'+
-              '<img width="100px" class="me-3" src="'+Card[i].image+'" alt="">'+
-              '<span>'+Card[i].title+'</span>'+
-          '</div>'+
-      '</th>'+
-      '<td class="text-end align-middle">'+Card[i].price+'&nbsp;₫</td>'+
-      '<td class="align-middle">'+
-          '<div class="updow">'+
-              '<button type="button" id="down" class="btn btn-outline-secondary"><i class="fa-solid fa-minus"></i></button>'+
-              '<input style="font-weight: 600;" type="number" value="'+Card[i].solg+'">'+
-              '<button type="button" id="up" class="btn btn-outline-secondary"><i class="fa-solid fa-plus"></i></button>'+
-          '</div>'+
-      '</td>'+
-      '<td id="price" class="text-center align-middle">'+tt.toLocaleString("en")+'&nbsp;₫</td>'+
-    '</tr>'
+  if ( Card.length == 0 ){
+    document.querySelector('#boxPaymentCard').innerHTML = 
+    '<div class="row pt-5 pb-5">'+
+      '<div class="col-12 p-4 empty-flex justify-content-center">'+
+          '<p>Chưa có sản phẩm nào trong giỏ hàng.</p>'+
+          '<button type="button" name="tất cả sản phẩm" class="btn mt-1 btnSeeCard">QUAY TRỞ LẠI CỬA HÀNG</button>'+
+      '</div>'+
+    '</div>'
+    moverCard(".btnSeeCard")
   }
-  document.querySelector('#tongPayment').innerHTML = tong.toLocaleString("en")+'&nbsp;₫'
-  document.querySelector('#mycart').innerHTML = ttgh;
-  // remove sf
-  let removes = document.querySelectorAll('.deletes');
-  console.log(removes);
-  for (let i = 0; i < removes.length ; i++  ){
-    removes[i].onclick = () =>{
-      let trCart = removes[i].parentElement.parentElement.parentElement;
-      let tensp = removes[i].parentElement.querySelector('span').innerText;
-      console.log(tensp);
-      trCart.remove() 
-      for( j = 0 ; j < Card.length ; j++ ){
-        if( Card[j].title == tensp ){
-          Card.splice(j, 1);
-          let json = JSON.stringify(Card);
-          localStorage.setItem("cart", json);
+  else{
+    let ttgh = "";
+    let tong = 0;
+    for(let i = 0; i < Card.length; i++){
+      let tt = Card[i].price.replaceAll(",", "") * Card[i].solg
+      tong += tt;
+      ttgh +=
+      '<tr>'+
+        '<th scope="row" class="c1">'+
+            '<div class="ccc">'+
+                '<div class="deletes me-3">'+
+                  '<i class="fa-solid fa-trash-can fs-5"></i>'+
+                '</div>'+
+                '<img width="100px" class="me-3" src="'+Card[i].image+'" alt="">'+
+                '<span>'+Card[i].title+'</span>'+
+            '</div>'+
+        '</th>'+
+        '<td class="text-end align-middle">'+Card[i].price+'&nbsp;₫</td>'+
+        '<td class="align-middle">'+
+            '<div class="updow">'+
+                '<button type="button" id="down" class="btn btn-outline-secondary"><i class="fa-solid fa-minus"></i></button>'+
+                '<input style="font-weight: 600;" type="number" value="'+Card[i].solg+'">'+
+                '<button type="button" id="up" class="btn btn-outline-secondary"><i class="fa-solid fa-plus"></i></button>'+
+            '</div>'+
+        '</td>'+
+        '<td id="price" class="text-center align-middle">'+tt.toLocaleString("en")+'&nbsp;₫</td>'+
+      '</tr>'
+    }
+    document.querySelector('#tongPayment').innerHTML = tong.toLocaleString("en")+'&nbsp;₫'
+    document.querySelector('#mycart').innerHTML = ttgh;
+    // remove sf
+    let removes = document.querySelectorAll('.deletes');
+    console.log(removes);
+    for (let i = 0; i < removes.length ; i++  ){
+      removes[i].onclick = () =>{
+        let trCart = removes[i].parentElement.parentElement.parentElement;
+        let tensp = removes[i].parentElement.querySelector('span').innerText;
+        console.log(tensp);
+        trCart.remove() 
+        for( j = 0 ; j < Card.length ; j++ ){
+          if( Card[j].title == tensp ){
+            Card.splice(j, 1);
+            let json = JSON.stringify(Card);
+            localStorage.setItem("cart", json);
+          }
         }
+        showMyCart();
+        change();
+        changeNumber();
+        ktgh();
+        tinhtong();
       }
-      showMyCart();
-      change();
-      changeNumber();
-      ktgh();
-      tinhtong();
     }
   }
 }
