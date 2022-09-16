@@ -307,7 +307,6 @@ function showMyCart(){
     document.querySelector('#mycart').innerHTML = ttgh;
     // remove sf
     let removes = document.querySelectorAll('.deletes');
-    console.log(removes);
     for (let i = 0; i < removes.length ; i++  ){
       removes[i].onclick = () =>{
         let trCart = removes[i].parentElement.parentElement.parentElement;
@@ -322,7 +321,8 @@ function showMyCart(){
           }
         }
         showMyCart();
-        change();
+        change(cardMini1);
+        change(cardMini3);
         changeNumber();
         ktgh();
         tinhtong();

@@ -187,10 +187,6 @@ function showInfoCart(){
   }
   infoCart.innerHTML = ttgh;
   infototal.innerHTML = tong.toLocaleString("en")+'&nbsp;₫';
-  // let btnSeeCard = document.querySelector(".btnSeeCard");
-  // let btnPayCard = document.querySelector(".btnPayCard");
-  // btnSeeCard.onclick = () =>{location.href = "payment-card.html";}
-  // btnPayCard.onclick = () =>{location.href = "payment-card-info.html";}
   }
 }
 showInfoCart()
