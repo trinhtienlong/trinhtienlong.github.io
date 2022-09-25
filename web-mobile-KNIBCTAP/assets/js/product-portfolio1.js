@@ -163,17 +163,34 @@ function renderProduct() {
   list1.innerHTML = "";
 
   for (let i = 0; i < product.length; i++) {
-    list1.innerHTML += `
-      <div class="col-lg-3 col-md-4 col-6 mb-4 por-flex">
-      <div class="h-100 h-white">
-      <div class="porfolio-img">
-      <img class="w-100" src="${product[i].image}">
-      </div>
-      <div class="porfolio-title">
-      <p>${product[i].title}</p>
-      <span>${product[i].price} ₫</span>
-      </div>
-      </div>
+    list1.innerHTML += 
+    // `
+    //   <div class="col-lg-3 col-md-4 col-6 mb-4 por-flex">
+    //   <div class="h-100 h-white">
+    //   <div class="porfolio-img">
+    //   <img class="w-100" src="${product[i].image}">
+    //   </div>
+    //   <div class="porfolio-title">
+    //   <p>${product[i].title}</p>
+    //   <span>${product[i].price} ₫</span>
+    //   </div>
+    //   </div>
+    //   </div>`
+      `<div class="col-lg-3 col-md-4 col-6 mb-3 por-box">
+          <div class="por-flex">
+              <div class="porfolio-img">
+                  <img class="w-100" src="${product[i].image}" alt="">
+              </div>
+              <div class="porfolio-title text-deco">
+                  <p>${product[i].title}</p>
+                  <span>${product[i].price} ₫</span>
+              </div>
+          </div>
+          <div class="addto position">
+              <div class="addto-child">
+                  <span>Thêm vào giỏ hàng</span><i class="fa-solid fa-cart-shopping icon-cart1 "></i>
+              </div>
+          </div>
       </div>`;
   }
 }
@@ -247,22 +264,27 @@ function hienDT(thuonghieuchon_arr = [], giaBan_arr = []) {
         continue;
       }
     }
-    list1.innerHTML += `
-      <div class="col-lg-3 col-md-4 col-6 mb-4 por-flex">
-        <div class="h-100 h-white">
-          <div class="porfolio-img">
-              <img class="w-100" src="${datas[i].image}" alt="">
-          </div>
-          <div class="porfolio-title text-deco">
-              <p>${datas[i].title}</p>
-              <span>${datas[i].price} ₫</span>
-          </div>
+    list1.innerHTML +=
+      `<div class="col-lg-3 col-md-4 col-6 mb-3 por-box">
+        <div class="por-flex">
+            <div class="porfolio-img">
+                <img class="w-100" src="${datas[i].image}" alt="">
+            </div>
+            <div class="porfolio-title text-deco">
+                <p>${datas[i].title}</p>
+                <span>${datas[i].price} ₫</span>
+            </div>
+        </div>
+        <div class="addto position">
+            <div class="addto-child">
+                <span>Thêm vào giỏ hàng</span><i class="fa-solid fa-cart-shopping icon-cart1 "></i>
+            </div>
         </div>
       </div>`;
   }
   movePoduct("#list1 .por-flex", "p");
   if( list1.innerHTML == '' ){
-    list1.innerHTML = '<h2 class="text-center fontStyle" >Empty Booth</h2><div class="d-flex justify-content-center"><img src="assets/imgs/no-results.png" class="w-50" alt=""></div>'
+    list1.innerHTML = '<h2 class="text-center fontStyle" >Empty Booth</h2><div class="d-flex justify-content-center"><img src="assets/imgs/epytybox.png" class="w-25" alt=""></div>'
   }
 }
 
@@ -299,26 +321,7 @@ for (let i = 0; i < thuongHieu.length; i++) {
   thuongHieu[i].onchange = chonDT;
 }
 
-// function movePoduct(boxqrAll, qrText, qrPrice) {
-//   let proList = document.querySelectorAll(boxqrAll);
-//   for (let i = 0; i < proList.length; i++) {
-//     proList[i].onclick = () => {
-//       let proTitle = proList[i].querySelector(qrText).innerText;
-//       let proPrice = proList[i].querySelector(qrPrice).innerText;
-//       let boxList = [
-//         {
-//           title: proTitle,
-//           price: proPrice,
-//         },
-//       ];
-//       let json = JSON.stringify(boxList);
-//       localStorage.setItem("data", json);
-//       location.href = "product.html";
-//     };
-//   }
-// }
-// movePoduct(".box-pk .row", ".pk-portfolio p", ".pk-portfolio span");
-// movePoduct("#list1 .por-flex", ".porfolio-title p", ".porfolio-title span");
+
 
 function movePoduct(boxqrAll, qrText) {
   let proList = document.querySelectorAll(boxqrAll);

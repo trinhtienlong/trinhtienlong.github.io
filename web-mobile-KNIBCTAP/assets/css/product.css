@@ -258,8 +258,8 @@ hr {
   color: #fd3b52;
 }
 
-.badge{
-  top: 20% !important;
+.badge {
+  cursor: pointer;
   left: 96% !important;
 }
 
@@ -841,8 +841,21 @@ tr {
   color: #000000;
 }
 
-.nav-link:hover {
+.nav-link{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.nav-link:hover,
+.infos:hover{
   color: rgb(52, 191, 255) !important;
+}
+
+.infos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
 }
 
 .fontStyle{

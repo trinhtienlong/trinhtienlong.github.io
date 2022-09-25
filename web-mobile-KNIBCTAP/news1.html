@@ -12,15 +12,15 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- css -->
-    <link rel="stylesheet" href="assets/css/news1.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <!-- slick css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/news1.css">
 
     <title>tin hay - chi tiết</title>
 </head>
@@ -85,12 +85,18 @@
                                     <i style="font-size: 1.2rem; width: 50px" class="fa-brands fa-app-store me-3"></i>Cửa hàng
                                 </li>
                                 <hr>
-                                <li class="item w-100 text-end">
-                                    <a aria-current="page" href="Q&A.html">Hỏi đáp</a>
+                                <li class="item w-100 d-flex justify-content-end">
+                                    <a class="d-flex align-items-center" aria-current="page" href="Q&A.html">
+                                        <i style="font-size: 1.2rem; width: 30px" class="fa-solid fa-circle-question me-3"></i>
+                                        Hỏi đáp
+                                    </a>
                                 </li>
                                 <hr>
-                                <li class="item w-100 text-end">
-                                    <a aria-current="page" href="news.html">Tin tức</a>
+                                <li class="item w-100 d-flex justify-content-end">
+                                    <a  class="d-flex align-items-center" aria-current="page" href="news.html">
+                                        <i style="font-size: 1.2rem; width: 30px" class="fa-solid fa-newspaper me-3"></i>
+                                        Tin tức
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -142,10 +148,12 @@
                         </form>
 
                         <ul class="navbar-nav mb-2 mb-lg-0">
-                            <li class="nav-item me-1">
+                            <li class="nav-item me-1 infos">
+                                <i class="fa-solid fa-newspaper"></i>
                                 <a class="nav-link active" aria-current="page" href="news.html">Tin hay</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item infos">
+                                <i class="fa-solid fa-circle-question"></i>
                                 <a class="nav-link active" aria-current="page" href="Q&A.html">Hỏi đáp</a>
                             </li>
                         </ul>
@@ -278,11 +286,11 @@
                     </div>
                     <div class="footer-time">
                         <div class="time1">
-                            <p>Tư vấn miễn phí ( 24 / 7)</p>
+                            <p>Tư vấn miễn phí (&nbsp24&nbsp/&nbsp7&nbsp)</p>
                             <p>0123456789</p>
                         </div>
                         <div class="time2">
-                            <p>Góp ý phản ánh (8h00 - 22h00)</p>
+                            <p>Góp ý phản ánh (&nbsp8h00&nbsp-&nbsp22h00&nbsp)</p>
                             <p>0123456789</p>
                         </div>
                     </div>

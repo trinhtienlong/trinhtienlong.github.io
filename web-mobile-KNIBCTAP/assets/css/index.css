@@ -128,7 +128,13 @@ body {
   position: relative;
 }
 
-.nav-link:hover{
+.nav-link{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.nav-link:hover,
+.infos:hover{
   color: rgb(52, 191, 255) !important;
 }
 
@@ -688,7 +694,6 @@ body {
 
 .badge {
   cursor: pointer;
-  top: 20% !important;
   left: 96% !important;
 }
 
@@ -737,6 +742,13 @@ hr {
 .deletes:hover,
 .delete:hover{
   cursor: pointer;
+}
+
+.infos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
 }
 
 @media only screen and (max-width: 1200px) {
