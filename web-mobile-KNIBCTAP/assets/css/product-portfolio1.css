@@ -660,6 +660,7 @@ img{
 .badge {
   cursor: pointer;
   left: 96% !important;
+  top: 20%;
 }
 
 .gototop{

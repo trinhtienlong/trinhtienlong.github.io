@@ -261,6 +261,7 @@ hr {
 .badge {
   cursor: pointer;
   left: 96% !important;
+  top: 20%;
 }
 
 .color-prd span:nth-child(2){

@@ -523,6 +523,7 @@ hr:not([size]) {
 .badge {
   cursor: pointer;
   left: 96% !important;
+  top: 20%;
 }
 
 .item a{
