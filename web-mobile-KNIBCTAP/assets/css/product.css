@@ -240,9 +240,6 @@ hr {
   color: white;
 }
 
-.text-deco:hover{
-  color: rgb(52, 191, 255);
-}
 
 .text-deco1{
   display: block;
@@ -580,21 +577,17 @@ tr {
 }
 
 .image-item .img img {
-  transition: 0.3s linear;
+  transition: 0.38s linear;
 }
 
-.image-item:hover .img img {
+.image-item:hover .title-price{
+  color: rgb(52, 191, 255) ;
+}
+
+.image-item:hover .img img{
   transform: scale(1.05);
 }
 
-.image-item:hover .img{
-  border-left: solid 2px #d2d2d273;
-  border-right: solid 2px #d2d2d273;
-}
-
-.image-item {
-  transition: 0.2s linear;
-}
 
 .title-price {
   background-color: #fff;

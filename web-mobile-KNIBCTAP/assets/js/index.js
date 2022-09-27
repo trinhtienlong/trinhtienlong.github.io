@@ -143,7 +143,7 @@ const localProduct = [
     name: "laptop",
     names: "HP ProBook",
     image: "assets/imgs/hp-probook-440-g3-t9s24pa-01.jpg",
-    title: "Laptop HP ProBook 440 G3 T9S24PA Bạc",
+    title: "Laptop HP ProBook 440 G3 T9S24PA Bạc Core i5-7500U/Win10 (13.3 inch) – Hàng Chính Hãng",
     price: "9,800,000",
   },
   {
@@ -352,7 +352,7 @@ const localChangeImg = [
     ],
   },
   {
-    name: "Laptop HP ProBook 440 G3 T9S24PA Bạc",
+    name: "Laptop HP ProBook 440 G3 T9S24PA Bạc Core i5-7500U/Win10 (13.3 inch) – Hàng Chính Hãng",
     img: [
       "assets/imgs/hp-probook-440-g3-t9s24pa-01.jpg",
       "assets/imgs/hp-probook-440-g3-t9s24pa-02.jpg",
