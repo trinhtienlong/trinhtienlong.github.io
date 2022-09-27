@@ -336,14 +336,15 @@ hr:not([size]) {
 }
 
 .thank{
-    background-color: #181a1b;
+    background-color: #2a2f32;
     font-weight: bold;
     line-height: 40px;
+    border: 3.5px #00d4e3 solid;
     border-radius: 8px;
 }
 
 .thank p{
-    color: #8FA552;
+    color: #c3e85c;
     font-size: 18px;
     text-align: center;
 }
