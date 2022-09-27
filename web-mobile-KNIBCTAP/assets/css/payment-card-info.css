@@ -198,7 +198,8 @@ hr:not([size]) {
 }
 
 .nav-link:hover,
-.infos:hover{
+.infos:hover,
+.infos:hover a{
   color: rgb(52, 191, 255) !important;
 }
 
@@ -539,6 +540,7 @@ small {
 .item{
   padding: 10px 20px;
   margin: 0 10px;
+  transition: 0.2s linear;
 }
 
 

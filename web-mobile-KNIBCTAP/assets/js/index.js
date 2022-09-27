@@ -55,7 +55,7 @@ $(document).ready(function () {
   });
 
   $(".banner-slider").slick({
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 2000,
     slidesToShow: 3,
     slidesToScroll: 3,
@@ -653,8 +653,6 @@ function renderProduct(nameIdProduct, idProduct) {
   let boxList = [];
   let seeAll = document.querySelector(idProduct);
   let seeAllName = seeAll.getAttribute("name");
-  // let boxlist = localStorage.getItem("dataBox");
-  // let boxLists = JSON.parse(boxlist);
   for (let i = 0; i < localProduct.length; i++) {
     if (seeAllName === localProduct[i].name) {
       boxList.push(localProduct[i]);
@@ -677,6 +675,7 @@ renderProduct("mobileSlider", "#mobile");
 renderProduct("laptopSlider", "#laptop");
 renderProduct("tabletSlider", "#tablet");
 renderProduct("pkSlider", "#phukien");
+
 
 //  di chuyển các danh mục sản phẩm sang trang product-portfolio
 function seeAllProduct(arrItem) {
@@ -749,4 +748,3 @@ function movePoduct(boxqrAll, qrText) {
   }
 }
 movePoduct(".image-item", ".title-price p");
-// movePoduct("#list1 .por-flex", ".porfolio-title p");

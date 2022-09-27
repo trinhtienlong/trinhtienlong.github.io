@@ -695,7 +695,8 @@ tr {
   right: 0;
   left: 0;
   height: 85px;
-  content: -webkit-gradient(
+  content: 
+  -webkit-gradient(
     linear,
     0% 100%,
     0% 0%,
@@ -737,6 +738,7 @@ tr {
 .item{
   padding: 10px 20px;
   margin: 0 10px;
+  transition: 0.2s linear;
 }
 
 .item:hover {
@@ -848,7 +850,8 @@ tr {
 }
 
 .nav-link:hover,
-.infos:hover{
+.infos:hover,
+.infos:hover a{
   color: rgb(52, 191, 255) !important;
 }
 

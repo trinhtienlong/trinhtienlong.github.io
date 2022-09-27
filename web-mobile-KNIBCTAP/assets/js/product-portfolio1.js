@@ -164,18 +164,6 @@ function renderProduct() {
 
   for (let i = 0; i < product.length; i++) {
     list1.innerHTML += 
-    // `
-    //   <div class="col-lg-3 col-md-4 col-6 mb-4 por-flex">
-    //   <div class="h-100 h-white">
-    //   <div class="porfolio-img">
-    //   <img class="w-100" src="${product[i].image}">
-    //   </div>
-    //   <div class="porfolio-title">
-    //   <p>${product[i].title}</p>
-    //   <span>${product[i].price} ₫</span>
-    //   </div>
-    //   </div>
-    //   </div>`
       `<div class="col-lg-3 col-md-4 col-6 mb-3 por-box">
           <div class="por-flex">
               <div class="porfolio-img">
@@ -193,8 +181,32 @@ function renderProduct() {
           </div>
       </div>`;
   }
+  // add to cart btn
+
 }
 renderProduct();
+
+function movePoduct(boxqrAll, qrText) {
+  let proList = document.querySelectorAll(boxqrAll);
+  let boxList = [];
+  for (let i = 0; i < proList.length; i++) {
+    proList[i].onclick = () => {
+      let proTitle = proList[i].querySelector(qrText).innerText;
+      let box = localStorage.getItem("dataBox");
+      let boxs = JSON.parse(box);
+      for (i = 0; i < boxs.length; i++) {
+        if (proTitle === boxs[i].title) {
+          boxList.push(boxs[i]);
+          let json = JSON.stringify(boxList);
+          localStorage.setItem("data", json);
+          location.href = "product.html";
+        }
+      }
+    };
+  }
+}
+movePoduct(".box-pk .row", ".pk-portfolio p");
+movePoduct("#list1 .por-flex", "p");
 
 let breadcrumb = document.querySelector(".breadcrumb-item:last-child");
 if (product.length === datas.length) {
@@ -282,6 +294,7 @@ function hienDT(thuonghieuchon_arr = [], giaBan_arr = []) {
         </div>
       </div>`;
   }
+  selectPoduct()
   movePoduct("#list1 .por-flex", "p");
   if( list1.innerHTML == '' ){
     list1.innerHTML = '<h2 class="text-center fontStyle" >Empty Booth</h2><div class="d-flex justify-content-center"><img src="assets/imgs/epytybox.png" class="w-25" alt=""></div>'
@@ -321,29 +334,6 @@ for (let i = 0; i < thuongHieu.length; i++) {
   thuongHieu[i].onchange = chonDT;
 }
 
-
-
-function movePoduct(boxqrAll, qrText) {
-  let proList = document.querySelectorAll(boxqrAll);
-  let boxList = [];
-  for (let i = 0; i < proList.length; i++) {
-    proList[i].onclick = () => {
-      let proTitle = proList[i].querySelector(qrText).innerText;
-      let box = localStorage.getItem("dataBox");
-      let boxs = JSON.parse(box);
-      for (i = 0; i < boxs.length; i++) {
-        if (proTitle === boxs[i].title) {
-          boxList.push(boxs[i]);
-          let json = JSON.stringify(boxList);
-          localStorage.setItem("data", json);
-          location.href = "product.html";
-        }
-      }
-    };
-  }
-}
-movePoduct(".box-pk .row", ".pk-portfolio p");
-movePoduct("#list1 .por-flex", "p");
 
 // tạo thanh search cho navbar và di chuyển sang trang product
 let box = localStorage.getItem("dataBox");
@@ -405,3 +395,42 @@ function navbaProduct(arrItem) {
   }
 }
 navbaProduct(".item");
+
+
+// add to cart
+
+function selectPoduct() {
+  let proList = document.querySelectorAll(".por-flex");
+  let addToCard = document.querySelectorAll('.addto-child');
+  for(let k = 0 ; k < addToCard.length ; k++ ){
+    addToCard[k].onclick = () => {
+      let soluongsf = 1;
+      let proTitle = proList[k].querySelector(".porfolio-title p").innerText;
+      let box = localStorage.getItem("dataBox");
+      let boxs = JSON.parse(box);
+      for (let i = 0; i < boxs.length; i++) {
+        if (proTitle === boxs[i].title) {
+          // kiểm tra trùng lặp sf,nếu trùng tăng sl và ngắt vòng for
+          let kt = 0;
+          for ( let j = 0; j < Card.length; j++ ){
+            if( Card[j].title == proTitle ){
+              kt = 1;
+              Card[j].solg += parseInt(soluongsf);
+              let json = JSON.stringify(Card);
+              localStorage.setItem("cart", json);
+              break;
+            }
+          }
+          if( kt == 0 ){
+            Card.push(boxs[i]);
+            Card[Card.length-1].solg = parseInt(soluongsf);
+            let json = JSON.stringify(Card);
+            localStorage.setItem("cart", json);
+          }
+        }
+      }
+      changeNumber()
+    }
+  }
+}
+selectPoduct();

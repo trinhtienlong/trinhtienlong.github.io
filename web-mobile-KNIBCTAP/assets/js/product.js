@@ -510,9 +510,8 @@ function changeNumber(){
 }
 changeNumber()
 
-// let tt = document.querySelector('#addToCard')
-// let tt1 = tt.parentNode.parentNode
-// console.log(tt1);
+
+// add to car
 
 function selectPoduct() {
   let proList = document.querySelector(".info-prd");
