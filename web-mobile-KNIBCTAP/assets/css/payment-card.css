@@ -381,7 +381,7 @@ body {
   max-width: 2.5rem;
   color: white;
   font-size: 18px;
-  background-color: #151515;
+  background-color: #3d3d3d;
   border: 0;
   outline: 0;
   text-align: center;
@@ -398,11 +398,11 @@ input::-webkit-inner-spin-button {
 } */
 
 .table-bg tbody tr {
-  border-bottom: 0.5px solid #bfc0c1 !important;
+  border-bottom: 2px solid #e2e2e2 !important;
 }
 
 .table-bg thead tr {
-  border-bottom: 3px solid #bfc0c1 !important;
+  border-bottom: 3px solid #e2e2e2  !important;
 }
 
 .table-bg tbody td {
@@ -583,6 +583,7 @@ tr {
   align-items: center;
   border-radius: 50%;
   background-color: #0000007b;
+  transition: 0.2s linear;
 }
 
 .gototop a:hover{

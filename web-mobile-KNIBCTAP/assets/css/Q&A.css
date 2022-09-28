@@ -485,6 +485,7 @@ hr:not([size]) {
   align-items: center;
   border-radius: 50%;
   background-color: #0000007b;
+  transition: 0.2s linear;
 }
 
 .gototop a:hover{

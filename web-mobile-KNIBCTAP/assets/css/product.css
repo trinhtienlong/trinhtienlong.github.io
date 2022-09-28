@@ -490,7 +490,7 @@ hr {
   max-width: 2.5rem;
   color: white;
   font-size: 18px;
-  background-color: #151515;
+  background-color: #3d3d3d;
   border: 0;
   outline: 0;
   text-align: center;
@@ -825,6 +825,7 @@ tr {
   align-items: center;
   border-radius: 50%;
   background-color: #0000007b;
+  transition: 0.2s linear
 }
 
 .gototop a:hover{

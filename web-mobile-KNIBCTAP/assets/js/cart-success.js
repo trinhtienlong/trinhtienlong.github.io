@@ -196,7 +196,7 @@ function showSuccessCart(){
   '</tr>'+
   '<tr>'+
   '<th scope="row">TỔNG CỘNG</th>'+
-  '<td colspan="2" class="text-end color-price">'+
+  '<td colspan="3" class="text-end color-price">'+
     '<span>'+tong.toLocaleString("en")+'&nbsp;₫'+'</span>'+
   '</td>'+
   '</tr>'

@@ -118,6 +118,65 @@ let cardMini = document.querySelector(".cus-iconCart");
 let cardMini1 = document.querySelector(".tet");
 let cardMini2 = document.querySelector(".cus-iconCart1");
 let cardMini3 = document.querySelector(".tet1")
+
+
+function moverCard(btnCard){
+  let btnaddtocard = document.querySelector(btnCard)
+    let boxEmpty = [];
+    btnaddtocard.onclick = () =>{
+      let btnName = btnaddtocard.getAttribute("name");
+      let boxlist = localStorage.getItem("dataBox");
+      let boxLists = JSON.parse(boxlist);
+      for (let i = 0; i < boxLists.length; i++) {
+        if (btnName === "tất cả sản phẩm"){
+          boxEmpty.push(boxLists[i]);
+        }
+      }
+      let json = JSON.stringify(boxEmpty);
+      localStorage.setItem("datas", json);
+      location.href = "product-portfolio1.html";
+  }
+}
+
+
+function change(box){
+  if( Card.length == 0 ){
+    console.log(1);
+    box.style.overflowY = "hidden";
+    box.innerHTML = 
+    '<img src="assets/imgs/empty-cart.svg" class="w-50" alt="">'+
+    '<h5 class="text-center fontStyle">Cart Is Empty</h5>'+
+    '<hr>'+
+    '<button type="button" name="tất cả sản phẩm" class="btn w-100 btnaddtocard">CỬA HÀNG</button>'
+    moverCard(".btnaddtocard");
+    changeNumber()
+  }
+  if( Card.length > 0 ){
+    showCart();
+    changeNumber()
+  }
+}
+cardMini.onmouseover = () =>{
+  change(cardMini1);
+}
+cardMini2.onclick = () =>{
+  change(cardMini3);
+}
+
+function changeNumber(){
+  let numberCard = document.querySelectorAll(".badge")
+  for(let i=0 ; i <numberCard.length ; i++ ){
+    numberCard[i].innerText = Card.length
+    if( numberCard[i].innerText == 0 ){
+      numberCard[i].style.display = "none"
+    }else{
+      numberCard[i].style.display = "inline-block"
+    }
+  }
+}
+changeNumber()
+
+
 function showCart(){
   let ttgh = "";
   let tong = 0;
@@ -177,7 +236,6 @@ function showCart(){
             localStorage.setItem("cart", json);
           }
         }
-        showCart();
         change(cardMini1);
         change(cardMini3);
         changeNumber();
@@ -188,63 +246,6 @@ function showCart(){
   remove(removes);
   remove(removes1);
 }
-
-
-function moverCard(btnCard){
-  let btnaddtocard = document.querySelector(btnCard)
-    let boxEmpty = [];
-    btnaddtocard.onclick = () =>{
-      let btnName = btnaddtocard.getAttribute("name");
-      let boxlist = localStorage.getItem("dataBox");
-      let boxLists = JSON.parse(boxlist);
-      for (let i = 0; i < boxLists.length; i++) {
-        if (btnName === "tất cả sản phẩm"){
-          boxEmpty.push(boxLists[i]);
-        }
-      }
-      let json = JSON.stringify(boxEmpty);
-      localStorage.setItem("datas", json);
-      location.href = "product-portfolio1.html";
-  }
-}
-
-
-function change(box){
-  if( Card.length == 0 ){
-    console.log(1);
-    box.style.overflowY = "hidden";
-    box.innerHTML = 
-    '<img src="assets/imgs/empty-cart.svg" class="w-50" alt="">'+
-    '<h5 class="text-center fontStyle">Cart Is Empty</h5>'+
-    '<hr>'+
-    '<button type="button" name="tất cả sản phẩm" class="btn w-100 btnaddtocard">CỬA HÀNG</button>'
-    moverCard(".btnaddtocard");
-    changeNumber()
-  }
-  if( Card.length > 0 ){
-    showCart();
-    changeNumber()
-  }
-}
-cardMini.onmouseover = () =>{
-  change(cardMini1);
-}
-cardMini2.onclick = () =>{
-  change(cardMini3);
-}
-
-function changeNumber(){
-  let numberCard = document.querySelectorAll(".badge")
-  for(let i=0 ; i <numberCard.length ; i++ ){
-    numberCard[i].innerText = Card.length
-    if( numberCard[i].innerText == 0 ){
-      numberCard[i].style.display = "none"
-    }else{
-      numberCard[i].style.display = "inline-block"
-    }
-  }
-}
-changeNumber()
 
 
 function showMyCart(){
@@ -309,9 +310,7 @@ function showMyCart(){
             localStorage.setItem("cart", json);
           }
         }
-        tinhtong();
-        change(cardMini1);
-        change(cardMini3);
+        tinhtong()
         changeNumber();
         showMyCart();
       }
