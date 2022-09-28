@@ -254,10 +254,10 @@ function showMyCart(){
     '<div class="row pt-5 pb-5">'+
       '<div class="col-12 p-4 empty-flex justify-content-center">'+
           '<p>Chưa có sản phẩm nào trong giỏ hàng.</p>'+
-          '<button type="button" name="tất cả sản phẩm" class="btn mt-1 btnSeeCard">QUAY TRỞ LẠI CỬA HÀNG</button>'+
+          '<button type="button" name="tất cả sản phẩm" class="btn mt-1 btnSeeCard" id="btnSeeCard">QUAY TRỞ LẠI CỬA HÀNG</button>'+
       '</div>'+
     '</div>'
-    moverCard(".btnSeeCard")
+    moverCard("#btnSeeCard")
   }
   else{
     let ttgh = "";
