@@ -297,7 +297,7 @@ function hienDT(thuonghieuchon_arr = [], giaBan_arr = []) {
   selectPoduct()
   movePoduct("#list1 .por-flex", "p");
   if( list1.innerHTML == '' ){
-    list1.innerHTML = '<h2 class="text-center fontStyle" >Empty Booth</h2><div class="d-flex justify-content-center"><img src="assets/imgs/epytybox.png" class="w-25" alt=""></div>'
+    list1.innerHTML = '<h2 class="text-center fontStyle mb-3" >Empty Booth</h2><div class="d-flex justify-content-center"><img src="assets/imgs/box-empty.png" class="w-50" alt=""></div>'
   }
 }
 

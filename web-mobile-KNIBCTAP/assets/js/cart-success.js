@@ -204,24 +204,24 @@ function showSuccessCart(){
   let thank = document.querySelector('#thank');
   thank.innerHTML = 
   `
-  <li>Họ tên: ${user.userName.toUpperCase() + " " + user.name.toUpperCase()} </li>
-  <li>Điện thoại: ${user.number} </li>
-  <li>Địa chỉ: ${user.city} </li>
-  <li>Email: ${user.email} </li>
-  <li></li>
-  <li></li>
+  <li>Họ tên:&nbsp<span class="blue">${user.userName.toUpperCase() + " " + user.name.toUpperCase()}</span></li>
+  <li>Điện thoại:&nbsp<span class="blue">${user.number}</span></li>
+  <li>Địa chỉ:&nbsp<span class="blue">${user.city}</span></li>
+  <li>Email:&nbsp<span class="blue">${user.email}</span></li>
+  <li>Ngày đặt hàng:&nbsp<span class="blue"></span></li>
+  <li>Thời gian:&nbsp<span class="blue"></span></li>
   <li>Tổng tiền đơn hàng: <span class="color-price">${tong.toLocaleString("en")}<span>&nbsp;đ</span></span></li>
-  <li>Phương thức thanh toán: Kiểm tra thanh toán </li>
+  <li>Phương thức thanh toán:&nbsp<span class="blue">Kiểm tra thanh toán</span></li>
   `
   function time(){
     let d = new Date();
     let thu = ["Chủ nhật","Thứ hai","Thứ ba","Thứ Tư","Thứ năm","Thứ sáu","Thứ bảy"];
     let thang = d.getMonth() + 1;
 
-    document.querySelector('#thank li:nth-child(5)').innerHTML = ("Ngày đặt hàng:&nbsp;" + thu[d.getDay()] + " ngày " + d.getDate()
+    document.querySelector('#thank li:nth-child(5) span').innerHTML = ( thu[d.getDay()] + " ngày " + d.getDate()
     + " tháng " + thang + " năm " + d.getFullYear() + "<br>");
-    document.querySelector('#thank li:nth-child(6)').innerHTML = 
-    ("Thời gian:&nbsp;" + d.getHours() + "h : " + d.getMinutes() + "p");
+    document.querySelector('#thank li:nth-child(6) span').innerHTML = 
+    ( d.getHours() + "h  " + d.getMinutes() + "p");
   }
   time();
   for ( i = 0 ; i < Card.length ; i++ ){

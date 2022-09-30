@@ -572,6 +572,10 @@ hr {
   color: #636363;
 }
 
+.blue{
+  color: #00d4e3;
+}
+
 @media only screen and (max-width: 1200px) {
   .collapse .d-flex {
     margin-left: 2.5rem
