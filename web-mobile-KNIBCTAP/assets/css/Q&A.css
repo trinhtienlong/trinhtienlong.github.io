@@ -349,12 +349,12 @@ hr:not([size]) {
 }
 
 .accordion-button:focus{
-    color: rgb(52, 191, 255) !important;
+    color: rgb(29, 124, 168) !important;
     box-shadow: none !important;
 }
 
 .accordion-button:hover{
-    color: rgb(52, 191, 255) !important;
+    color: rgb(29, 124, 168) !important;
 }
 
 .order button {
