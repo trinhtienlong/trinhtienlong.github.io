@@ -419,9 +419,7 @@ form.addEventListener("click", function (e) {
       toastList.forEach((toast) => toast.show());
     }
     success();
-    setTimeout(() => {
-      location.href = "cart-success.html";
-    }, 850);
+    location.href = "cart-success.html";
   }
 });
 
@@ -450,7 +448,7 @@ formLogin.addEventListener("click", function (e) {
         <div class="mt-2">Tài khoản của bạn đã đăng nhập thành công</div>`);
       setTimeout(() => {
         location.href = "cart-success.html";
-      }, 850);
+      }, 750);
     }
     if (
       (nameEmailVal !== data.email && passwordVal !== data.password) ||
