@@ -2,9 +2,40 @@
   text-align: center;
 }
 
+.App a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0 25px;
+}
+
+.App li {
+  list-style: none;
+  padding: 20px 0;
+  background-color: black;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.flex{
+  display: flex;
+}
+
+.scroll{
+  overflow-y: scroll;
+  height: 500px;
+  width: 400px;
+  margin: 50px auto;
+}
+
+.scroll img{
+  width: 100%;
+}
+
+.center{
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {

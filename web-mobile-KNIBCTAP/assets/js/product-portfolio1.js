@@ -181,8 +181,6 @@ function renderProduct() {
           </div>
       </div>`;
   }
-  // add to cart btn
-
 }
 renderProduct();
 
