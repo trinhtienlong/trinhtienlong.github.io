@@ -1,0 +1,19 @@
+{
+    "Post": [
+        {
+            "id": 1,
+            "tiltle": "Post 1",
+            "author": "typescript"
+        },
+        {
+            "id": 2,
+            "tiltle": "Post 1",
+            "author": "typescript"
+        },
+        {
+            "id": 3,
+            "tiltle": "Post 1",
+            "author": "typescript"
+        }
+    ]
+}

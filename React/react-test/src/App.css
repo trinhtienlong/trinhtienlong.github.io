@@ -20,23 +20,58 @@
 }
 
 .flex{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 2;
+  grid-gap: 20px ;
+}
+
+.flex a{
+  padding: 20px 0;
+  background-color: bisque;
   display: flex;
+  justify-content: center;
 }
 
-.scroll{
-  overflow-y: scroll;
-  height: 500px;
-  width: 400px;
-  margin: 50px auto;
+.flex img{
+  width: 100px;
 }
 
-.scroll img{
-  width: 100%;
+.flex div{
+  width: 200px;
+  margin: 0 30px;
 }
 
 .center{
   text-align: center;
+  display: grid;
+  grid-template-columns: 4;
+  grid-template-rows: 3;
 }
+
+.pagination{
+  list-style: none;
+  display: flex;
+}
+
+.page-link{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 40px;
+  color: #fff;
+  border-radius: 50%;
+  background-color: #282c34;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+
+.page-link:hover{
+  background-color: #1c7a94;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

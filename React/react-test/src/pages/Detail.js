@@ -9,10 +9,11 @@ function Detail(){
     const [Detail, setDetail] = useState("")
 
     useEffect(()=>{
+        console.log('1');
         try {
             axios({
                 method: "get",
-                url: `https://fakestoreapi.com/products/${param.id}`,
+                url: `http://localhost:3000/product/${param.id}`,
             }).then((response)=>{
                 setDetail(response.data)
                 setisLoading(true)
@@ -20,7 +21,7 @@ function Detail(){
         } catch (error) {
             console.log(error);
         }
-    })
+    },[])
 
     if(isLoading === false){
         return <h1 className="App">loading.....</h1>

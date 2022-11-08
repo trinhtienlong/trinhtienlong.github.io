@@ -28,6 +28,7 @@ function myFunction() {
 }
 
 let Card = JSON.parse(localStorage.getItem("cart")) || [];
+console.log(Card);
 let cardMini = document.querySelector(".cus-iconCart");
 let cardMini1 = document.querySelector(".tet")
 let cardMini2 = document.querySelector(".cus-iconCart1");

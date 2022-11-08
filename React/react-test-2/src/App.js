@@ -1,10 +1,21 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Brower from './Page/Brower';
+import Home from './Page/Home';
+import Layout from './Page/Layout';
+import Nopage from './Page/Nopage';
 
 function App() {
   return (
-    <div className="App">
-      hello
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />}/>
+          <Route path='brower' element={<Brower />}/>
+          <Route path='*' element={<Nopage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
