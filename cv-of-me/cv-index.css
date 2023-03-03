@@ -1,0 +1,437 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;1000&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-family: "Nunito";
+  list-style: none;
+  text-decoration: none !important;
+  text-transform: capitalize;
+  transition: all 0.15s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+html::-webkit-scrollbar {
+  width: 1.1rem;
+}
+html::-webkit-scrollbar-track {
+  background: #323232;
+}
+html::-webkit-scrollbar-thumb {
+  background: #f9ca24;
+}
+html .rocket {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s linear;
+  position: fixed;
+  font-size: 3rem;
+  right: 2.5rem;
+  bottom: 1.8rem;
+  transform: rotate(316deg);
+  cursor: pointer;
+  z-index: 1000;
+}
+html .rocket a {
+  color: #f9ca24;
+}
+html .rocket:hover {
+  animation: elf 0.5s;
+}
+html .toggle {
+  left: 0;
+}
+html body {
+  background: #111;
+  overflow-x: hidden;
+  padding-left: 35rem;
+}
+html section {
+  min-height: 100vh;
+}
+html .btn {
+  padding: 0.7rem 3rem;
+  background: #5f5f5f;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 2rem;
+  border-radius: 5rem;
+}
+html .btn .yellow {
+  color: #f9ca24;
+}
+html .btn:hover {
+  animation: elf 0.5s;
+  background: #f9ca24 !important;
+  color: #fff !important;
+}
+html .btn:hover .yellow {
+  color: #fff;
+}
+html header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 35rem;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background: #323232;
+}
+html header .user {
+  padding-top: 5rem;
+}
+html header .user_img {
+  width: 19rem;
+  height: 19rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 0 10px 5px #f9ca24, 0 0 10px 5px #f9ca24;
+}
+html header .user_name {
+  color: #dfdfdf;
+  font-size: 3.5rem;
+  margin: 0;
+  font-weight: 1000;
+}
+html header .user_post {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #dfdfdf;
+  margin-bottom: 0;
+}
+html header .navbar {
+  width: 100%;
+  display: flex;
+}
+html header .navbar ul {
+  padding: 1rem 3rem;
+  margin: auto;
+}
+html header .navbar ul li {
+  margin: 1.5rem 0.5rem;
+}
+html header .navbar ul li a {
+  display: block;
+  color: #fff;
+  padding: 1rem 9rem;
+  border-radius: 50rem;
+  background: #5f5f5f;
+  font-size: 2rem;
+  font-weight: 700;
+}
+html header .navbar ul li a:hover {
+  background: #f9ca24;
+  animation: elf 0.5s;
+}
+html #mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  z-index: 99;
+  visibility: hidden;
+  opacity: 0.9;
+}
+html .mask-visible {
+  visibility: visible !important;
+}
+html .menu {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: #5f5f5f;
+  padding: 0.85rem 1.4rem;
+  border-radius: 0.2rem;
+  color: #dfdfdf;
+  cursor: pointer;
+  font-size: 2.5rem;
+  z-index: 1000;
+  display: none;
+}
+html .menu:hover {
+  color: #f9ca24;
+}
+html .home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 15rem;
+}
+html .home h3 {
+  font-size: 2.5rem;
+  color: #dfdfdf;
+}
+html .home h1 {
+  font-size: 5rem;
+  color: #dfdfdf;
+}
+html .home h1 span {
+  color: #f9ca24;
+}
+html .home p {
+  font-size: 2rem;
+  color: #dfdfdf;
+  padding: 1rem 0;
+}
+html .about {
+  padding: 0 7rem;
+}
+html .about .heading {
+  text-align: center;
+  text-transform: capitalize;
+  padding: 4rem 0 2.5rem 0;
+  font-size: 3.5rem;
+  border-bottom: #5f5f5f 2px solid;
+  color: #dfdfdf;
+}
+html .about .heading span {
+  color: #f9ca24;
+}
+html .about .row-info {
+  margin-top: 3rem;
+}
+html .about .row-info .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #dfdfdf;
+}
+html .about .row-info .info h3 {
+  margin: 0 0 2.5rem 0;
+  font-size: 2.3rem;
+}
+html .about .row-info .info span {
+  color: #f9ca24;
+  font-size: 2rem;
+}
+html .about .row-info .info i {
+  color: #f9ca24;
+}
+html .about .row-info .couter {
+  text-align: center;
+}
+html .about .row-info .couter .row {
+  margin: -2rem;
+}
+html .about .row-info .couter .gn {
+  padding: 2rem;
+}
+html .about .row-info .couter .box-in {
+  color: #dfdfdf;
+  background: #5f5f5f;
+  padding: 3rem 2rem;
+}
+html .about .row-info .couter .box-in span {
+  font-size: 3.5rem;
+  color: #f9ca24;
+}
+html .about .row-info .couter .box-in h3 {
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+html .education {
+  padding: 0 7rem;
+}
+html .education .heading {
+  text-align: center;
+  text-transform: capitalize;
+  padding: 4rem 0 2.5rem 0;
+  font-size: 3.5rem;
+  border-bottom: #5f5f5f 2px solid;
+  color: #dfdfdf;
+}
+html .education .heading span {
+  color: #f9ca24;
+}
+html .education .row {
+  margin: -2.9rem;
+}
+html .education .gn {
+  padding: 2.9rem;
+}
+html .education .row-education {
+  margin-top: 3rem;
+  padding: 1rem 0;
+}
+html .education .row-education .education-box {
+  position: relative;
+  border-left: 2px solid #dfdfdf;
+  color: #dfdfdf;
+  padding: 1.5rem 0 0 4rem;
+}
+html .education .row-education .education-box span {
+  font-size: 1.3rem;
+  background: #5f5f5f;
+  padding: 0.3rem 2rem;
+  border-radius: 5rem;
+}
+html .education .row-education .education-box h3 {
+  margin: 1.3rem 0;
+  font-size: 2rem;
+}
+html .education .row-education .education-box p {
+  font-size: 1.3rem;
+}
+html .education .row-education .education-box .graduation-icon {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 50%;
+  top: 0;
+  left: -2.5rem;
+  color: #fff;
+  background: #f9ca24;
+}
+html .portfolio {
+  padding: 0 7rem;
+}
+html .portfolio .heading {
+  text-align: center;
+  text-transform: capitalize;
+  padding: 4rem 0 2.5rem 0;
+  font-size: 3.5rem;
+  border-bottom: #5f5f5f 2px solid;
+  color: #dfdfdf;
+}
+html .portfolio .heading span {
+  color: #f9ca24;
+}
+html .portfolio .row {
+  margin: -2rem;
+}
+html .portfolio .gn {
+  padding: 2rem;
+}
+html .portfolio .row-portfolio {
+  padding-top: 4rem;
+}
+html .portfolio .box-img {
+  overflow: hidden;
+  border-radius: 1rem;
+}
+html .portfolio .box-img img {
+  width: 100%;
+}
+html .portfolio .box-img img:hover {
+  transform: scale(1.3);
+}
+html .contact {
+  padding: 0 7rem;
+}
+html .contact .heading {
+  text-align: center;
+  text-transform: capitalize;
+  padding: 4rem 0 2.5rem 0;
+  font-size: 3.5rem;
+  border-bottom: #5f5f5f 2px solid;
+  color: #dfdfdf;
+}
+html .contact .heading span {
+  color: #f9ca24;
+}
+html .contact .row-contact {
+  padding-top: 7rem;
+}
+html .contact .contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+html .contact .contact-info h3 {
+  color: #f9ca24;
+  font-size: 3.5rem;
+  margin-bottom: 2.5rem;
+}
+html .contact .contact-info .info-me:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+html .contact .contact-info .info-me {
+  color: #dfdfdf;
+}
+html .contact .contact-info svg {
+  color: #f9ca24;
+  min-width: 3rem;
+}
+html .contact .contact-form .form-control {
+  padding: 1rem;
+  background: #323232;
+  color: #dfdfdf;
+  border: none;
+  font-size: 1.5rem;
+}
+html .contact .contact-form .form-control:focus {
+  border: #dfdfdf solid 0.5px;
+  box-shadow: none;
+}
+html .contact .contact-form button {
+  font-size: 1.5rem;
+}
+@media (max-width: 1250px) {
+  html .box-in h3 {
+    padding: 0 !important;
+  }
+}
+@media (max-width: 1200px) {
+  html html {
+    font-size: 55%;
+  }
+  html .home {
+    padding: 0 7rem;
+  }
+  html .box-in h3 {
+    padding: 0 6rem !important;
+  }
+  html .about .info {
+    margin-bottom: 3rem;
+  }
+}
+@media (max-width: 1100px) {
+  html .box-in h3 {
+    padding: 0 3rem !important;
+  }
+}
+@media (max-width: 991px) {
+  html header {
+    left: -120%;
+  }
+  html body {
+    padding-left: 0;
+  }
+  html .menu {
+    display: block;
+  }
+}
+@media (max-width: 470px) {
+  html .contact-info div {
+    font-size: 1.3rem;
+  }
+}
+@keyframes elf {
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}/*# sourceMappingURL=cv-index.css.map */
