@@ -1,6 +1,8 @@
 window.onscroll = function () {
   scrollRocket();
 };
+
+let body = document.querySelector("body");
 let rocket = document.querySelector(".rocket");
 let menu = document.querySelector(".menu");
 let header = document.querySelector("header");
@@ -8,6 +10,46 @@ let navbarLeft = document.querySelectorAll(".navbar-left");
 let mask = document.getElementById("mask");
 let imgZoom = document.querySelector(".user_img");
 let imgBox = document.querySelector(".img-box");
+let faRocket = document.getElementById("fa-rocket")
+let faBars = document.getElementById("fa-bars")
+let darkLight = document.getElementById("dark-light")
+let bgPublic = document.querySelectorAll(".bgr-public")
+let educationBox = document.querySelectorAll(".education-box")
+
+darkLight.onclick = () =>{
+  if(darkLight.className === "bi bi-moon-fill"){
+    body.style.background = "#fafafa"
+    body.style.color = "#323232"
+    header.style.background = "#ededed"
+    bgPublic.forEach((item) => {
+        item.style.background = "#cacaca"
+    })
+    educationBox.forEach((item) =>{
+        item.style.borderColor = "#323232"
+    })
+    menu.style.background = "#cacaca"
+  }else{
+    body.style.background = "#111"
+    body.style.color = "#f7f7f7"
+    header.style.background = "#323232"
+    bgPublic.forEach((item) => {
+      item.style.background = "#5f5f5f"
+    })
+    educationBox.forEach((item) =>{
+      item.style.borderColor = "#dfdfdf"
+    })
+    menu.style.background = "#5f5f5f"
+  }
+  darkLight.classList.toggle("bi-brightness-high-fill")
+}
+
+
+rocket.onmouseover = () =>{
+  faRocket.className = "bi-rocket-fill"
+}
+rocket.onmouseout = () =>{
+  faRocket.className = "bi bi-rocket"
+}
 
 function scrollRocket() {
   if (
@@ -16,6 +58,7 @@ function scrollRocket() {
   ) {
     rocket.style.visibility = "visible";
     rocket.style.opacity = "0.5";
+
   } else {
     rocket.style.visibility = "hidden";
     rocket.style.opacity = "0";
@@ -25,6 +68,7 @@ function scrollRocket() {
 function toggle(){
   header.classList.toggle("toggle");
   mask.classList.toggle("mask-visible");
+  faBars.classList.toggle("bi-x-lg")
 }
 menu.onclick = toggle
 mask.onclick = toggle
@@ -34,7 +78,7 @@ function checkClick(){
     item.onclick = () =>{
       navbarLeft.forEach((itemChild)=>{
         if( itemChild.getAttribute("class") !== "navbar-left"){
-          itemChild.className = "navbar-left"
+          itemChild.className = "navbar-left bgr-public"
         }
       })
       item.classList.add("navbar-left_bgyellow")

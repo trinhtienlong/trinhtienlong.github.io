@@ -25,23 +25,47 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-thumb {
   background: #f9ca24;
 }
+html body {
+  background: #111;
+  overflow-x: hidden;
+  color: #f7f7f7;
+  padding-left: 35rem;
+}
+html .bgr-public {
+  background: #5f5f5f;
+}
 html .rocket {
   visibility: hidden;
-  opacity: 0;
-  transition: all 0.3s linear;
+  opacity: 0.5;
   position: fixed;
   font-size: 3rem;
   right: 2.5rem;
   bottom: 1.8rem;
-  transform: rotate(316deg);
   cursor: pointer;
   z-index: 1000;
+  transition: all 0.4s linear;
 }
 html .rocket a {
   color: #f9ca24;
 }
 html .rocket:hover {
+  opacity: 1 !important;
   animation: elf 0.5s;
+}
+html .dark-light {
+  position: fixed;
+  top: 1.2rem;
+  left: 1.2rem;
+  z-index: 1000;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #f9ca24;
+}
+html .dark-light:hover {
+  animation: elf 0.5s;
+}
+html .dark-light .bi-brightness-high-fill::before {
+  content: "\f1d1" !important;
 }
 html .toggle {
   left: 0;
@@ -65,18 +89,12 @@ html .img-box .img-zoom {
 html .img-box .img-zoom .img-zoom_child {
   border-radius: 0.5rem;
 }
-html body {
-  background: #111;
-  overflow-x: hidden;
-  padding-left: 35rem;
-}
 html section {
   min-height: 100vh;
 }
 html .btn {
   padding: 0.7rem 3rem;
-  background: #5f5f5f;
-  color: #fff;
+  color: inherit;
   cursor: pointer;
   margin-top: 1rem;
   font-size: 2rem;
@@ -100,7 +118,6 @@ html header {
   left: 0;
   height: 100%;
   width: 35rem;
-  background: #1a1a1a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,13 +133,10 @@ html header .user_img {
   width: 19rem;
   height: 19rem;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
   margin-bottom: 2.5rem;
   box-shadow: 0 0 10px 5px #f9ca24, 0 0 10px 5px #f9ca24;
 }
 html header .user_name {
-  color: #dfdfdf;
   font-size: 3.5rem;
   margin: 0;
   font-weight: 1000;
@@ -130,7 +144,6 @@ html header .user_name {
 html header .user_post {
   font-size: 2rem;
   font-weight: 800;
-  color: #dfdfdf;
   margin-bottom: 0;
 }
 html header .navbar {
@@ -146,10 +159,9 @@ html header .navbar ul li {
 }
 html header .navbar ul li a {
   display: block;
-  color: #fff;
+  color: inherit;
   padding: 1rem 9rem;
   border-radius: 50rem;
-  background: #5f5f5f;
   font-size: 2rem;
   font-weight: 700;
 }
@@ -176,12 +188,12 @@ html .mask-visible {
 }
 html .menu {
   position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 1rem;
+  right: 1rem;
   background: #5f5f5f;
   padding: 0.85rem 1.4rem;
   border-radius: 0.2rem;
-  color: #dfdfdf;
+  color: #f7f7f7;
   cursor: pointer;
   font-size: 2.5rem;
   z-index: 1000;
@@ -196,24 +208,27 @@ html .home {
   flex-direction: column;
   padding: 0 15rem;
 }
+html .home a {
+  color: inherit;
+}
 html .home h3 {
   font-size: 2.5rem;
-  color: #dfdfdf;
 }
 html .home h1 {
   font-size: 5rem;
-  color: #dfdfdf;
 }
 html .home h1 span {
   color: #f9ca24;
 }
 html .home p {
   font-size: 2rem;
-  color: #dfdfdf;
   padding: 1rem 0;
 }
 html .about {
   padding: 0 7rem;
+}
+html .about a {
+  color: inherit;
 }
 html .about .heading {
   text-align: center;
@@ -221,7 +236,6 @@ html .about .heading {
   padding: 4rem 0 2.5rem 0;
   font-size: 3.5rem;
   border-bottom: #5f5f5f 2px solid;
-  color: #dfdfdf;
 }
 html .about .heading span {
   color: #f9ca24;
@@ -233,7 +247,6 @@ html .about .row-info .info {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #dfdfdf;
 }
 html .about .row-info .info h3 {
   margin: 0 0 2.5rem 0;
@@ -256,8 +269,6 @@ html .about .row-info .couter .gn {
   padding: 2rem;
 }
 html .about .row-info .couter .box-in {
-  color: #dfdfdf;
-  background: #5f5f5f;
   padding: 3rem 2rem;
 }
 html .about .row-info .couter .box-in span {
@@ -277,7 +288,6 @@ html .education .heading {
   padding: 4rem 0 2.5rem 0;
   font-size: 3.5rem;
   border-bottom: #5f5f5f 2px solid;
-  color: #dfdfdf;
 }
 html .education .heading span {
   color: #f9ca24;
@@ -294,13 +304,11 @@ html .education .row-education {
 }
 html .education .row-education .education-box {
   position: relative;
-  border-left: 2px solid #dfdfdf;
-  color: #dfdfdf;
+  border-left: 2px solid #f7f7f7;
   padding: 1.5rem 0 0 4rem;
 }
 html .education .row-education .education-box span {
   font-size: 1.3rem;
-  background: #5f5f5f;
   padding: 0.3rem 2rem;
   border-radius: 5rem;
 }
@@ -311,15 +319,18 @@ html .education .row-education .education-box h3 {
 html .education .row-education .education-box p {
   font-size: 1.3rem;
 }
-html .education .row-education .education-box .graduation-icon {
+html .education .row-education .education-box i {
   position: absolute;
-  width: 3rem;
-  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5.2rem;
+  height: 5.2rem;
+  font-size: 2.5rem;
   padding: 1rem;
   border-radius: 50%;
   top: 0;
-  left: -2.5rem;
-  color: #fff;
+  left: -2.75rem;
   background: #f9ca24;
 }
 html .portfolio {
@@ -331,7 +342,6 @@ html .portfolio .heading {
   padding: 4rem 0 2.5rem 0;
   font-size: 3.5rem;
   border-bottom: #5f5f5f 2px solid;
-  color: #dfdfdf;
 }
 html .portfolio .heading span {
   color: #f9ca24;
@@ -364,7 +374,6 @@ html .contact .heading {
   padding: 4rem 0 2.5rem 0;
   font-size: 3.5rem;
   border-bottom: #5f5f5f 2px solid;
-  color: #dfdfdf;
 }
 html .contact .heading span {
   color: #f9ca24;
@@ -386,23 +395,27 @@ html .contact .contact-info h3 {
 html .contact .contact-info .info-me:not(:last-child) {
   margin-bottom: 1.5rem;
 }
-html .contact .contact-info .info-me {
-  color: #dfdfdf;
-}
 html .contact .contact-info svg {
   color: #f9ca24;
   min-width: 3rem;
 }
 html .contact .contact-form .form-control {
   padding: 1rem;
-  background: #323232;
-  color: #dfdfdf;
+  color: inherit;
   border: none;
   font-size: 1.5rem;
 }
 html .contact .contact-form .form-control:focus {
-  border: #dfdfdf solid 0.5px;
+  border: #f7f7f7 solid 0.5px;
   box-shadow: none;
+}
+html .contact .contact-form ::-moz-placeholder {
+  color: inherit;
+  opacity: 0.55;
+}
+html .contact .contact-form ::placeholder {
+  color: inherit;
+  opacity: 0.55;
 }
 html .contact .contact-form button {
   font-size: 1.5rem;

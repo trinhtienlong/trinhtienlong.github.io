@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;1000&display=swap");
 
-$white: #fff;
-$bgr-remote: #323232;
-$bgr-btn: #5f5f5f;
-$bgr-info: #323232;
-$yellow: #f9ca24;
-$post: #dfdfdf;
+@import "colors";
 
 @mixin heading {
     text-align: center;
@@ -13,7 +8,6 @@ $post: #dfdfdf;
     padding: 4rem 0 2.5rem 0;
     font-size: 3.5rem;
     border-bottom: $bgr-btn 2px solid;
-    color: $post;
     span {
         color: $yellow;
     }
@@ -28,13 +22,11 @@ $post: #dfdfdf;
     }
 }
 
-@mixin colum-center{
+@mixin colum-center {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
-
 
 * {
     margin: 0;
@@ -62,30 +54,59 @@ html {
         background: $yellow;
     }
 
+    body {
+        background: #111;
+        overflow-x: hidden;
+        color: $post;
+        padding-left: 35rem;
+    }
+
+    .bgr-public{
+        background: $bgr-btn;
+    }
+
     .rocket {
         a {
             color: $yellow;
         }
         visibility: hidden;
-        opacity: 0;
-        transition: all 0.3s linear;
+        opacity: 0.5;
         position: fixed;
         font-size: 3rem;
         right: 2.5rem;
         bottom: 1.8rem;
-        transform: rotate(316deg);
         cursor: pointer;
         z-index: 1000;
-        &:hover{
+        transition: all 0.4s linear;
+        &:hover {
+            opacity: 1 !important;
             animation: elf 0.5s;
         }
     }
 
-    .toggle{
+    .dark-light {
+        position: fixed;
+        top: 1.2rem;
+        left: 1.2rem;
+        z-index: 1000;
+        font-size: 2.5rem;
+        cursor: pointer;
+        color: $yellow;
+
+        &:hover {
+            animation: elf 0.5s;
+        }
+
+        .bi-brightness-high-fill::before {
+            content: "\F1D1" !important;
+        }
+    }
+
+    .toggle {
         left: 0;
     }
 
-    .img-box{
+    .img-box {
         position: fixed;
         z-index: 10000;
         width: 100%;
@@ -96,20 +117,13 @@ html {
         background: #1a1a1ae8;
         display: flex;
         visibility: hidden;
-        .img-zoom{
+        .img-zoom {
             margin: auto;
             width: 60rem;
-            .img-zoom_child{
+            .img-zoom_child {
                 border-radius: 0.5rem;
             }
         }
-    }
-
-
-    body {
-        background: #111;
-        overflow-x: hidden;
-        padding-left: 35rem;
     }
 
     section {
@@ -118,8 +132,7 @@ html {
 
     .btn {
         padding: 0.7rem 3rem;
-        background: $bgr-btn;
-        color: $white;
+        color: inherit;
         cursor: pointer;
         margin-top: 1rem;
         font-size: 2rem;
@@ -144,7 +157,6 @@ html {
         left: 0;
         height: 100%;
         width: 35rem;
-        background: #1a1a1a;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -159,13 +171,11 @@ html {
                 width: 19rem;
                 height: 19rem;
                 border-radius: 50%;
-                object-fit: cover;
                 margin-bottom: 2.5rem;
                 box-shadow: 0 0 10px 5px $yellow, 0 0 10px 5px $yellow;
             }
 
             &_name {
-                color: $post;
                 font-size: 3.5rem;
                 margin: 0;
                 font-weight: 1000;
@@ -174,7 +184,6 @@ html {
             &_post {
                 font-size: 2rem;
                 font-weight: 800;
-                color: $post;
                 margin-bottom: 0;
             }
         }
@@ -189,10 +198,9 @@ html {
                     margin: 1.5rem 0.5rem;
                     a {
                         display: block;
-                        color: $white;
+                        color: inherit;
                         padding: 1rem 9rem;
                         border-radius: 50rem;
-                        background: $bgr-btn;
                         font-size: 2rem;
                         font-weight: 700;
 
@@ -205,12 +213,12 @@ html {
             }
         }
 
-        .navbar-left_bgyellow{
-            background: $yellow !important
+        .navbar-left_bgyellow {
+            background: $yellow !important;
         }
     }
 
-    #mask{
+    #mask {
         position: fixed;
         top: 0;
         left: 0;
@@ -222,14 +230,14 @@ html {
         opacity: 0.9;
     }
 
-    .mask-visible{
+    .mask-visible {
         visibility: visible !important;
     }
 
     .menu {
         position: fixed;
-        top: 1.5rem;
-        right: 1.5rem;
+        top: 1rem;
+        right: 1rem;
         background: $bgr-btn;
         padding: 0.85rem 1.4rem;
         border-radius: 0.2rem;
@@ -248,26 +256,29 @@ html {
         justify-content: center;
         flex-direction: column;
         padding: 0 15rem;
+        a{
+            color: inherit;
+        }
         h3 {
             font-size: 2.5rem;
-            color: $post;
         }
         h1 {
             font-size: 5rem;
-            color: $post;
             span {
                 color: $yellow;
             }
         }
         p {
             font-size: 2rem;
-            color: $post;
             padding: 1rem 0;
         }
     }
 
     .about {
         padding: 0 7rem;
+        a{
+            color: inherit;
+        }
         .heading {
             @include heading;
         }
@@ -276,7 +287,6 @@ html {
             .info {
                 @include colum-center();
 
-                color: $post;
                 h3 {
                     margin: 0 0 2.5rem 0;
                     font-size: 2.3rem;
@@ -295,8 +305,6 @@ html {
                 @include change-guter(-2rem, 2rem);
 
                 .box-in {
-                    color: $post;
-                    background: $bgr-btn;
                     padding: 3rem 2rem;
                     span {
                         font-size: 3.5rem;
@@ -326,11 +334,9 @@ html {
             .education-box {
                 position: relative;
                 border-left: 2px solid $post;
-                color: $post;
                 padding: 1.5rem 0 0 4rem;
                 span {
                     font-size: 1.3rem;
-                    background: $bgr-btn;
                     padding: 0.3rem 2rem;
                     border-radius: 5rem;
                 }
@@ -341,15 +347,18 @@ html {
                 p {
                     font-size: 1.3rem;
                 }
-                .graduation-icon {
+                i {
                     position: absolute;
-                    width: 3rem;
-                    height: 3rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 5.2rem;
+                    height: 5.2rem;
+                    font-size: 2.5rem;
                     padding: 1rem;
                     border-radius: 50%;
                     top: 0;
-                    left: -2.5rem;
-                    color: $white;
+                    left: -2.75rem;
                     background: $yellow;
                 }
             }
@@ -380,54 +389,54 @@ html {
         }
     }
 
-    .contact{
+    .contact {
         padding: 0 7rem;
         .heading {
             @include heading;
         }
 
-        .row-contact{
+        .row-contact {
             padding-top: 7rem;
         }
 
-        .contact-info{
+        .contact-info {
             @include colum-center();
 
             font-size: 1.8rem;
-            h3{
+            h3 {
                 color: $yellow;
                 font-size: 3.5rem;
                 margin-bottom: 2.5rem;
             }
 
-            .info-me:not(:last-child){
+            .info-me:not(:last-child) {
                 margin-bottom: 1.5rem;
             }
 
-            .info-me{
-                color: $post;
-            }
-
-            svg{
+            svg {
                 color: $yellow;
                 min-width: 3rem;
             }
         }
 
-        .contact-form{
-            .form-control{
-                padding: 1rem ;
-                background: $bgr-info;
-                color: $post;
+        .contact-form {
+            .form-control {
+                padding: 1rem;
+                color: inherit;
                 border: none;
                 font-size: 1.5rem;
-                &:focus{
+                &:focus {
                     border: $post solid 0.5px;
                     box-shadow: none;
                 }
             }
 
-            button{
+            ::placeholder{
+                color: inherit;
+                opacity: 0.55;
+            }
+
+            button {
                 font-size: 1.5rem;
             }
         }
@@ -478,22 +487,22 @@ html {
     }
 
     @media (max-width: 470px) {
-        .contact-info div{
+        .contact-info div {
             font-size: 1.3rem;
         }
     }
 
     @keyframes elf {
         25% {
-          transform: scale(0.9, 1.1);
+            transform: scale(0.9, 1.1);
         }
-      
+
         50% {
-          transform: scale(1.1, 0.9);
+            transform: scale(1.1, 0.9);
         }
-      
+
         75% {
-          transform: scale(0.95, 1.05);
+            transform: scale(0.95, 1.05);
         }
     }
 }
