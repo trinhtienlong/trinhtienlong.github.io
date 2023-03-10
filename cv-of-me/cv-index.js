@@ -15,6 +15,19 @@ let faBars = document.getElementById("fa-bars")
 let darkLight = document.getElementById("dark-light")
 let bgPublic = document.querySelectorAll(".bgr-public")
 let educationBox = document.querySelectorAll(".education-box")
+let github = document.getElementById("gh")
+let fb = document.getElementById("fb")
+let gm = document.getElementById("gm")
+
+
+github.onclick = () =>{
+  location.assign("https://github.com/trinhtienlong/trinhtienlong.github.io")
+}
+
+fb.onclick = () =>{
+  location.assign("https://www.facebook.com/profile.php?id=100042402650351")
+}
+
 
 darkLight.onclick = () =>{
   if(darkLight.className === "bi bi-moon-fill"){

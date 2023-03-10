@@ -51,6 +51,7 @@ html .rocket a {
 html .rocket:hover {
   opacity: 1 !important;
   animation: elf 0.5s;
+  filter: drop-shadow(0 0 2px #f9ca24);
 }
 html .dark-light {
   position: fixed;
@@ -392,12 +393,117 @@ html .contact .contact-info h3 {
   font-size: 3.5rem;
   margin-bottom: 2.5rem;
 }
+html .contact .contact-info .info-me:nth-of-type(1) {
+  text-transform: lowercase;
+}
 html .contact .contact-info .info-me:not(:last-child) {
   margin-bottom: 1.5rem;
 }
 html .contact .contact-info svg {
   color: #f9ca24;
   min-width: 3rem;
+}
+html .contact .contact-info ul {
+  margin: 5rem 0 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  padding-left: 0;
+}
+html .contact .contact-info ul li:nth-child(1) {
+  --color: #800080;
+}
+html .contact .contact-info ul li:nth-child(2) {
+  --color: #385491;
+}
+html .contact .contact-info ul li:nth-child(3) {
+  --color: #a92f1f;
+}
+html .contact .contact-info ul li {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 6rem;
+  height: 6rem;
+}
+html .contact .contact-info ul li .base {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 0.3rem solid var(--color);
+  border-left: 0.3rem solid transparent;
+  animation: spin 8s linear infinite;
+  filter: drop-shadow(0 0 10px var(--color));
+}
+html .contact .contact-info ul li .base::after {
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  top: 5px;
+  left: 0;
+  border-radius: 50%;
+  background-color: var(--color);
+}
+html .contact .contact-info ul li .base,
+html .contact .contact-info ul li .title,
+html .contact .contact-info ul li .icon {
+  position: absolute;
+  transform: rotateX(60deg) rotateZ(-45deg);
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+html .contact .contact-info ul li .title {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transform: rotateY(30deg) skewY(-22deg) translateY(0px);
+  opacity: 0;
+  pointer-events: none;
+}
+html .contact .contact-info ul li .icon {
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  height: 100%;
+  pointer-events: none;
+}
+html .contact .contact-info ul li .base:hover {
+  filter: drop-shadow(0 0 10px var(--color));
+  animation-play-state: paused;
+}
+html .contact .contact-info ul li .base:hover + .title + .icon {
+  transform: rotateY(30deg) skewY(-22deg) translateY(-5.5rem);
+  color: var(--color);
+  filter: drop-shadow(0 0 2px var(--color));
+  animation: wave 1s ease-in-out infinite;
+}
+html .contact .contact-info ul li .base:hover + .title {
+  color: var(--color);
+  transform: rotateY(30deg) skewY(-22deg) translateY(-3rem);
+  text-shadow: 0 0 1px var(--color);
+  transition-delay: 0.1s;
+  opacity: 1;
+  animation: wave 1s ease-in-out infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotateX(60deg) rotateZ(0);
+  }
+  100% {
+    transform: rotateX(60deg) rotateZ(-360deg);
+  }
+}
+@keyframes wave {
+  100% {
+    margin-bottom: 0;
+  }
+  50% {
+    margin-bottom: 15px;
+  }
 }
 html .contact .contact-form .form-control {
   padding: 1rem;
